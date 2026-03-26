@@ -15,7 +15,7 @@
     "verify": "npm run lint && npm run format:check && npm run audit"
   },
   "devDependencies": {
-    "markdownlint-cli2": "^0.21.0",
+    "markdownlint-cli2": "^0.22.0",
     "prettier": "^3.6.2"
   }
 }
