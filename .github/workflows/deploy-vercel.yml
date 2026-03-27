@@ -32,12 +32,12 @@ jobs:
           fi
 
       - name: Checkout course content
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           path: course-content
 
       - name: Checkout course-docs-site
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: metyatech/course-docs-site
           ref: main
