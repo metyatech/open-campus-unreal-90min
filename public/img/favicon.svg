@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Unreal 90 minute lesson">
+  <rect width="128" height="128" rx="28" fill="#101826" />
+  <rect x="20" y="18" width="88" height="92" rx="20" fill="#f97316" />
+  <path
+    d="M40 44v28c0 12.15 9.85 22 22 22s22-9.85 22-22V44H70v28a8 8 0 1 1-16 0V44H40Z"
+    fill="#101826"
+  />
+  <circle cx="52" cy="36" r="6" fill="#101826" />
+  <circle cx="76" cy="36" r="6" fill="#101826" />
+</svg>

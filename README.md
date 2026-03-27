@@ -1,8 +1,11 @@
 # open-campus-unreal-90min
 
-Unreal Engine 5.x と Blueprint を使った、オープンキャンパス向け 90 分体験授業の standalone lesson package です。
+Unreal Engine 5.x と Blueprint を使った、オープンキャンパス向け 90 分体験授業の
+course content repository です。
 
-この repository は docs site 依存なしで使えます。Markdown をそのまま配布・印刷・投影できます。
+この repo は **content-only** です。共有サイト runtime は
+`metyatech/course-docs-site` を使い、この repo の `content/` と `site.config.ts`
+を読み込んで Vercel へ deploy します。
 
 ## Overview
 
@@ -11,22 +14,26 @@ Unreal Engine 5.x と Blueprint を使った、オープンキャンパス向け
 - 形式: Unreal Engine 5.x / Third Person template / Blueprint
 - 到達点: ミニゲームを 1 本完成させ、ゲームの基本構造を理解する
 
-## Materials
+## Site Preview
 
-- [lesson-overview.md](lesson-overview.md): 授業概要、到達目標、90 分タイムライン
-- [student-guide.md](student-guide.md): 受講者が授業中にそのまま使う手順書
-- [teacher-guide.md](teacher-guide.md): 進行台本、詰まり対応、進度差の扱い
-- [setup-and-troubleshooting.md](setup-and-troubleshooting.md): 教室準備、当日スモークテスト、障害時フォールバック
+`course-docs-site` を clone して、この repo を content source として指定します。
 
-## Usage
+```sh
+git clone https://github.com/metyatech/course-docs-site.git
+cd course-docs-site
+npm install
+COURSE_CONTENT_SOURCE="github:metyatech/open-campus-unreal-90min#main" npm run dev
+```
 
-最短運用は次の順です。
+ローカルで未 push の変更を確認したい場合は、GitHub source の代わりにローカルパスを使います。
 
-1. 教員は [teacher-guide.md](teacher-guide.md) を読んで進行を決める
-2. 受講者へ [student-guide.md](student-guide.md) を配布する
-3. 教室準備と当日対応は [setup-and-troubleshooting.md](setup-and-troubleshooting.md) を参照する
+```sh
+COURSE_CONTENT_SOURCE=../open-campus-unreal-90min npm run dev
+```
 
-## Setup
+## Repository Setup
+
+この repo 自体の verify / hook 用セットアップです。
 
 ```sh
 npm install
@@ -34,19 +41,40 @@ compose-agentsmd
 git config core.hooksPath .githooks
 ```
 
-## Verify
+## Verification
+
+この repo の content / docs lint は次で実行します。
 
 ```sh
 npm run verify
 ```
 
-`compose-agentsmd` を実行して [AGENTS.md](AGENTS.md) を再生成したうえで commit してください。
+サイトとしての build 確認は `course-docs-site` 側で `COURSE_CONTENT_SOURCE` をこの
+repo に向けて `npm run build` を実行してください。
 
-## Environment
+`compose-agentsmd` を実行して [AGENTS.md](./AGENTS.md) を再生成したうえで commit
+してください。
 
-- Node.js 22 以上
-- `compose-agentsmd` がグローバルにインストール済みであること
-- Markdown を読める任意の環境で教材自体は利用可能
+## Deploy (Vercel)
+
+deploy は GitHub Actions から Vercel CLI を使って行います。Vercel の GitHub 連携は使いません。
+設定は [`.github/workflows/deploy-vercel.yml`](./.github/workflows/deploy-vercel.yml) にあります。
+
+必要な GitHub Actions secrets:
+
+- `VERCEL_TOKEN`
+
+`VERCEL_ORG_ID` と `VERCEL_PROJECT_ID` は workflow に固定済みです。
+
+## Project Files
+
+- `content/`: サイト表示用の教材ページ（MDX）
+- `public/`: 画像や favicon などの静的ファイル
+- `site.config.ts`: `course-docs-site` に読み込ませる講義別設定
+- `.github/workflows/`: CI / site build check / deploy / security workflows
+- `.githooks/`: local pre-commit hook
+- `.tasks.jsonl`: committed task-tracker state
+- `agent-ruleset.json`: rule composition source
 
 ## Versioning
 
@@ -54,11 +82,7 @@ npm run verify
 
 - Patch: 誤字修正、文面改善、非破壊の運用メモ追加
 - Minor: 既存運用を壊さない新教材や追加手順の追加
-- Major: ファイル名変更、既存手順の削除、授業運用の前提変更
-
-## Release
-
-配布物は GitHub repository の履歴を正本とします。アプリ配備やサイト deploy はありません。
+- Major: 情報構造変更、既存 URL の削除、授業運用の前提変更
 
 ## Official References
 
@@ -66,19 +90,11 @@ npm run verify
 - [Unreal Engine 5.6 オフラインインストーラー（公式）](https://dev.epicgames.com/documentation/en-us/unreal-engine/offline-installer-of-unreal-engine?application_version=5.6)
 - [Academic Installation（公式・UE4.27、学内展開の注意点参考）](https://dev.epicgames.com/documentation/en-us/unreal-engine/academic-installation?application_version=4.27)
 
-## Repository Files
-
-- `.github/workflows/`: CI, CodeQL, secret scanning
-- `.githooks/`: local pre-commit hook
-- `.tasks.jsonl`: committed task-tracker state
-- `agent-ruleset.json`: rule composition source
-- `AGENTS.md`: composed operational rules
-
 ## Compliance
 
-- [AGENTS.md](AGENTS.md)
-- [LICENSE](LICENSE)
-- [SECURITY.md](SECURITY.md)
-- [CONTRIBUTING.md](CONTRIBUTING.md)
-- [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
-- [CHANGELOG.md](CHANGELOG.md)
+- [AGENTS.md](./AGENTS.md)
+- [LICENSE](./LICENSE)
+- [SECURITY.md](./SECURITY.md)
+- [CONTRIBUTING.md](./CONTRIBUTING.md)
+- [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md)
+- [CHANGELOG.md](./CHANGELOG.md)

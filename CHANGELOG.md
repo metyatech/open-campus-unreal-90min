@@ -7,6 +7,9 @@ Versioning.
 
 ## [Unreleased]
 
+- Migrate lesson materials to the `course-docs-site` content-repo structure.
+- Add Vercel deployment workflow driven by this content repository.
+
 ### Added
 
 - Initial standalone lesson package for a 90-minute Unreal Engine open campus

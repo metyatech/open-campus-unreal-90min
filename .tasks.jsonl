@@ -1,2 +1,2 @@
-
 {"id":"JqYXHA2w","description":"Bootstrap and publish the standalone open-campus Unreal 90-minute lesson repository","stage":"pending","createdAt":"2026-03-19T10:12:16.119Z","updatedAt":"2026-03-19T10:12:16.119Z"}
+{"id":"bGYhKl9J","description":"Migrate open-campus-unreal-90min to use metyatech/course-docs-site base and deploy to Vercel","stage":"committed","createdAt":"2026-03-27T00:08:14.445Z","updatedAt":"2026-03-27T00:28:42.085Z","committedEventId":"RrIH4XvAE7GrVTRG"}

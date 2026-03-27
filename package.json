@@ -2,7 +2,7 @@
   "name": "open-campus-unreal-90min",
   "version": "0.1.0",
   "private": true,
-  "description": "Standalone materials for a 90-minute Unreal Engine open campus lesson.",
+  "description": "Content repository for the Unreal Engine open campus 90-minute lesson.",
   "license": "MIT",
   "engines": {
     "node": ">=22"

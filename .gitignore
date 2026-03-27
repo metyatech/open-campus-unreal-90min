@@ -2,3 +2,16 @@ node_modules/
 .threads.jsonl
 npm-debug.log*
 
+# Build output (accidental/local)
+.next/
+out/
+build/
+dist/
+
+# Generated search
+public/_pagefind/
+
+# Vercel / local env
+.vercel/
+.env.local
+.env.*.local
