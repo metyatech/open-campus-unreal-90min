@@ -1,5 +1,7 @@
 export const siteConfig = {
+  title: 'Unreal 90分授業',
   logoText: 'Unreal 90分授業',
+  githubRepo: 'metyatech/open-campus-unreal-90min',
   projectLink: 'https://github.com/metyatech/open-campus-unreal-90min',
   docsRepositoryBase:
     'https://github.com/metyatech/open-campus-unreal-90min/tree/main',

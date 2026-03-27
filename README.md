@@ -25,8 +25,9 @@ npm install
 COURSE_CONTENT_SOURCE=../open-campus-unreal-90min npm run dev
 ```
 
-この repo は private のため、認証なしの `github:owner/repo#ref` source ではなく、
-ローカルパス source を使う運用を前提にしています。
+course-docs 系 content repo は public / private を問わず、この local path source 方式で統一しています。
+ローカル preview では `../open-campus-unreal-90min`、GitHub Actions deploy では checkout 済み content を
+`../content` として `course-docs-site` に渡します。
 
 ## Repository Setup
 
