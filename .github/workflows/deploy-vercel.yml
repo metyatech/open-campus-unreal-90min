@@ -16,19 +16,18 @@ permissions:
 
 jobs:
   deploy:
-    if: ${{ secrets.VERCEL_TOKEN != '' }}
     runs-on: ubuntu-latest
     env:
-      VERCEL_ORG_ID: team_0U0XtETmOuOPhOyizcGbmYLk
-      VERCEL_PROJECT_ID: prj_wgqh0KbhoeDwt6YT52Gh3AEcKGOc
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
       VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
       VERCEL_CLI_VERSION: 50.9.6
       COURSE_CONTENT_SOURCE: 'github:metyatech/open-campus-unreal-90min#main'
     steps:
       - name: Validate secrets
         run: |
-          if [ -z "$VERCEL_TOKEN" ]; then
-            echo "Missing required secret: VERCEL_TOKEN"
+          if [ -z "$VERCEL_TOKEN" ] || [ -z "$VERCEL_ORG_ID" ] || [ -z "$VERCEL_PROJECT_ID" ]; then
+            echo "Missing one or more required secrets: VERCEL_TOKEN, VERCEL_ORG_ID, VERCEL_PROJECT_ID"
             exit 1
           fi
 
@@ -67,10 +66,3 @@ jobs:
         run: |
           npx vercel@${{ env.VERCEL_CLI_VERSION }} deploy --prebuilt --prod --archive=tgz --token=${{ env.VERCEL_TOKEN }} || \
           npx vercel@${{ env.VERCEL_CLI_VERSION }} deploy --prebuilt --prod --archive=tgz --token=${{ env.VERCEL_TOKEN }}
-
-  deploy-skipped:
-    if: ${{ secrets.VERCEL_TOKEN == '' }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Explain why deploy was skipped
-        run: echo "Skipping Vercel deploy because VERCEL_TOKEN is not configured for this repository."
