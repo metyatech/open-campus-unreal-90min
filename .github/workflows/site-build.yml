@@ -13,10 +13,10 @@ jobs:
   build-site:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout content repo
+      - name: Checkout course content
         uses: actions/checkout@v4
         with:
-          path: content
+          path: course-content
 
       - name: Checkout course-docs-site
         uses: actions/checkout@v4
@@ -39,5 +39,5 @@ jobs:
       - name: Build site against local content
         working-directory: site
         env:
-          COURSE_CONTENT_SOURCE: ../content
+          COURSE_CONTENT_SOURCE: ../course-content
         run: npm run build

@@ -22,7 +22,7 @@ jobs:
       VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
       VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
       VERCEL_CLI_VERSION: 50.9.6
-      COURSE_CONTENT_SOURCE: ../content
+      COURSE_CONTENT_SOURCE: ../course-content
     steps:
       - name: Validate secrets
         run: |
@@ -31,10 +31,10 @@ jobs:
             exit 1
           fi
 
-      - name: Checkout content repo
+      - name: Checkout course content
         uses: actions/checkout@v4
         with:
-          path: content
+          path: course-content
 
       - name: Checkout course-docs-site
         uses: actions/checkout@v4
