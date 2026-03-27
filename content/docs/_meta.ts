@@ -10,9 +10,11 @@ const meta = {
   },
   'teacher-guide': {
     title: '教員ガイド',
+    display: 'hidden',
   },
   'setup-and-troubleshooting': {
     title: 'セットアップ・トラブル対応',
+    display: 'hidden',
   },
 };
 
