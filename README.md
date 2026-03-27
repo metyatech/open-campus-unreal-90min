@@ -16,20 +16,17 @@ course content repository です。
 
 ## Site Preview
 
-`course-docs-site` を clone して、この repo を content source として指定します。
+`course-docs-site` を clone して、ローカル clone 済みのこの repo を content source として指定します。
 
 ```sh
 git clone https://github.com/metyatech/course-docs-site.git
 cd course-docs-site
 npm install
-COURSE_CONTENT_SOURCE="github:metyatech/open-campus-unreal-90min#main" npm run dev
-```
-
-ローカルで未 push の変更を確認したい場合は、GitHub source の代わりにローカルパスを使います。
-
-```sh
 COURSE_CONTENT_SOURCE=../open-campus-unreal-90min npm run dev
 ```
+
+この repo は private のため、認証なしの `github:owner/repo#ref` source ではなく、
+ローカルパス source を使う運用を前提にしています。
 
 ## Repository Setup
 
