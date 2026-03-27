@@ -1,5 +1,0 @@
-{
-  "gitignore": true,
-  "globs": ["**/*.md", "**/*.mdx"],
-  "ignores": ["AGENTS.md", "CLAUDE.md", "node_modules/**"],
-}
