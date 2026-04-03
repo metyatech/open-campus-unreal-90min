@@ -32,6 +32,31 @@ Write these rules in a way that keeps learning outcomes (clarity, sequencing, re
 
 - Prefer learning effectiveness over convenience or brevity.
 
+## Reader perspective and voice
+
+- Write learner-facing pages from the reader's perspective — never open a page
+  by describing what the document is, who it targets, or what the lesson covers
+  as if writing about the reader from the outside. ("この教材は〜のための資料です"
+  や "この授業は〜のための授業です" は典型的な NG 例)
+- Address the reader as already present: use second-person direct address
+  ("進めましょう", "確認してください") rather than third-person audience
+  description ("受講者が操作する", "初学者向け").
+- Each page must have a single distinct job. State that job internally before
+  writing, and do not duplicate content that belongs to another page's role.
+
+## Prose flow vs. bullet lists
+
+- When explaining WHY a step exists or WHY an ordering was chosen, write prose
+  with explicit cause-effect flow ("〜するため、まず〜から始める"). Decomposing
+  logical chains into bullets destroys the reasoning thread.
+- Reserve bullet lists for genuinely enumerable items (feature lists, key
+  bindings, error cases). Do not convert reasoning paragraphs into bullets.
+
+## Page navigation
+
+- Do not add explicit "次へ →" / "次に読む" links for standard sequential
+  navigation. Sidebar ordering defines the reading flow; trust it.
+
 ## Page content and samples
 
 - Write learner-facing text (body, labels, output strings) in Japanese using beginner-friendly vocabulary.
