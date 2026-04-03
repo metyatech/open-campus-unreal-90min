@@ -1,13 +1,7 @@
 const meta = {
-  intro: {
-    title: 'はじめに',
-  },
-  'lesson-overview': {
-    title: '授業概要',
-  },
-  'student-guide': {
-    title: '受講者ガイド',
-  },
+  intro: {},
+  'lesson-overview': {},
+  'student-guide': {},
   'teacher-guide': {
     title: '教員ガイド',
     display: 'hidden',
