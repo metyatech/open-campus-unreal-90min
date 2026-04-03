@@ -1,0 +1,8 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#0F172A" rx="8"/>
+  <rect x="2" y="2" width="796" height="446" fill="none" stroke="#334155" stroke-width="2" stroke-dasharray="10,5" rx="7"/>
+  <circle cx="400" cy="210" r="60" fill="none" stroke="#475569" stroke-width="3"/>
+  <polygon points="385,185 385,235 435,210" fill="#475569"/>
+  <text x="400" y="310" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="#94A3B8">&#23436;&#25104;&#12487;&#12514;&#36798;&#30011;</text>
+  <text x="400" y="340" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#475569">demo-complete.mp4 &#12434; content/docs/intro/assets/ &#12395;&#36861;&#21152;</text>
+</svg>
