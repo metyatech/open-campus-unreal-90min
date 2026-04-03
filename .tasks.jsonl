@@ -9,3 +9,4 @@
 {"id":"4dK7AgXm","description":"Root-fix course-docs-site verification issues and hide admin-only lesson pages from public open-campus site","stage":"done","createdAt":"2026-03-27T08:04:31.106Z","updatedAt":"2026-03-27T09:32:50.134Z","committedEventId":"ojjsl8Xp_Y5n4AuU"}
 {"id":"w3lvu7iu","description":"Fix open-campus-unreal-90min markdownlint failure in private rules doc","stage":"done","createdAt":"2026-03-28T07:54:35.533Z","updatedAt":"2026-03-28T14:59:03.334Z","committedEventId":"Qsn0NrdtC2g7cNYu"}
 {"id":"_oUVzzFV","description":"Close completed pushed tracker tasks","stage":"done","createdAt":"2026-03-28T14:58:52.288Z","updatedAt":"2026-03-28T14:59:03.468Z"}
+{"id":"E_Vu6laK","description":"Investigate why local npm run dev does not unlock admin-only pages after password save","stage":"done","createdAt":"2026-04-03T04:08:13.894Z","updatedAt":"2026-04-03T04:12:50.041Z"}

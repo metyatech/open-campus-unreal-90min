@@ -29,6 +29,9 @@ course-docs 系 content repo は public / private を問わず、この local pa
 ローカル preview では `../open-campus-unreal-90min`、GitHub Actions deploy では checkout 済み content を
 `../course-content` として `course-docs-site` に渡します。
 
+この教材の `教員ガイド` と `セットアップ・トラブル対応` をローカルで確認する場合は、
+`../course-docs-site/.env.local` に `ADMIN_MODE_TOKEN` も設定してから `npm run dev` を起動してください。
+
 ## Repository Setup
 
 この repo 自体の hook 用セットアップです。
