@@ -71,6 +71,11 @@ Write these rules in a way that keeps learning outcomes (clarity, sequencing, re
 - At the start of a chapter, add 1–2 sentences explaining where/why the topic is used.
 - When referencing real websites, do not link to pages that show personal data or require authentication.
 
+## Cognitive load
+
+- Defer explanatory content (panel names, concept tables, terminology) until the step where it is first needed; do not front-load reference material.
+- Remove or omit any item that is already explained inline in the step that uses it.
+
 ## Prerequisites (learned vs. not yet learned)
 
 - Use the order in `content/**/_meta.ts` as the source of truth for what is already learned.
@@ -122,6 +127,10 @@ Write these rules in a way that keeps learning outcomes (clarity, sequencing, re
 
 - For admonitions in course pages, use only `tip`, `note`, `warning`, `caution`, `important`.
 - Unsupported admonition types are authoring errors; fix the source instead of relying on fallback rendering.
+- Use `note` for supplementary background info, terminology, naming conventions, and conceptual explanations.
+- Use `tip` for step-completion checklists, exercises, placement hints, and positive guidance.
+- Use `caution` for troubleshooting steps, error-prone operations, and common mistakes.
+- Prefer `:::` callouts over `>` blockquote for all standalone information blocks; reserve `>` blockquote only for quoted speech.
 
 ## Page assets (images / downloads)
 
