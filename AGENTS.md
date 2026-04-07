@@ -167,8 +167,9 @@ Write these rules in a way that keeps learning outcomes (clarity, sequencing, re
 
 ## Exercises (`@metyatech/exercise`)
 
-- Use `<Exercise>` and `<Solution>` from `@metyatech/exercise/client`.
+- Use `<Exercise>` and `<Solution>` in MDX pages; they are globally available via `course-docs-platform` and require no import.
   - Place `<Solution>` at the end of the same `<Exercise>`.
+- Title the exercise block with a Markdown heading (`###`) placed **before** `<Exercise>`, not inside it; there is no `title` prop.
 - Numbering:
   - Use `演習N` / `演習-発展N` (N starts at 1) and keep numbering unique within the page.
 - Problem statements must be unambiguous:
