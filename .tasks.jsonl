@@ -11,3 +11,4 @@
 {"id":"_oUVzzFV","description":"Close completed pushed tracker tasks","stage":"done","createdAt":"2026-03-28T14:58:52.288Z","updatedAt":"2026-03-28T14:59:03.468Z"}
 {"id":"E_Vu6laK","description":"Investigate why local npm run dev does not unlock admin-only pages after password save","stage":"done","createdAt":"2026-04-03T04:08:13.894Z","updatedAt":"2026-04-03T04:12:50.041Z"}
 {"id":"XPz1YRcs","description":"Migrate open-campus-unreal-90min download link authoring to DownloadLink","stage":"committed","createdAt":"2026-04-07T11:50:58.076Z","updatedAt":"2026-04-07T12:17:42.979Z","committedEventId":"TWjrmDYDR3gLDdOL"}
+{"id":"6u2KjcIw","description":"Remove redundant deploy lint from open-campus-unreal-90min Vercel workflow","stage":"committed","createdAt":"2026-04-07T12:49:32.473Z","updatedAt":"2026-04-07T12:55:20.333Z","committedEventId":"Sk5OeJVmAy_GHbVQ"}
