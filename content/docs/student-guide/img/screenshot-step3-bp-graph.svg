@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="360" viewBox="0 0 800 360">
-  <rect width="800" height="360" fill="#F1F5F9" rx="8"/>
-  <rect x="1" y="1" width="798" height="358" fill="none" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="8,4" rx="8"/>
-  <text x="400" y="155" font-family="system-ui,sans-serif" font-size="48" fill="#94A3B8" text-anchor="middle">📸</text>
-  <text x="400" y="210" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="#64748B" text-anchor="middle">Step 3 ： Blueprint ノードグラフ</text>
-  <text x="400" y="238" font-family="system-ui,sans-serif" font-size="13" fill="#94A3B8" text-anchor="middle">BP_Item の完成したノードグラフのスクリーンショット</text>
-</svg>
