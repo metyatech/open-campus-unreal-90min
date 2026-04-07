@@ -31,6 +31,7 @@ Write these rules in a way that keeps learning outcomes (clarity, sequencing, re
 ### Decision priority
 
 - Prefer learning effectiveness over convenience or brevity.
+- Write logically precise prose
 
 ## Reader perspective and voice
 
@@ -70,6 +71,20 @@ Write these rules in a way that keeps learning outcomes (clarity, sequencing, re
 - Add language info to fenced code blocks (`js`, `ts`, `html`, `css`).
 - At the start of a chapter, add 1–2 sentences explaining where/why the topic is used.
 - When referencing real websites, do not link to pages that show personal data or require authentication.
+
+## Goal-first ordering
+
+- Before any sequence of steps, always state: (1) what the reader will have built
+  or achieved when the sequence is complete, and (2) the meaning of any new
+  concept or term that will appear in those steps. Never introduce a term
+  (variable name, system name, setting value) in a step before explaining what
+  it represents.
+- Present the goal as a concrete "what you will build" summary (a short table or
+  sentence listing inputs → outputs or before → after states) rather than a
+  vague "in this step you will learn…" statement.
+- Definitions and goal summaries belong immediately before the first sub-step,
+  not at the top of a higher-level section; place them where the reader needs
+  them, not earlier.
 
 ## Cognitive load
 

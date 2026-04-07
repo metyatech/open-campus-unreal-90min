@@ -3,52 +3,42 @@
     <filter id="shadow" x="-4%" y="-4%" width="108%" height="116%">
       <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#00000018"/>
     </filter>
-  </defs>
-
-  <rect width="780" height="200" fill="#F8FAFC" rx="0"/>
-
-  <!-- Arrow 1: Box1 竊・Box2 -->
-  <line x1="218" y1="72" x2="272" y2="72" stroke="#B0BEC5" stroke-width="2" marker-end="url(#arrowhead)"/>
-  <!-- Arrow 2: Box2 竊・Box3 -->
-  <line x1="498" y1="72" x2="552" y2="72" stroke="#B0BEC5" stroke-width="2" marker-end="url(#arrowhead)"/>
-
-  <defs>
     <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
       <polygon points="0 0, 10 3.5, 0 7" fill="#B0BEC5"/>
     </marker>
   </defs>
 
-  <!-- Box 1: 繧､繝吶Φ繝・-->
+  <rect width="780" height="200" fill="#F8FAFC" rx="0"/>
+
+  <!-- Arrow 1 -->
+  <line x1="218" y1="72" x2="272" y2="72" stroke="#B0BEC5" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- Arrow 2 -->
+  <line x1="498" y1="72" x2="552" y2="72" stroke="#B0BEC5" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Box 1: イベント -->
   <g filter="url(#shadow)">
     <rect x="30" y="24" width="186" height="96" rx="12" fill="#E3F2FD" stroke="#4A90D9" stroke-width="2"/>
   </g>
-  <!-- Lightning bolt icon -->
   <path d="M100 44 L92 68 L102 68 L94 92 L114 62 L104 62 L112 44 Z" fill="#4A90D9" opacity="0.85"/>
-  <!-- Label -->
-  <text x="123" y="78" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="18" font-weight="600" fill="#2C3E50" text-anchor="middle">繧､繝吶Φ繝・/text>
-  <!-- Subtitle -->
-  <text x="123" y="148" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" fill="#90A4AE" text-anchor="middle">菴輔°縺瑚ｵｷ縺阪◆縺ｨ縺・/text>
+  <text x="123" y="78" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="18" font-weight="600" fill="#2C3E50" text-anchor="middle">イベント</text>
+  <text x="123" y="148" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" fill="#90A4AE" text-anchor="middle">何かが起きたとき</text>
 
-  <!-- Box 2: 螟画焚 -->
+  <!-- Box 2: 変数の更新 -->
   <g filter="url(#shadow)">
     <rect x="280" y="24" width="186" height="96" rx="12" fill="#FFF3E0" stroke="#F5A623" stroke-width="2"/>
   </g>
-  <!-- Database/cylinder icon -->
   <g transform="translate(348, 40)">
     <ellipse cx="0" cy="0" rx="12" ry="5" fill="none" stroke="#F5A623" stroke-width="1.8" opacity="0.85"/>
     <path d="M-12 0 L-12 24 A12 5 0 0 0 12 24 L12 0" fill="none" stroke="#F5A623" stroke-width="1.8" opacity="0.85"/>
     <ellipse cx="0" cy="24" rx="12" ry="5" fill="none" stroke="#F5A623" stroke-width="1.8" opacity="0.85"/>
   </g>
-  <!-- Label -->
-  <text x="373" y="78" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="18" font-weight="600" fill="#2C3E50" text-anchor="middle">螟画焚</text>
-  <!-- Subtitle -->
-  <text x="373" y="148" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" fill="#90A4AE" text-anchor="middle">迥ｶ諷九′螟峨ｏ繧・/text>
+  <text x="373" y="78" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="18" font-weight="600" fill="#2C3E50" text-anchor="middle">変数の更新</text>
+  <text x="373" y="148" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" fill="#90A4AE" text-anchor="middle">状態が変わる</text>
 
-  <!-- Box 3: 繧｢繧ｯ繧ｷ繝ｧ繝ｳ -->
+  <!-- Box 3: アクション -->
   <g filter="url(#shadow)">
     <rect x="560" y="24" width="186" height="96" rx="12" fill="#E8F5E9" stroke="#2ECC71" stroke-width="2"/>
   </g>
-  <!-- Gear icon -->
   <g transform="translate(628, 56)">
     <circle cx="0" cy="0" r="8" fill="none" stroke="#2ECC71" stroke-width="1.8" opacity="0.85"/>
     <circle cx="0" cy="0" r="3" fill="#2ECC71" opacity="0.85"/>
@@ -63,8 +53,6 @@
       <line x1="-6.4" y1="6.4" x2="-8.5" y2="8.5"/>
     </g>
   </g>
-  <!-- Label -->
-  <text x="653" y="78" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="18" font-weight="600" fill="#2C3E50" text-anchor="middle">繧｢繧ｯ繧ｷ繝ｧ繝ｳ</text>
-  <!-- Subtitle -->
-  <text x="653" y="148" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" fill="#90A4AE" text-anchor="middle">邨先棡縺悟・繧・/text>
+  <text x="653" y="78" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="18" font-weight="600" fill="#2C3E50" text-anchor="middle">アクション</text>
+  <text x="653" y="148" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" fill="#90A4AE" text-anchor="middle">結果が出る</text>
 </svg>
