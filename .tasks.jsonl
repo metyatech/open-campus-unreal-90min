@@ -12,3 +12,4 @@
 {"id":"E_Vu6laK","description":"Investigate why local npm run dev does not unlock admin-only pages after password save","stage":"done","createdAt":"2026-04-03T04:08:13.894Z","updatedAt":"2026-04-03T04:12:50.041Z"}
 {"id":"XPz1YRcs","description":"Migrate open-campus-unreal-90min download link authoring to DownloadLink","stage":"committed","createdAt":"2026-04-07T11:50:58.076Z","updatedAt":"2026-04-07T12:17:42.979Z","committedEventId":"TWjrmDYDR3gLDdOL"}
 {"id":"6u2KjcIw","description":"Remove redundant deploy lint from open-campus-unreal-90min Vercel workflow","stage":"committed","createdAt":"2026-04-07T12:49:32.473Z","updatedAt":"2026-04-07T12:55:20.333Z","committedEventId":"Sk5OeJVmAy_GHbVQ"}
+{"id":"IEEApXIN","description":"Switch open-campus-unreal-90min CI integration build to course-docs-site build:verified","stage":"committed","createdAt":"2026-04-07T13:52:55.817Z","updatedAt":"2026-04-07T13:53:06.585Z","committedEventId":"wacjgj6xDL5P9Nis"}
