@@ -3,7 +3,6 @@ title: ゲームを作ろう
 ---
 
 import projectZipUrl from './assets/UE90min.zip'
-import { createCourseDownloadUrl } from '@metyatech/course-docs-platform/mdx'
 
 ここから実際に手を動かして作っていきます。
 
@@ -46,7 +45,7 @@ import { createCourseDownloadUrl } from '@metyatech/course-docs-platform/mdx'
 :::note[1-1・1-2 を省略する場合]
 **1-1・1-2 は次のダウンロードリンクからプロジェクトファイルをダウンロードすることで省略できます**
 
-<a href={createCourseDownloadUrl(projectZipUrl, 'UE90min.zip')} download="UE90min.zip">UE90min.zip をダウンロード</a>
+<DownloadLink file={projectZipUrl} filename="UE90min.zip">UE90min.zip をダウンロード</DownloadLink>
 
 省略する場合は、zip を展開して、中の `UE90min.uproject` をダブルクリックしてプロジェクトを開き、**1-3 から**始めてください。
 :::
