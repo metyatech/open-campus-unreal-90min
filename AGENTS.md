@@ -38,12 +38,19 @@ Write these rules in a way that keeps learning outcomes (clarity, sequencing, re
 - For step-by-step tutorial pages (hands-on guides, walkthroughs), use the
   `tutorial-authoring` skill. It defines the information hierarchy, component
   system, and writing rules for procedural content.
-- Use the `<Step>`, `<Procedure>`, `<Action>`, `<Verify>`, `<Concept>`,
-  `<Reference>`, and `<Checkpoint>` components from `course-docs-platform`.
+- Use the `<Section>`, `<Action>`, `<Verify>`, `<Concept>`, `<Reference>`,
+  `<Recovery>`, and `<Checkpoint>` components from `course-docs-platform`.
   They are globally available in MDX pages (no import needed).
+- `<Section>` is a recursive structural container that replaces both the
+  legacy `<Step>` and `<Procedure>`. Nest Sections to any depth instead of
+  using a fixed two-level structure. Each top-level Section must declare a
+  `goal` prop.
 - Do not use `:::note` for background/concept explanations in tutorials; use
   `<Concept>` (which renders as a collapsible `<details>`).
-- Do not use `---` horizontal rules between sub-steps; only between Steps.
+- Do not use `:::caution` as recovery for an Action; use `<Recovery>` placed
+  inline immediately after the action that can fail.
+- Do not use `---` horizontal rules between sub-sections; only between
+  top-level Sections.
 - One image per `<Action>`; never batch multiple images before a numbered list.
 
 ## Reader perspective and voice
