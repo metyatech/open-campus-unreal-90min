@@ -16,3 +16,4 @@
 {"id":"xAQxuFTB","description":"Add workflow concurrency to content repo CI/deploy runs to cancel stale work","stage":"committed","createdAt":"2026-04-07T14:05:24.027Z","updatedAt":"2026-04-07T14:16:54.822Z","committedEventId":"B79zO6x1j0FHB30y"}
 {"id":"yFo5ArtM","description":"Force GitHub Actions workflows onto Node 24 action runtime to remove deprecation warnings","stage":"committed","createdAt":"2026-04-07T14:44:52.008Z","updatedAt":"2026-04-07T14:46:25.691Z","committedEventId":"gbXHnWhQmW5Vdt1l"}
 {"id":"kN0cC8Rt","description":"Upgrade actions/cache to v5 and remove temporary Node 24 forcing env","stage":"committed","createdAt":"2026-04-07T14:55:58.371Z","updatedAt":"2026-04-07T14:57:34.937Z","committedEventId":"u5Wg0WAncJz_ZgHa"}
+{"id":"PtLHVACT","description":"Restore click-to-zoom behavior for Action images in course docs preview","stage":"in-progress","createdAt":"2026-04-08T10:11:14.260Z","updatedAt":"2026-04-08T10:26:57.735Z"}

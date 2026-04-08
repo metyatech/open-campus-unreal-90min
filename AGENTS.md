@@ -33,6 +33,19 @@ Write these rules in a way that keeps learning outcomes (clarity, sequencing, re
 - Prefer learning effectiveness over convenience or brevity.
 - Write logically precise prose
 
+## Tutorial / hands-on pages
+
+- For step-by-step tutorial pages (hands-on guides, walkthroughs), use the
+  `tutorial-authoring` skill. It defines the information hierarchy, component
+  system, and writing rules for procedural content.
+- Use the `<Step>`, `<Procedure>`, `<Action>`, `<Verify>`, `<Concept>`,
+  `<Reference>`, and `<Checkpoint>` components from `course-docs-platform`.
+  They are globally available in MDX pages (no import needed).
+- Do not use `:::note` for background/concept explanations in tutorials; use
+  `<Concept>` (which renders as a collapsible `<details>`).
+- Do not use `---` horizontal rules between sub-steps; only between Steps.
+- One image per `<Action>`; never batch multiple images before a numbered list.
+
 ## Reader perspective and voice
 
 - Write learner-facing pages from the reader's perspective — never open a page
