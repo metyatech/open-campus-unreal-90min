@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "id": "add-print-string-node-from-actorbeginoverlap",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/add-print-string-node-from-actorbeginoverlap.png",
+  "rawImagePath": "content/docs/student-guide/shots/add-print-string-node-from-actorbeginoverlap.raw.png",
+  "crop": {
+    "x": 281,
+    "y": 100,
+    "width": 804,
+    "height": 677
+  },
+  "annotations": [
+    {
+      "id": "4501671e-05b6-4711-b430-c560cd91c647",
+      "type": "box",
+      "x": 235,
+      "y": 298,
+      "width": 44,
+      "height": 42
+    },
+    {
+      "id": "e4451225-da8d-4187-a943-5f717b81410c",
+      "type": "box",
+      "x": 374,
+      "y": 329,
+      "width": 37,
+      "height": 38
+    },
+    {
+      "id": "363f7228-c9b9-4fe9-ba35-d321510a9588",
+      "type": "box",
+      "x": 393,
+      "y": 375,
+      "width": 406,
+      "height": 30
+    },
+    {
+      "id": "1c4a4ebb-568a-4d99-9d6a-1b5f7e6f0048",
+      "type": "box",
+      "x": 396,
+      "y": 423,
+      "width": 401,
+      "height": 28
+    }
+  ],
+  "annotationMode": "callout",
+  "alt": "",
+  "updatedAt": "2026-04-14T08:22:48.276Z"
+}

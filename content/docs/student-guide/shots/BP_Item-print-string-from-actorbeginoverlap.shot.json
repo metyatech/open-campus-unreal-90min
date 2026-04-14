@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "id": "bp-item-print-string-from-actorbeginoverlap",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/BP_Item-print-string-from-actorbeginoverlap.png",
+  "rawImagePath": "content/docs/student-guide/shots/BP_Item-print-string-from-actorbeginoverlap.raw.png",
+  "crop": {
+    "x": 239,
+    "y": 163,
+    "width": 684,
+    "height": 416
+  },
+  "annotations": [
+    {
+      "id": "2c385885-eb3e-45ab-84b6-fbe0bfd13f96",
+      "type": "box",
+      "x": 18,
+      "y": 82,
+      "width": 570,
+      "height": 245
+    }
+  ],
+  "annotationMode": "focal",
+  "alt": "",
+  "updatedAt": "2026-04-14T08:35:16.153Z"
+}
