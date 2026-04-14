@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "id": "newproject",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/newproject.png",
+  "rawImagePath": "content/docs/student-guide/shots/newproject.raw.png",
+  "crop": {
+    "x": 0,
+    "y": 0,
+    "width": 1091,
+    "height": 794
+  },
+  "annotations": [
+    {
+      "id": "0c7c56c2-4309-49b0-9195-7899857ec620",
+      "type": "box",
+      "x": 17,
+      "y": 224,
+      "width": 262,
+      "height": 34
+    },
+    {
+      "id": "30b94f6f-290d-47ae-9800-10a957bd3c37",
+      "type": "arrow",
+      "fromX": 47,
+      "fromY": 167,
+      "toX": 67,
+      "toY": 215
+    }
+  ],
+  "annotationMode": "focal",
+  "alt": "",
+  "updatedAt": "2026-04-14T01:37:22.684Z"
+}

@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "id": "play-in-editor",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/play-in-editor.png",
+  "rawImagePath": "content/docs/student-guide/shots/play-in-editor.raw.png",
+  "crop": {
+    "x": 0,
+    "y": 0,
+    "width": 1232,
+    "height": 728
+  },
+  "annotations": [
+    {
+      "id": "e5453fb0-fe76-474c-815f-5866c73229af",
+      "type": "box",
+      "x": 442,
+      "y": 51,
+      "width": 53,
+      "height": 52
+    },
+    {
+      "id": "a8028c8e-52b7-4212-bd43-3fd869094cb1",
+      "type": "box",
+      "x": 23,
+      "y": 155,
+      "width": 978,
+      "height": 343
+    }
+  ],
+  "annotationMode": "callout",
+  "alt": "",
+  "updatedAt": "2026-04-14T01:59:29.992Z"
+}
