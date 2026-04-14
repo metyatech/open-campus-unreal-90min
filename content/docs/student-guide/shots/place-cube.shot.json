@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "id": "place-cube",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/place-cube.png",
+  "rawImagePath": "content/docs/student-guide/shots/place-cube.raw.png",
+  "crop": {
+    "x": 0,
+    "y": 0,
+    "width": 1232,
+    "height": 728
+  },
+  "annotations": [
+    {
+      "id": "7c0ee8a6-be72-42cd-a5cb-3021cb2b6b91",
+      "type": "box",
+      "x": 252,
+      "y": 55,
+      "width": 58,
+      "height": 45
+    },
+    {
+      "id": "b48c1a45-9cb5-4c75-9b8d-56467a615b11",
+      "type": "box",
+      "x": 250,
+      "y": 296,
+      "width": 208,
+      "height": 29
+    },
+    {
+      "id": "53fafbce-1180-4814-b7d2-0b661eac7632",
+      "type": "box",
+      "x": 453,
+      "y": 306,
+      "width": 145,
+      "height": 31
+    }
+  ],
+  "annotationMode": "callout",
+  "alt": "",
+  "updatedAt": "2026-04-14T02:24:57.710Z"
+}
