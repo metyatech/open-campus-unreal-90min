@@ -66,3 +66,13 @@ jobs:
       - name: Build site against local content
         working-directory: site
         run: npm run build:verified
+
+      - name: Build site with tutorial-lint strict (advisory)
+        # Promotes every tutorial-lint warning to a build-failing error.
+        # Kept advisory until the content backlog of warnings is zero;
+        # flip `continue-on-error` to false to make it blocking.
+        working-directory: site
+        env:
+          TUTORIAL_LINT_STRICT: '1'
+        continue-on-error: true
+        run: npm run build:verified
