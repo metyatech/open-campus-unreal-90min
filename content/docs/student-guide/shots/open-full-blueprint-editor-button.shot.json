@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "id": "open-full-blueprint-editor-button",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/open-full-blueprint-editor-button.png",
+  "rawImagePath": "content/docs/student-guide/shots/open-full-blueprint-editor-button.raw.png",
+  "crop": {
+    "x": 0,
+    "y": 0,
+    "width": 757,
+    "height": 732
+  },
+  "annotations": [
+    {
+      "id": "b2ee75f9-3b6a-4ee6-af8b-72255d4c57f3",
+      "type": "box",
+      "x": 5,
+      "y": 120,
+      "width": 201,
+      "height": 25
+    }
+  ],
+  "annotationMode": "focal",
+  "alt": "",
+  "updatedAt": "2026-04-14T06:04:13.948Z"
+}

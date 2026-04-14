@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "id": "how-to-bp-item-overlapalldynamic",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/how-to-BP_Item_OverlapAllDynamic.png",
+  "rawImagePath": "content/docs/student-guide/shots/how-to-BP_Item_OverlapAllDynamic.raw.png",
+  "crop": {
+    "x": 0,
+    "y": 0,
+    "width": 757,
+    "height": 732
+  },
+  "annotations": [
+    {
+      "id": "1018140b-0f2c-4094-9822-27426d2874b8",
+      "type": "box",
+      "x": 17,
+      "y": 143,
+      "width": 684,
+      "height": 37
+    },
+    {
+      "id": "9fdef6c8-14c3-46c0-9b32-c57e223d8ae8",
+      "type": "box",
+      "x": 18,
+      "y": 333,
+      "width": 340,
+      "height": 30
+    },
+    {
+      "id": "a06b24e2-5580-463c-89cc-370edd5977ba",
+      "type": "box",
+      "x": 296,
+      "y": 387,
+      "width": 147,
+      "height": 31
+    },
+    {
+      "id": "5cb54a75-266b-489b-9e8d-093c0cc2b681",
+      "type": "box",
+      "x": 298,
+      "y": 522,
+      "width": 148,
+      "height": 28
+    }
+  ],
+  "annotationMode": "callout",
+  "alt": "",
+  "updatedAt": "2026-04-14T05:57:18.972Z"
+}

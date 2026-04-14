@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "id": "close-bp-item-editor-window",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/close-BP_Item-editor-window.png",
+  "rawImagePath": "content/docs/student-guide/shots/close-BP_Item-editor-window.raw.png",
+  "crop": {
+    "x": 0,
+    "y": 0,
+    "width": 1574,
+    "height": 892
+  },
+  "annotations": [
+    {
+      "id": "125a1a54-2ccd-452e-b7e0-cb80902c10ae",
+      "type": "box",
+      "x": 589,
+      "y": 204,
+      "width": 43,
+      "height": 35
+    },
+    {
+      "id": "63417152-0098-4dc6-932a-9cdcba4a7b7e",
+      "type": "arrow",
+      "fromX": 744,
+      "fromY": 93,
+      "toX": 637,
+      "toY": 198
+    }
+  ],
+  "annotationMode": "focal",
+  "alt": "",
+  "updatedAt": "2026-04-14T05:35:44.969Z"
+}
