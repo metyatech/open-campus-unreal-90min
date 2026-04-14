@@ -63,16 +63,15 @@ jobs:
         working-directory: site
         run: npm run lint
 
-      - name: Build site against local content
-        working-directory: site
-        run: npm run build:verified
-
-      - name: Build site with tutorial-lint strict (advisory)
-        # Promotes every tutorial-lint warning to a build-failing error.
-        # Kept advisory until the content backlog of warnings is zero;
-        # flip `continue-on-error` to false to make it blocking.
+      - name: Build site against local content (tutorial-lint strict + collect)
+        # TUTORIAL_LINT_STRICT promotes every tutorial-lint warning to a
+        # build-failing error. TUTORIAL_LINT_COLLECT aggregates every
+        # finding in a file into one message so PR authors see the full
+        # list instead of fixing them one at a time.
+        # Content has been cleaned of existing violations, so this is
+        # now a blocking gate rather than the former advisory job.
         working-directory: site
         env:
           TUTORIAL_LINT_STRICT: '1'
-        continue-on-error: true
+          TUTORIAL_LINT_COLLECT: '1'
         run: npm run build:verified
