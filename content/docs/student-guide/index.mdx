@@ -448,18 +448,6 @@ BP_Item は元キューブなので初期設定は「ブロック」です。「
 
 本番の「触れたらスコアを増やし、アイテムを消す」ロジックを組みます。
 
-**完成形のノードの流れ：**
-
-```
-[Event ActorBeginOverlap]
-        ↓ (実行)
-[Cast To BP_ThirdPersonCharacter]  ← "Other Actor" ピンを接続
-        ↓ (Cast Succeeded)
-[Set Score]  ← 現在の Score + 1 を入力  【スコアを増やす】
-        ↓
-[Destroy Actor]                             【アイテムを消す】
-```
-
 <Section title="(a) Cast ノードを追加する" goal="触れたオブジェクトがプレイヤーかを判定するノードをつなぎます">
 
 <Action img="./img/Event%20ActorBeginOverlap-Cast%20To%20BP_ThirdPersonCharacter-searching.png">
