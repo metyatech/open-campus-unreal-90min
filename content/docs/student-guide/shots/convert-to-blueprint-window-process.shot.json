@@ -12,36 +12,12 @@
   },
   "annotations": [
     {
-      "id": "c17a07d7-671a-4239-ae1e-8cd5f47500d8",
-      "type": "box",
-      "x": 16,
-      "y": 83,
-      "width": 180,
-      "height": 43
-    },
-    {
-      "id": "6c5e095c-d69d-43be-a654-66743e4f035d",
-      "type": "box",
-      "x": 22,
-      "y": 345,
-      "width": 307,
-      "height": 27
-    },
-    {
       "id": "d18d4095-786f-41c9-a9d6-ea60c98a69c9",
       "type": "box",
       "x": 16,
       "y": 529,
       "width": 535,
       "height": 37
-    },
-    {
-      "id": "a9c48f75-155f-46fd-9784-0d82834459c3",
-      "type": "box",
-      "x": 11,
-      "y": 571,
-      "width": 537,
-      "height": 24
     },
     {
       "id": "d0500c89-947a-4033-84de-9bab74379bcf",
@@ -54,5 +30,5 @@
   ],
   "annotationMode": "callout",
   "alt": "",
-  "updatedAt": "2026-04-14T05:10:02.798Z"
+  "updatedAt": "2026-04-15T10:47:15.330Z"
 }
