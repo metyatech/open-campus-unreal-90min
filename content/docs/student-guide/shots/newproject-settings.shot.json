@@ -17,7 +17,8 @@
       "x": 19,
       "y": 40,
       "width": 310,
-      "height": 111
+      "height": 111,
+      "role": "action"
     },
     {
       "id": "9e8096d5-bf4e-4926-9503-678047b248d7",
@@ -25,7 +26,8 @@
       "x": 335,
       "y": 202,
       "width": 112,
-      "height": 164
+      "height": 164,
+      "role": "action"
     },
     {
       "id": "1325a629-d6ab-4a1a-bdf8-fd43f9204de3",
@@ -33,7 +35,8 @@
       "x": 853,
       "y": 444,
       "width": 145,
-      "height": 35
+      "height": 35,
+      "role": "action"
     },
     {
       "id": "ba56b2b5-4f37-46a6-bbb2-8bf81f94ea70",
@@ -41,7 +44,8 @@
       "x": 827,
       "y": 486,
       "width": 375,
-      "height": 96
+      "height": 96,
+      "role": "action"
     },
     {
       "id": "d0c34ac4-4403-479d-a603-dbd723a3dca6",
@@ -49,7 +53,8 @@
       "x": 33,
       "y": 734,
       "width": 756,
-      "height": 38
+      "height": 38,
+      "role": "action"
     },
     {
       "id": "f86181ff-e937-4c32-b05d-41ed36fec452",
@@ -57,7 +62,8 @@
       "x": 813,
       "y": 734,
       "width": 386,
-      "height": 38
+      "height": 38,
+      "role": "action"
     },
     {
       "id": "5b94b927-daa0-4c31-9e76-b16fad6c0298",
@@ -65,7 +71,8 @@
       "x": 1014,
       "y": 807,
       "width": 79,
-      "height": 45
+      "height": 45,
+      "role": "action"
     }
   ],
   "annotationMode": "callout",

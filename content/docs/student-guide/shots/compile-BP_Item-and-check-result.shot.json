@@ -17,7 +17,8 @@
       "x": 102,
       "y": 60,
       "width": 110,
-      "height": 44
+      "height": 44,
+      "role": "action"
     }
   ],
   "annotationMode": "focal",

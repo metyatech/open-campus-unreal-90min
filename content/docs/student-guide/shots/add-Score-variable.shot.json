@@ -17,7 +17,8 @@
       "x": 180,
       "y": 564,
       "width": 40,
-      "height": 37
+      "height": 37,
+      "role": "action"
     },
     {
       "id": "02261c5b-f4ae-4fc3-8e1c-53412cad067c",
@@ -25,7 +26,8 @@
       "x": 14,
       "y": 613,
       "width": 55,
-      "height": 29
+      "height": 29,
+      "role": "action"
     },
     {
       "id": "88bda34d-6f72-4577-88be-7aed07282a82",
@@ -33,7 +35,8 @@
       "x": 111,
       "y": 613,
       "width": 90,
-      "height": 34
+      "height": 34,
+      "role": "action"
     }
   ],
   "annotationMode": "callout",
