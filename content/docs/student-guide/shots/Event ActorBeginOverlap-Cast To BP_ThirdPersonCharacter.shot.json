@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "id": "event-actorbeginoverlap-cast-to-bp-thirdpersoncharacter",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/Event ActorBeginOverlap-Cast To BP_ThirdPersonCharacter.png",
+  "rawImagePath": "content/docs/student-guide/shots/Event ActorBeginOverlap-Cast To BP_ThirdPersonCharacter.raw.png",
+  "crop": {
+    "x": 184,
+    "y": 103,
+    "width": 682,
+    "height": 552
+  },
+  "annotations": [
+    {
+      "id": "63e1e1a0-515e-42e2-8231-a21a740dbf64",
+      "type": "box",
+      "role": "verify",
+      "x": 47,
+      "y": 247,
+      "width": 519,
+      "height": 139
+    }
+  ],
+  "annotationMode": "focal",
+  "alt": "",
+  "updatedAt": "2026-04-16T10:28:36.318Z"
+}

@@ -6,22 +6,22 @@
   "rawImagePath": "content/docs/student-guide/shots/BP_Item-print-string-from-actorbeginoverlap.raw.png",
   "crop": {
     "x": 239,
-    "y": 163,
+    "y": 100,
     "width": 684,
-    "height": 416
+    "height": 479
   },
   "annotations": [
     {
       "id": "2c385885-eb3e-45ab-84b6-fbe0bfd13f96",
       "type": "box",
-      "x": 18,
-      "y": 82,
-      "width": 570,
-      "height": 245,
-      "role": "action"
+      "role": "verify",
+      "x": 23,
+      "y": 149,
+      "width": 571,
+      "height": 242
     }
   ],
   "annotationMode": "focal",
   "alt": "",
-  "updatedAt": "2026-04-14T08:35:16.153Z"
+  "updatedAt": "2026-04-16T10:22:31.445Z"
 }
