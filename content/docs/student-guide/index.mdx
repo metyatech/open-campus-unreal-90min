@@ -4,6 +4,7 @@ authoringMode: 'tutorial'
 ---
 
 import projectZipUrl from './assets/UE90min.zip'
+import itemFbxUrl from './assets/Item.fbx'
 
 <Prerequisites>
 - Unreal Engine 5.7 がインストールされた PC
@@ -640,135 +641,45 @@ CLEAR! が出る個数を変えてみましょう。
 
 この3つはどんなゲームにも、ゲーム以外のアプリにも共通して出てきます。
 
-## 発展演習：ゲームを派手にカスタマイズしよう
+## 発展演習：ゲームをカスタマイズしよう
 
-時間が余ったら、上から順に全部やってみてください。全部終えると、白いキューブだけの地味な見た目から、**回って光ってエフェクトが飛び散るゲーム**に生まれ変わります。
+早く終わって時間が余ったら挑戦してみましょう。
 
 ### 演習-発展1：アイテムをくるくる回す
 
 <Exercise>
 
-<Section title="アイテムに回転コンポーネントを付ける" goal="アイテムが自動で回転するようになります">
+`BP_Item` を開き、コンポーネントパネルの「**＋ 追加**」をクリック → 検索欄に「**Rotating**」と入力 →「**Rotating Movement**」を選びます。コンパイル・保存してプレイ。
 
-<Action>
-`BP_Item` を開き、左上の **コンポーネント** パネルの「**＋ 追加**」ボタンをクリック
-</Action>
-
-<Action>
-検索欄に「**Rotating**」と入力し、出てきた「**Rotating Movement**」を選ぶ
-</Action>
-
-<Action>
-コンパイル・保存してプレイ
-</Action>
-
-<Verify>アイテムがくるくる回っていれば成功です</Verify>
-
-</Section>
+→ アイテムがくるくる回っていれば成功です。
 
 </Exercise>
 
-### 演習-発展2：アイテムの形を変える
+### 演習-発展2：アイテムを専用モデルに差し替える
 
 <Exercise>
 
-キューブのままだと回転が目立ちにくいので、好きな形に差し替えてみましょう。
+<DownloadLink file={itemFbxUrl} filename="Item.fbx">Item.fbx をダウンロード</DownloadLink>
 
-**やり方（StaticMesh の差し替え方）**
+ダウンロードした `Item.fbx` を、Unreal Editor の **コンテンツブラウザ** にドラッグ＆ドロップします。インポートダイアログが開いたら「**Import All**」をクリック。
 
-1. `BP_Item` の **コンポーネント** パネルで「**StaticMesh**」を選ぶ
-2. 詳細パネルの「**Static Mesh**」のドロップダウンをクリックし、検索欄に形の名前（例：`Sphere`）を入れて選ぶ
-3. コンパイル・保存してプレイ
+次に `BP_Item` を開き、コンポーネントパネルで「**StaticMesh**」を選び、詳細パネルの「**Static Mesh**」を「**Item**」に変えてコンパイル・保存してプレイ。
 
-→ 選んだ形が 5 個並んでいれば成功です。
+→ 専用モデルのアイテムが 5 個並んでいれば成功です。
 
 </Exercise>
 
-### 演習-発展3：取ったときにキラキラエフェクトを出す
+### 演習-発展3：クリアしたらスローモーションにする
 
 <Exercise>
 
-アイテムに触れた瞬間に、派手な粒子エフェクトが出るようにしましょう。
-
-**やり方 1（Niagara システムを作る）**
-
-1. コンテンツブラウザの空いている場所で**右クリック** →「**FX**」→「**Niagara System**」
-2. 開いたダイアログで「**New system from an Emitter Template or Behavior Example**」を選び、一覧から派手そうなテンプレート（例：`Simple Sprite Burst`、`Fountain` など）を 1 つ選んで **Finish**
-3. できたファイルの名前を「**NS_Collect**」に変更
-
-**やり方 2（BP_Item から呼び出す）**
-
-`BP_Item` のイベントグラフで、`Set Score` と `Destroy Actor` の間に「**Spawn System at Location**」ノードを挿入します：
-
-1. `Set Score` と `Destroy Actor` をつなぐ白い実行ピンの線をクリックして選び、**Delete キー**で削除
-2. `Set Score` の実行ピンからドラッグ → 空の場所で離し →「**Spawn System at Location**」を検索して追加
-3. 追加したノードの**出力側の実行ピン**を `Destroy Actor` の実行ピンにドラッグしてつなぐ
-4. ノードの「**System Template**」ドロップダウンで「**NS_Collect**」を選ぶ
-5. 「**Location**」ピンからドラッグ → 空の場所で離し →「**Get Actor Location**」を検索して追加
-6. コンパイル・保存してプレイ
-
-→ アイテムに触れた瞬間にエフェクトが飛び散れば成功です。
-
-</Exercise>
-
-### 演習-発展4：画面全体に光のにじみ（Bloom）をかける
-
-<Exercise>
-
-レベルに **Post Process Volume** を置いて、画面全体をふんわり光らせましょう。
-
-**やり方**
-
-1. ツールバーの「**＋ 追加**」→「**ビジュアルエフェクト**」→「**Post Process Volume**」をビューポートにドラッグして配置
-2. 配置した `PostProcessVolume` をクリックして選択
-3. 詳細パネルで「**Infinite Extent (Unbound)**」にチェック（これでレベル全体に効果がかかる）
-4. 「**Lens**」→「**Bloom**」セクションの「**Intensity**」のチェックを ON にして、値を `2.0` くらいにする
-
-→ プレイして、画面の明るい部分がふんわりにじんで見えれば成功です。
-
-</Exercise>
-
-### 演習-発展5：スコアを画面に表示する
-
-<Exercise>
-
-現在のスコアを画面にリアルタイムで表示する **HUD** を追加します。未習の機能が多いので、手順に沿って進めてください。
-
-**やり方 1（HUD の Widget を作る）**
-
-1. コンテンツブラウザで**右クリック** →「**ユーザーインターフェース**」→「**Widget Blueprint**」→「**User Widget**」
-2. 名前を「**WBP_HUD**」にしてダブルクリックで開く
-3. 左上の **パレット** から「**Text**」を、中央の **階層** パネルの `Canvas Panel` の上にドラッグ
-4. 追加した `Text` を選び、詳細パネルの「**Content**」→「**Text**」欄の右にある「**バインド**」→「**バインディングを作成**」をクリック
-5. 関数グラフが開きます。空の場所で**右クリック** →「**Get Player Character**」を検索して追加
-6. `Get Player Character` の**出力ピン**（青）からドラッグ → 空の場所で離し →「**Cast To BP_ThirdPersonCharacter**」を検索して追加
-7. Cast の「**As BP Third Person Character**」ピン（青）からドラッグ → 空の場所で離し →「**Get Score**」を検索して追加
-8. `Get Score` の出力ピン（緑）を、右端の **Return Node** の「**Return Value**」ピン（紫）にドラッグしてつなぐ（Integer → Text の変換ノードが自動で挿入されます）
-9. コンパイル・保存
-
-**やり方 2（ゲーム開始時に HUD を画面に出す）**
-
-1. `BP_ThirdPersonCharacter` を開く
-2. イベントグラフに `Event BeginPlay` ノードが無ければ、右クリック →「**Event BeginPlay**」で追加
-3. `BeginPlay` の実行ピンに「**Create Widget**」ノードをつなぎ、**Class** に `WBP_HUD` を指定
-4. `Create Widget` の **Return Value** から「**Add to Viewport**」を追加してつなぐ
-5. コンパイル・保存してプレイ
-
-→ 画面にスコア（最初は `0`）が表示され、アイテムを取るたびに数字が増えれば成功です。
-
-</Exercise>
-
-### 演習-発展6：クリアしたらスローモーションにする
-
-<Exercise>
-
-`BP_Item` のイベントグラフの、`Branch` の **True** 側の `Print String`（`CLEAR!` を表示するもの）の**後ろ**に「**Set Global Time Dilation**」ノードをつないでください。**Time Dilation** は時間の流れる速さで、`1.0` が等倍・小さくするほどゆっくりになります。好きな値を入れて、コンパイル・保存してプレイしてみましょう。
+`BP_Item` のイベントグラフで、`Print String`（`CLEAR!` を表示するもの）の実行ピンの後ろに「**Set Global Time Dilation**」ノードをつなぎ、値を `0.3` にしてコンパイル・保存してプレイ。
 
 → 5 個目を取った瞬間に動きがゆっくりになれば成功です。
 
 </Exercise>
 
-お疲れさまでした！ここまで全部終えると、最初の白いキューブのゲームとはまるで別物になっているはずです。ルールや演出を 1 つ増やすたびに、作れるゲームの幅はどんどん広がっていきます。
+お疲れさまでした！ルールや演出を 1 つ増やすたびに、作れるゲームの幅はどんどん広がっていきます。
 
 <NextSteps>
 - [Unreal Engine 公式ラーニング（日本語）](https://dev.epicgames.com/community/unreal-engine/learning) で次のチュートリアルを探す
