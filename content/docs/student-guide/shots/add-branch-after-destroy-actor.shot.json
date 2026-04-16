@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "id": "add-branch-after-destroy-actor",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/add-branch-after-destroy-actor.png",
+  "rawImagePath": "content/docs/student-guide/shots/add-branch-after-destroy-actor.raw.png",
+  "crop": {
+    "x": 0,
+    "y": 0,
+    "width": 1056,
+    "height": 830
+  },
+  "annotations": [
+    {
+      "id": "11be6280-e971-45dd-958e-f5eefb947941",
+      "type": "box",
+      "role": "action",
+      "x": 610,
+      "y": 223,
+      "width": 326,
+      "height": 168
+    }
+  ],
+  "annotationMode": "focal",
+  "alt": "",
+  "updatedAt": "2026-04-16T10:36:11.423Z"
+}

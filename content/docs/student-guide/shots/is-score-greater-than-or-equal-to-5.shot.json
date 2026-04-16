@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "id": "is-score-greater-than-or-equal-to-5",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/is-score-greater-than-or-equal-to-5.png",
+  "rawImagePath": "content/docs/student-guide/shots/is-score-greater-than-or-equal-to-5.raw.png",
+  "crop": {
+    "x": 206,
+    "y": 104,
+    "width": 771,
+    "height": 434
+  },
+  "annotations": [
+    {
+      "id": "40e713ff-867b-43f7-964f-a7c90bd14c01",
+      "type": "box",
+      "role": "action",
+      "x": 207,
+      "y": 219,
+      "width": 261,
+      "height": 195
+    },
+    {
+      "id": "5afb7e9b-43a2-4d2b-8d2d-e76690e3bb8f",
+      "type": "box",
+      "role": "action",
+      "x": 317,
+      "y": 353,
+      "width": 35,
+      "height": 35
+    }
+  ],
+  "annotationMode": "callout",
+  "alt": "",
+  "updatedAt": "2026-04-16T10:39:04.199Z"
+}

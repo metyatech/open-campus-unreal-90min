@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "id": "add-clear-message-print-string",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/add-clear-message-print-string.png",
+  "rawImagePath": "content/docs/student-guide/shots/add-clear-message-print-string.raw.png",
+  "crop": {
+    "x": 246,
+    "y": 102,
+    "width": 927,
+    "height": 408
+  },
+  "annotations": [
+    {
+      "id": "7fd88e42-6b46-44c5-85db-d7a71879faa1",
+      "type": "box",
+      "role": "action",
+      "x": 515,
+      "y": 129,
+      "width": 324,
+      "height": 156
+    },
+    {
+      "id": "219f37c6-7a49-417d-9203-37f1cba37d3b",
+      "type": "box",
+      "role": "action",
+      "x": 711,
+      "y": 197,
+      "width": 62,
+      "height": 33
+    }
+  ],
+  "annotationMode": "callout",
+  "alt": "",
+  "updatedAt": "2026-04-16T10:42:36.654Z"
+}

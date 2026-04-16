@@ -551,20 +551,6 @@ BP_Item は元キューブなので初期設定は「ブロック」です。「
 
 アイテムを取るたびにスコアが 1 増える仕組みはもう作ってあります。最後の 1 個を取ってスコアが 5 になった瞬間に「CLEAR!」を出すために、`BP_Item` の Blueprint に**条件分岐**を追加します。
 
-<Concept title="Step 4 で追加するノードの流れ（BP_Item）">
-
-```text
-（Step 3 で作った）[Set Score]
-        ↓
-（Step 3 で作った）[Destroy Actor]
-        ↓  ← ここに新しくつなぐ
-[Branch（分岐）]  ← Condition: 新しいスコア >= 5
-        ↓ True
-[Print String "CLEAR!"]
-```
-
-</Concept>
-
 <Section title="4-1. BP_Item にクリア判定を追加する" goal="スコアが 5 以上のときに CLEAR! を表示する分岐をイベントグラフに組みます">
 
 <Concept title="Branch（条件分岐）とは">
@@ -576,32 +562,32 @@ BP_Item は元キューブなので初期設定は「ブロック」です。「
 </Concept>
 
 <Action img="./img/add-branch-after-destroy-actor.png" alt="Destroy Actor の実行ピンから Branch ノードが配置された状態">
-  `Destroy Actor` の**実行ピン**をドラッグして、「**Branch**」ノードを配置します
+  `Destroy Actor` の**実行ピン**の後に、「**Branch**」ノードを追加します
 </Action>
 
 <Action img="./img/is-score-greater-than-or-equal-to-5.png" alt="Set Score の Score 出力ピンから >= ノードが配置され、下側入力に 5 が入力されている">
-  `Set Score` の**Score 出力ピン**（緑）をドラッグして、「**>=**」ノードを配置し、下側の入力に「**5**」を入力します
+  ① `Set Score` の**Score 出力ピン**（緑）の後に、「**>=**」ノードを追加し、② 下側の入力に「**5**」を入力します
 </Action>
 
 <Action img="./img/connect-is-score-clear-to-branch-condition.png" alt=">= ノードの出力が Branch の Condition ピンに接続された状態">
-  `>=` の**出力ピン**（赤）を `Branch` の「**Condition**」ピン（赤）につなぎます
+  `>=` の**出力ピン**を `Branch` の「**Condition**」ピンにつなぎます
 </Action>
 
 <Action img="./img/add-clear-message-print-string.png" alt="Branch の True 実行ピンから Print String が配置され、In String に CLEAR! と入力されている">
-  `Branch` の「**True**」実行ピンをドラッグして「**Print String**」を配置し、「In String」欄に「**CLEAR!**」と入力します
+  ① `Branch` の「**True**」実行ピンの後に「**Print String**」を追加し、② 「In String」欄に「**CLEAR!**」と入力します
 </Action>
 
 <Action>
   「**コンパイル**」をクリックします
 </Action>
 
-<Reference title="Set Score ノードから右側の完成形">
+<Reference title="Blueprint 全体">
 
-<iframe src="https://blueprintue.com/render/lxxevqg_/" width="100%" height="400" scrolling="no" allowFullScreen></iframe>
+<iframe src="https://blueprintue.com/render/z3v-dreo/" width="100%" height="400" scrolling="no" allowFullScreen></iframe>
 
 </Reference>
 
-<Verify>コンパイルアイコンが**緑のチェック**になり、Blueprint 全体が Reference の完成形と一致していれば設定完了です</Verify>
+<Verify>コンパイルアイコンが**緑のチェック**になり、イベントグラフが「Blueprint 全体」と一致していれば設定完了です</Verify>
 
 </Section>
 
@@ -644,15 +630,15 @@ CLEAR! が出る個数を変えてみましょう。
 
 ## 振り返り
 
-あなたが今日作ったゲームには、3 つの重要な考え方が使われています。
+今日作ったゲームには、3つのプログラミングの基本的な仕組みが使われています。
 
-| 仕組み | 今日の使い方 |
+| 仕組み | 意味 |
 | --- | --- |
-| **当たり判定（イベント）** | 「何かに触れたとき」に処理を開始する |
+| **イベント** | 「何かに触れたとき」に処理を開始する |
 | **変数** | スコアをゲームの中で記憶する |
 | **条件分岐** | 「スコアが足りているかどうか」で処理を分ける |
 
-この 3 つはどんなゲームにも、ゲーム以外のアプリにも共通して出てきます。
+この3つはどんなゲームにも、ゲーム以外のアプリにも共通して出てきます。
 
 ## 発展演習：ゲームをカスタマイズしよう
 
