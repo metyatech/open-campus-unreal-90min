@@ -14,23 +14,23 @@
     {
       "id": "e5453fb0-fe76-474c-815f-5866c73229af",
       "type": "box",
+      "role": "action",
       "x": 442,
       "y": 51,
       "width": 53,
-      "height": 52,
-      "role": "action"
+      "height": 52
     },
     {
       "id": "a8028c8e-52b7-4212-bd43-3fd869094cb1",
       "type": "box",
-      "x": 23,
-      "y": 155,
-      "width": 978,
-      "height": 343,
-      "role": "action"
+      "role": "action",
+      "x": 6,
+      "y": 143,
+      "width": 992,
+      "height": 354
     }
   ],
   "annotationMode": "callout",
   "alt": "",
-  "updatedAt": "2026-04-14T01:59:29.992Z"
+  "updatedAt": "2026-04-16T01:07:36.255Z"
 }
