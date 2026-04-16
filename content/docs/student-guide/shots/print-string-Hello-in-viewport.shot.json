@@ -14,14 +14,14 @@
     {
       "id": "538fd2b0-3a89-4ea3-8d2c-bf4b67812543",
       "type": "box",
+      "role": "verify",
       "x": 35,
       "y": 168,
       "width": 53,
-      "height": 41,
-      "role": "action"
+      "height": 41
     }
   ],
   "annotationMode": "focal",
   "alt": "",
-  "updatedAt": "2026-04-14T08:37:17.152Z"
+  "updatedAt": "2026-04-16T13:03:48.885Z"
 }

@@ -14,7 +14,7 @@
     {
       "id": "cb9abfb8-b815-4255-a03b-207e72bde95f",
       "type": "box",
-      "role": "action",
+      "role": "verify",
       "x": 26,
       "y": 171,
       "width": 83,
@@ -23,5 +23,5 @@
   ],
   "annotationMode": "focal",
   "alt": "",
-  "updatedAt": "2026-04-16T10:48:08.664Z"
+  "updatedAt": "2026-04-16T13:04:05.435Z"
 }
