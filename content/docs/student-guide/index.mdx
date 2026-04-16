@@ -368,7 +368,7 @@ BP_Item は元キューブなので初期設定は「ブロック」です。「
 検索欄に正しい名前が入力されているか確認してください。スペルが少しでも違うと表示されません。
 </Recovery>
 
-<Verify img="./img/BP_Item-print-string-from-actorbeginoverlap.png" alt="Event ActorBeginOverlap から Print String に接続されたイベントグラフ">イベントグラフがこの形になっていれば成功です</Verify>
+<Verify img="./img/BP_Item-print-string-from-actorbeginoverlap.png" alt="Event ActorBeginOverlap から Print String に接続されたイベントグラフ">イベントグラフがこの形になっていればKです</Verify>
 
 <Concept title="「コンパイル」とは">
 
@@ -465,7 +465,7 @@ BP_Item は元キューブなので初期設定は「ブロック」です。「
 <Section title="(d) 動作確認用の Print String をつないで増分を確認する" goal="プレイ中にスコアの増分が画面で確認できるようになります">
 
 <Action img="./img/print-string-from-set-score.png" alt="Set Score の実行ピンからドラッグして Print String ノードが配置された状態">
-  `Set Score` の**実行ピン**に、「**Print String**」をつなぎます
+  `Set Score` の**実行ピン**の後に、「**Print String**」を追加します
 </Action>
 
 <Action img="./img/connect-setscore-and-printstring.png" alt="Set Score の出力ピンが Print String の In String ピンに接続された状態">
@@ -478,24 +478,24 @@ BP_Item は元キューブなので初期設定は「ブロック」です。「
   「**コンパイル**」をクリックします
 </Action>
 
-<Verify img="./img/increment-score-overview.png" alt="BP_Item のイベントグラフ全体。ActorBeginOverlap から Set Score と Print String までの流れ">コンパイルアイコンが**緑のチェック**になり、Blueprint 全体がこの形になっていれば成功です</Verify>
+<Verify img="./img/increment-score-overview.png" alt="BP_Item のイベントグラフ全体。ActorBeginOverlap から Set Score と Print String までの流れ">コンパイルアイコンが**緑のチェック**になり、Blueprint 全体がこの形になっていればOKです</Verify>
 
 <Action>
   メインエディタに戻ってプレイ（▶）して、アイテムに触れます
 </Action>
 
-<Verify>触れるたびに画面左上のスコアが「1」「2」「3」... と増えていけば成功です。</Verify>
+<Verify img="./img/increment-score-output.png" alt="プレイ中にスコア出力が増加する様子">触れるたびに画面左上のスコアが出力されて、「1」「2」「3」... と増えていけば成功です。確認できたら Esc でプレイを終了します。</Verify>
 
 </Section>
 
 <Section title="(e) 動作確認用ノードを片付ける" goal="動作確認用の Print String と変換ノードを削除します">
 
-<Action>
+<Action img="./img/print-string-node-before-delete.png" alt="Set Score と接続された Print String ノード。削除対象として示されている">
   `Print String` ノードをクリックして選択し、**Delete キー**を押して削除します
 </Action>
 
 <Action img="./img/auto-conversion-node-before-delete.png" alt="Set Score と Print String の間にある自動変換ノード。削除対象として示されている">
-  手前に自動追加された**「緑から紫」の変換ノード**も同様に選択して **Delete キー**で削除します
+  手前に自動追加された **「緑（`Integer`）から紫（`String`）」の変換ノード** も同様に選択して **Delete キー**で削除します
 </Action>
 
 <Action>
@@ -511,14 +511,14 @@ BP_Item は元キューブなので初期設定は「ブロック」です。「
 <Section title="3-5. アイテムを消す（Destroy Actor）" goal="スコア加算後にアイテム自体も消えるロジックが完成します">
 
 <Action img="./img/add-destroy-actor-node.png" alt="Set Score の実行ピンから Destroy Actor ノードが配置された状態">
-  `Set Score` の**実行ピン**をドラッグして、「**Destroy Actor**」を配置します
+  `Set Score` の**実行ピン**の後に、「**Destroy Actor**」を追加します
 </Action>
 
 <Action>
   「**コンパイル**」をクリックします
 </Action>
 
-<Verify>コンパイルアイコンが**緑のチェック**になれば Destroy Actor の追加完了です</Verify>
+<Verify img="./img/destroy-actor-completed.png" alt="Destroy Actor ノードが追加された状態">コンパイルアイコンが**緑のチェック**になり、Blueprint 全体がこの形になっていればOKです</Verify>
 
 </Section>
 
