@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "id": "getscore-from-bp-thirdpersoncharacter",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/GetScore-from-BP_ThirdPersonCharacter.png",
+  "rawImagePath": "content/docs/student-guide/shots/GetScore-from-BP_ThirdPersonCharacter.raw.png",
+  "crop": {
+    "x": 242,
+    "y": 100,
+    "width": 876,
+    "height": 552
+  },
+  "annotations": [
+    {
+      "id": "c3d30c4d-72b0-406c-ba70-3982f656109c",
+      "type": "box",
+      "role": "action",
+      "x": 359,
+      "y": 227,
+      "width": 45,
+      "height": 43
+    },
+    {
+      "id": "e86d9ec1-f10c-4ab6-bc57-43552c177b18",
+      "type": "box",
+      "role": "action",
+      "x": 434,
+      "y": 265,
+      "width": 42,
+      "height": 33
+    },
+    {
+      "id": "fc1b392e-e584-45e8-8329-8de3fc3f2f8d",
+      "type": "box",
+      "role": "action",
+      "x": 435,
+      "y": 329,
+      "width": 425,
+      "height": 28
+    },
+    {
+      "id": "488b87e6-8371-4ff8-9260-d9020bf6da4f",
+      "type": "box",
+      "role": "action",
+      "x": 442,
+      "y": 390,
+      "width": 420,
+      "height": 27
+    }
+  ],
+  "annotationMode": "callout",
+  "alt": "",
+  "updatedAt": "2026-04-16T09:24:28.912Z"
+}

@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "id": "connect-score-1-setscore",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/connect-Score+1-SetScore.png",
+  "rawImagePath": "content/docs/student-guide/shots/connect-Score+1-SetScore.raw.png",
+  "crop": {
+    "x": 250,
+    "y": 102,
+    "width": 888,
+    "height": 547
+  },
+  "annotations": [
+    {
+      "id": "974b055c-d32d-4e04-9d2b-8d4be7e0ed91",
+      "type": "box",
+      "role": "action",
+      "x": 616,
+      "y": 240,
+      "width": 102,
+      "height": 122
+    }
+  ],
+  "annotationMode": "focal",
+  "alt": "",
+  "updatedAt": "2026-04-16T09:36:39.942Z"
+}

@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "id": "connect-casttobp-thirdpersoncharacter-setscore",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/connect-CastToBP_ThirdPersonCharacter-SetScore.png",
+  "rawImagePath": "content/docs/student-guide/shots/connect-CastToBP_ThirdPersonCharacter-SetScore.raw.png",
+  "crop": {
+    "x": 248,
+    "y": 102,
+    "width": 853,
+    "height": 372
+  },
+  "annotations": [
+    {
+      "id": "48f566f7-168c-43aa-a2b8-6fcaa7818a7e",
+      "type": "box",
+      "role": "action",
+      "x": 258,
+      "y": 141,
+      "width": 427,
+      "height": 36
+    }
+  ],
+  "annotationMode": "focal",
+  "alt": "",
+  "updatedAt": "2026-04-16T09:41:43.039Z"
+}

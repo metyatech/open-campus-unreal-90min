@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "id": "connect-setscore-and-printstring",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/connect-setscore-and-printstring.png",
+  "rawImagePath": "content/docs/student-guide/shots/connect-setscore-and-printstring.raw.png",
+  "crop": {
+    "x": 246,
+    "y": 101,
+    "width": 892,
+    "height": 417
+  },
+  "annotations": [
+    {
+      "id": "1c5f452c-b136-464c-a1ad-512c40d1b9c7",
+      "type": "box",
+      "role": "action",
+      "x": 539,
+      "y": 227,
+      "width": 165,
+      "height": 31
+    }
+  ],
+  "annotationMode": "focal",
+  "alt": "",
+  "updatedAt": "2026-04-16T09:46:21.504Z"
+}

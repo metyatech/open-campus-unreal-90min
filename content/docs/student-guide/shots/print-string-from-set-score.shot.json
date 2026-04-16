@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "id": "print-string-from-set-score",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/print-string-from-set-score.png",
+  "rawImagePath": "content/docs/student-guide/shots/print-string-from-set-score.raw.png",
+  "crop": {
+    "x": 249,
+    "y": 103,
+    "width": 876,
+    "height": 412
+  },
+  "annotations": [
+    {
+      "id": "68120c8a-7d81-4b86-9f45-dfa0c9a15711",
+      "type": "box",
+      "role": "action",
+      "x": 531,
+      "y": 150,
+      "width": 326,
+      "height": 169
+    }
+  ],
+  "annotationMode": "focal",
+  "alt": "",
+  "updatedAt": "2026-04-16T09:45:13.501Z"
+}
