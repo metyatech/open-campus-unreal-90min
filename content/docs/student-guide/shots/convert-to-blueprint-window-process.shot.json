@@ -27,16 +27,16 @@
       "x": 22,
       "y": 345,
       "width": 307,
-      "height": 27
+      "height": 29
     },
     {
       "id": "d18d4095-786f-41c9-a9d6-ea60c98a69c9",
       "type": "box",
       "role": "action",
-      "x": 16,
-      "y": 529,
-      "width": 535,
-      "height": 37
+      "x": 11,
+      "y": 539,
+      "width": 536,
+      "height": 28
     },
     {
       "id": "a9c48f75-155f-46fd-9784-0d82834459c3",
@@ -45,19 +45,19 @@
       "x": 11,
       "y": 571,
       "width": 537,
-      "height": 24
+      "height": 28
     },
     {
       "id": "d0500c89-947a-4033-84de-9bab74379bcf",
       "type": "box",
       "role": "action",
-      "x": 399,
-      "y": 601,
+      "x": 397,
+      "y": 603,
       "width": 102,
-      "height": 31
+      "height": 26
     }
   ],
   "annotationMode": "callout",
   "alt": "",
-  "updatedAt": "2026-04-15T13:26:11.011Z"
+  "updatedAt": "2026-04-16T08:05:59.059Z"
 }
