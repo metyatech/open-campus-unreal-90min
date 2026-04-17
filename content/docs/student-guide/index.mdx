@@ -4,7 +4,6 @@ authoringMode: 'tutorial'
 ---
 
 import projectZipUrl from './assets/UE90min.zip'
-import itemFbxUrl from './assets/Item.fbx'
 
 <Prerequisites>
 - Unreal Engine 5.7 がインストールされた PC
@@ -649,7 +648,9 @@ CLEAR! が出る個数を変えてみましょう。
 
 <Exercise>
 
-`BP_Item` を開き、コンポーネントパネルの「**＋ 追加**」をクリック → 検索欄に「**Rotating**」と入力 →「**Rotating Movement**」を選びます。コンパイル・保存してプレイ。
+1. `BP_Item` を開き、コンポーネントパネルの「**＋ 追加**」をクリック → 検索欄に「**回転**」と入力 →「**回転中移動コンポーネント**」を選んで追加します。
+2. コンポーネントパネルで「**Static Mesh Component**」を選択 → 詳細パネルのトランスフォームカテゴリの「**可動性**」を「**ムーバブル**」に変更します。
+3. コンパイル・保存してプレイします。
 
 → アイテムがくるくる回っていれば成功です。
 
@@ -659,13 +660,20 @@ CLEAR! が出る個数を変えてみましょう。
 
 <Exercise>
 
-<DownloadLink file={itemFbxUrl} filename="Item.fbx">Item.fbx をダウンロード</DownloadLink>
+無料・会員登録なしで `.fbx` を探せるサイトの例です。好きなサイトを 1 つ開き、好きな 3D 素材を 1 つダウンロードしましょう。
 
-ダウンロードした `Item.fbx` を、Unreal Editor の **コンテンツブラウザ** にドラッグ＆ドロップします。インポートダイアログが開いたら「**Import All**」をクリック。
+- [Kenney](https://kenney.nl/assets/category:3D)
+- [Poly Haven](https://polyhaven.com/)
+- [NASA 3D Resources](https://science.nasa.gov/3d-resources/)
+- [Open3dModel](https://open3dmodel.com/)
 
-次に `BP_Item` を開き、コンポーネントパネルで「**StaticMesh**」を選び、詳細パネルの「**Static Mesh**」を「**Item**」に変えてコンパイル・保存してプレイ。
+ダウンロードした zip を展開して、中にある好きな `.fbx` を 1 つ選んでください。
 
-→ 専用モデルのアイテムが 5 個並んでいれば成功です。
+選んだ `.fbx` を Unreal Editor の **コンテンツブラウザ** 内の **コンテンツ** 以下の自分のわかりやすい場所にドラッグ＆ドロップします。インポートダイアログが開いたら「**インポート**」をクリック。
+
+次に `BP_Item` を開き、コンポーネントパネルで「**Static Mesh Component**」を選択 → 詳細パネルのスタティックメッシュカテゴリの「**Static Mesh**」を、今インポートしたモデルに変え、マテリアルカテゴリにインポートしたマテリアルを割り当て、コンパイル・保存してプレイ。
+
+→ 選んだモデルのアイテムが 5 個並んでいれば成功です。
 
 </Exercise>
 
