@@ -40,3 +40,4 @@
 {"id":"AGT5dT4S","description":"Simplify advanced exercises to 3: rotate, custom FBX item, slow-motion","stage":"committed","createdAt":"2026-04-16T16:24:20.178Z","updatedAt":"2026-04-16T16:24:26.636Z","committedEventId":"JnlY5Y1cEW8aLht1"}
 {"id":"EWjPmdle","description":"Update 演習-発展2 to use a user-chosen external no-signup FBX source instead of a pre-prepared local FBX","stage":"in-progress","createdAt":"2026-04-17T06:39:34.204Z","updatedAt":"2026-04-17T06:39:34.204Z"}
 {"id":"o1n_3dY-","description":"Fix broken-looking SVG rendering in content/docs without commit","stage":"committed","createdAt":"2026-04-18T11:45:18.152Z","updatedAt":"2026-04-18T14:27:59.726Z","committedEventId":"xOvo8V1TMGIees1O"}
+{"id":"ZQ0JX_s7","description":"Replace brittle intro download link with latest release page link","stage":"committed","createdAt":"2026-04-19T09:19:27.635Z","updatedAt":"2026-04-19T09:19:48.351Z","committedEventId":"IOzVIy5xkvGQevbw"}
