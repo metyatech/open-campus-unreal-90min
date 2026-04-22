@@ -21,15 +21,15 @@ Preview the site through `course-docs-site`:
 
 1. Clone `metyatech/course-docs-site`.
 2. Run `npm install` in that repo.
-3. Start the dev server with
-   `COURSE_CONTENT_SOURCE=../open-campus-unreal-90min npm run dev`.
+3. Create `course-docs-site/.env.course.local` with `COURSE_CONTENT_SOURCE` set to this repository.
+4. Start the dev server with `npm run dev`.
+
+Use any local path that is valid from the `course-docs-site` checkout. If the two repositories are siblings, `../open-campus-unreal-90min` works.
 
 ## Verification
 
 Run the full verification suite before each commit:
 
-- `npx markdownlint-cli "**/*.md" --config .markdownlint.json --ignore AGENTS.md --ignore agent-rules-private/**`
-- `compose-agentsmd`
+- `node scripts/verify.mjs`
 
-If the change affects site rendering, also build through `course-docs-site` with
-`COURSE_CONTENT_SOURCE` pointing to this repository before concluding.
+If `course-docs-site` is not in the same workspace, set `COURSE_DOCS_SITE_DIR` to that checkout before running the verify script.
