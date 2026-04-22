@@ -15,9 +15,8 @@ exclude = [ "node_modules/", ".venv/", ".next/", "dist/" ]
 [verify]
 # Content-only repo: mirror the CI markdownlint step so mwt deliver
 # performs the same gating check before promoting changes to main.
-command = "npx --yes markdownlint-cli \"**/*.md\" --config .markdownlint.json --ignore AGENTS.md"
+command = "node scripts/verify.mjs"
 
 [policy]
 allow_ignored_seed_changes = true
 allow_tracked_seed_changes = false
-
