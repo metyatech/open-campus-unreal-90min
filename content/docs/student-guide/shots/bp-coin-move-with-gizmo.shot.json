@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "id": "bp-coin-move-with-gizmo",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/bp-coin-move-with-gizmo.png",
+  "rawImagePath": "content/docs/student-guide/shots/bp-coin-move-with-gizmo.raw.png",
+  "crop": {
+    "x": 0,
+    "y": 0,
+    "width": 1423,
+    "height": 837
+  },
+  "annotations": [
+    {
+      "id": "a09ba865-fc98-4f44-b909-ec98a9a8dc6e",
+      "type": "box",
+      "role": "action",
+      "x": 517,
+      "y": 401,
+      "width": 159,
+      "height": 174
+    }
+  ],
+  "annotationMode": "focal",
+  "alt": "",
+  "updatedAt": "2026-05-09T06:38:57.174Z"
+}

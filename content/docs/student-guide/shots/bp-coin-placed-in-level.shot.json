@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "id": "bp-coin-placed-in-level",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/bp-coin-placed-in-level.png",
+  "rawImagePath": "content/docs/student-guide/shots/bp-coin-placed-in-level.raw.png",
+  "crop": {
+    "x": 0,
+    "y": 0,
+    "width": 1423,
+    "height": 837
+  },
+  "annotations": [
+    {
+      "id": "7ac92050-0a4f-4693-9d55-61e9b4339fb7",
+      "type": "box",
+      "role": "action",
+      "x": 393,
+      "y": 203,
+      "width": 251,
+      "height": 544
+    },
+    {
+      "id": "17d2ee7e-11b7-48c7-9bbf-c3cf81b2373d",
+      "type": "box",
+      "role": "action",
+      "x": 1044,
+      "y": 280,
+      "width": 360,
+      "height": 280
+    }
+  ],
+  "annotationMode": "callout",
+  "alt": "",
+  "updatedAt": "2026-05-09T06:45:54.265Z"
+}
