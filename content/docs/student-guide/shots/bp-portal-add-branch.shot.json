@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "id": "bp-portal-add-branch",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/bp-portal-add-branch.png",
+  "rawImagePath": "content/docs/student-guide/shots/bp-portal-add-branch.raw.png",
+  "crop": {
+    "x": 74,
+    "y": 101,
+    "width": 1258,
+    "height": 632
+  },
+  "annotations": [
+    {
+      "id": "929a69bd-36ad-431a-a272-8a1bd9c2709c",
+      "type": "box",
+      "role": "action",
+      "x": 310,
+      "y": 389,
+      "width": 54,
+      "height": 42
+    },
+    {
+      "id": "61617dca-0f52-4365-81e7-544169378116",
+      "type": "box",
+      "role": "action",
+      "x": 577,
+      "y": 388,
+      "width": 65,
+      "height": 65
+    },
+    {
+      "id": "62da5702-106d-40f1-88ee-fa28f6270ef2",
+      "type": "box",
+      "role": "action",
+      "x": 592,
+      "y": 36,
+      "width": 417,
+      "height": 32
+    },
+    {
+      "id": "5f46bc12-f9be-4f79-b805-73b552a0b743",
+      "type": "box",
+      "role": "action",
+      "x": 599,
+      "y": 215,
+      "width": 410,
+      "height": 32
+    }
+  ],
+  "annotationMode": "callout",
+  "alt": "",
+  "updatedAt": "2026-05-09T09:12:23.257Z"
+}

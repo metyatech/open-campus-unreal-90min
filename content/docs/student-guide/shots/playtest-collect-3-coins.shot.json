@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "id": "playtest-collect-3-coins",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/playtest-collect-3-coins.png",
+  "rawImagePath": "content/docs/student-guide/shots/playtest-collect-3-coins.raw.png",
+  "crop": {
+    "x": 0,
+    "y": 0,
+    "width": 1423,
+    "height": 837
+  },
+  "annotations": [
+    {
+      "id": "bb99b3ab-b364-4928-abc6-a1a466af54dc",
+      "type": "box",
+      "role": "action",
+      "x": 5,
+      "y": 142,
+      "width": 1040,
+      "height": 654
+    }
+  ],
+  "annotationMode": "focal",
+  "alt": "",
+  "updatedAt": "2026-05-09T09:39:47.627Z"
+}

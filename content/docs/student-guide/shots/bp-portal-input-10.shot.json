@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "id": "bp-portal-input-10",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/bp-portal-input-10.png",
+  "rawImagePath": "content/docs/student-guide/shots/bp-portal-input-10.raw.png",
+  "crop": {
+    "x": 76,
+    "y": 164,
+    "width": 1255,
+    "height": 565
+  },
+  "annotations": [
+    {
+      "id": "ae752de9-2c7a-4ee6-9f85-ed2726e6a23b",
+      "type": "box",
+      "role": "action",
+      "x": 329,
+      "y": 325,
+      "width": 41,
+      "height": 36
+    }
+  ],
+  "annotationMode": "focal",
+  "alt": "",
+  "updatedAt": "2026-05-09T09:13:41.627Z"
+}

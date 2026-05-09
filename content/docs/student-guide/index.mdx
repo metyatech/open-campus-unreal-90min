@@ -229,10 +229,6 @@ Blueprint のノードを組み終わったら、**コンパイル**でゲーム
 
 <Section title="Step 4：BP_Portal のクリア条件を直す（55〜70分）" goal="10 枚以上集めてポータルに入るとゲームをクリアできるようになります">
 
-<Concept title=">= 10 と Branch">
-`>= 10` は、数が 10 以上かどうかを調べる条件です。`Branch` は、条件が合っているときと合っていないときで処理の行き先を分けます。ここでは、コインが 10 枚以上ならポータルを有効にするために使います。
-</Concept>
-
 <Section title="4-1. BP_Portal を開く" goal="ポータルの Blueprint を編集できるようになります">
 
 <Action img="./img/open-bp-portal-from-content-browser.png" alt="① Content Drawer で ② `OpenCampus` フォルダを開き、③ `BP_Portal` をダブルクリックして開く操作が示されているスクリーンショット">
@@ -249,30 +245,46 @@ Blueprint のノードを組み終わったら、**コンパイル**でゲーム
 
 <Section title="4-2. 10 枚以上で通れる条件にする" goal="BP_Portal がコイン 10 枚以上のときだけクリア処理へ進むようになります">
 
-<Action img="./img/bp-portal-condition-greater-equal-10-wired.png" alt="BP_Portal のイベントグラフで、① >= 10 の比較ノード、② Branch の条件への接続が示されているスクリーンショット">
-  ① `>= 10` の比較ノードを置き、② 比較結果を `Branch` の `Condition` につなぎます。
+<Concept title="Branch">
+`Branch` は、条件が合っているときと合っていないときで処理の行き先を分けます。ここでは、コインが 10 枚以上ならポータルを有効にするために使います。
+</Concept>
+
+<Action img="./img/bp-portal-add-branch.png" alt="BP_Portal のイベントグラフで、① Event Coins Updated の実行ピン、② 空いている場所、③ 検索欄、④ Branch の候補が示されているスクリーンショット">
+  ① `Event Coins Updated` の白い実行ピンからドラッグして、② 空いている場所へドロップします。③ 表示された検索欄に `Branch` と入力し、④ 候補から `Branch` を選びます。
 </Action>
 
-<Action img="./img/compile-success.png" alt="Blueprint エディター上部で、① コンパイル、② 保存の操作場所が示されているスクリーンショット">
-  ① コンパイルして、② 保存します。
+<Action img="./img/bp-portal-add-greater-equal.png" alt="BP_Portal のイベントグラフで、① Event Coins Updated の緑の「New Amount」からドラッグして、② 空いている場所へドロップし、③ 検索欄、④ Greater Equal (>=) の候補が示されているスクリーンショット">
+  ① `Event Coins Updated` の緑の「New Amount」からドラッグして、② 空いている場所へドロップし、③ `>=` を入力して検索し、④ `Greater Equal (>=)` ノードを選びます。
 </Action>
 
-<Recovery title="ポータルが反応しないとき">
-10 枚以上集めても反応しない場合は、`>= 10` の結果が `Branch` につながっていない可能性があります。つながりを確認してから、もう一度コンパイルしてください。
-</Recovery>
+<Action img="./img/bp-portal-input-10.png" alt="BP_Portal のイベントグラフで、>= ノードの下のピンに値 10 が入力されているスクリーンショット">
+  `>=` ノードの下のピンに `10` を入力します。
+</Action>
+
+<Action img="./img/bp-portal-connect-greater-equal-to-branch.png" alt="BP_Portal のイベントグラフで、>= ノードの出力ピンが Branch の Condition ピンに接続されているスクリーンショット">
+  `>=` ノードの出力ピンを `Branch` の `Condition` ピンにつなぎます。
+</Action>
+
+<Action img="./img/bp-portal-connect-branch-true-to-portal.png" alt="BP_Portal のイベントグラフで、Branch ノードの True ピンが、ポータル起動の実行ピンにつながっているスクリーンショット">
+  `Branch` ノードの `True` ピンを、「**ポータル起動**」の実行ピンにつなぎます。
+</Action>
+
+<Action img="./img/compile-success.png" alt="コンパイル成功の画像">
+  コンパイルして、保存します。
+</Action>
 
 <Verify>コンパイルアイコンが**緑のチェック**になれば設定完了です。</Verify>
 
 </Section>
 
-<Section title="4-3. 完成したゲームを確認する" goal="コインを 10 枚以上集めてからポータルに入る流れを確認します">
+<Section title="4-3. 完成したゲームを確認する" goal="コインを 10 枚以上集めるとポータルが光って、入るとクリアになることを確認します">
 
-<Action img="./img/playtest-collect-10-coins.png" alt="プレイ中のビューポートで、① 拾うコイン、② 10以上になったコイン数表示が示されているスクリーンショット">
-  プレイして、① `BP_Coin` を拾います。② 表示が 10 枚以上になるまで集めます。
+<Action img="./img/playtest-collect-10-coins.png" alt="プレイ中のビューポートで、コインを10枚集めてポータルが光るところが示されているスクリーンショット">
+  プレイして、コインを10枚集めます。ポータルが光ります。
 </Action>
 
-<Action img="./img/bp-portal-glowing-and-clear.png" alt="プレイ中のビューポートで、① 光っている BP_Portal、② ポータルへ入るキャラクターが示されているスクリーンショット">
-  ① `BP_Portal` が光ったら、② 中へ入ります。
+<Action img="./img/bp-portal-glowing-and-clear.png" alt="プレイ中のビューポートで、光っているポータルに入ってゲームクリアになるところが示されているスクリーンショット">
+  光っているポータルに入ります。ゲームクリアになります。
 </Action>
 
 <Verify>10 枚以上集めたあとにポータルへ入ってゲームクリアになれば完成です。</Verify>
@@ -296,35 +308,21 @@ Blueprint のノードを組み終わったら、**コンパイル**でゲーム
 <Section title="5-1. 3 枚でクリアできるようにする" goal="少ないコイン数でもクリアできる条件に変えます">
 
 <Action img="./img/bp-portal-condition-greater-equal-3.png" alt="BP_Portal のイベントグラフで、① 比較ノード、② しきい値 3 が示されているスクリーンショット">
-  ① 比較ノードを確認し、② 条件を `>= 3` に変更してから、コンパイルして保存します。
+  再度 `BP_Portal` を開き、条件を `>= 3` に変更してから、コンパイルして保存します。
 </Action>
 
-<Action img="./img/playtest-clear-with-3-coins.png" alt="プレイ中のビューポートで、① 3枚になったコイン数表示、② 光った BP_Portal が示されているスクリーンショット">
-  プレイして、① `BP_Coin` を 3 枚拾ってから、② `BP_Portal` に入ります。
+<Action img="./img/playtest-collect-3-coins.png" alt="プレイ中のビューポートで、コインを3枚集めてポータルが光るところが示されているスクリーンショット">
+  プレイして、コインを 3 枚集めてみましょう。ポータルが光って、入るとクリアになります。
 </Action>
 
-<Verify>3 枚でゲームクリアになれば、条件の数字で難しさを変えられることを確認できています。</Verify>
+<Verify>3 枚でゲームクリアになれば、条件の数字でゲームのクリア条件を変えられることを確認できています。</Verify>
 
 </Section>
 
-<Section title="5-2. 15 枚ではクリアできないことを試す" goal="条件を大きくするとクリアしにくくなることを確認します">
-
-<Action img="./img/bp-portal-condition-greater-equal-15.png" alt="BP_Portal のイベントグラフで、① 比較ノード、② しきい値 15 が示されているスクリーンショット">
-  ① 比較ノードを確認し、② 条件を `>= 15` に変更してから、コンパイルして保存します。
-</Action>
-
-<Action img="./img/playtest-10-coins-not-clear.png" alt="プレイ中のビューポートで、① 10枚のコイン数表示、② まだ光っていない BP_Portal が示されているスクリーンショット">
-  プレイして、① `BP_Coin` を 10 枚拾ってから、② `BP_Portal` に入ります。
-</Action>
-
-<Verify>10 枚ではクリアにならなければ、条件の数字がゲームのルールを決めていることを確認できています。</Verify>
-
-</Section>
-
-<Section title="5-3. 最後のルールを決める" goal="授業後に遊ぶためのクリア条件を決めます">
+<Section title="5-2. 自分でルールを決める" goal="自分でクリア条件を好きな数値に決めます">
 
 <Action img="./img/bp-portal-condition-restored.png" alt="BP_Portal のイベントグラフで、① 比較ノード、② 10 もしくは自分で選んだしきい値が示されているスクリーンショット">
-  ① 比較ノードを確認し、② 条件を `>= 10` に戻すか、自分で選んだ数字に変更して、コンパイルして保存します。
+  再度 `BP_Portal` を開き、`>=` の条件の数値を、自分がクリア条件にしたい数値に変更して、コンパイルして保存します。
 </Action>
 
 <Verify>選んだ数字どおりに `BP_Portal` が反応すれば、ゲームのルール調整は完了です。</Verify>
@@ -333,13 +331,12 @@ Blueprint のノードを組み終わったら、**コンパイル**でゲーム
 
 <Checkpoint>
 - `>= 3` にすると 3 枚でクリアできる
-- `>= 15` にすると 10 枚ではクリアできない
-- 最後に `>= 10` または自分で選んだ数字へ戻している
+- `>=` の数値を変えると、クリアに必要なコイン数を自分で調整できる
 </Checkpoint>
 
 </Section>
 
-<Section title="任意：時間が余ったらコインを回す（80〜90分）" goal="本編が終わったあと、時間が余ったときだけコインの見た目を動かします">
+<Section title="任意：時間が余った場合（80〜90分）" goal="さらにゲームの完成度を高めます">
 
 ここからは時間が余ったときだけ進めます。ゲーム本編は Step 5 までで完成しているので、この演習を行わなくても今日のゲームは完成です。
 

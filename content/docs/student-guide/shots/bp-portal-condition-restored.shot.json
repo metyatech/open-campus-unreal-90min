@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "id": "bp-portal-condition-restored",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/bp-portal-condition-restored.png",
+  "rawImagePath": "content/docs/student-guide/shots/bp-portal-condition-restored.raw.png",
+  "crop": {
+    "x": 0,
+    "y": 0,
+    "width": 1396,
+    "height": 857
+  },
+  "annotations": [
+    {
+      "id": "e7241f98-64f5-4fac-be08-0c669cd307b6",
+      "type": "box",
+      "role": "action",
+      "x": 457,
+      "y": 648,
+      "width": 42,
+      "height": 42
+    }
+  ],
+  "annotationMode": "focal",
+  "alt": "",
+  "updatedAt": "2026-05-09T09:43:01.136Z"
+}
