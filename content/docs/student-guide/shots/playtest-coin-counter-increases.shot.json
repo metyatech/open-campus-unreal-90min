@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "id": "playtest-coin-counter-increases",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/playtest-coin-counter-increases.png",
+  "rawImagePath": "content/docs/student-guide/shots/playtest-coin-counter-increases.raw.png",
+  "crop": {
+    "x": 0,
+    "y": 0,
+    "width": 1423,
+    "height": 837
+  },
+  "annotations": [
+    {
+      "id": "d1adfb13-9bfa-4f33-a2fe-ac44b3dde6d3",
+      "type": "box",
+      "role": "action",
+      "x": 529,
+      "y": 321,
+      "width": 498,
+      "height": 463
+    },
+    {
+      "id": "468abbf3-d3df-4dd4-a4cf-f7875283eae5",
+      "type": "box",
+      "role": "action",
+      "x": 918,
+      "y": 153,
+      "width": 103,
+      "height": 63
+    }
+  ],
+  "annotationMode": "callout",
+  "alt": "",
+  "updatedAt": "2026-05-09T08:35:39.628Z"
+}
