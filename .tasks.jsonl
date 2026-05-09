@@ -43,3 +43,4 @@
 {"id":"ZQ0JX_s7","description":"Replace brittle intro download link with latest release page link","stage":"committed","createdAt":"2026-04-19T09:19:27.635Z","updatedAt":"2026-04-19T09:19:48.351Z","committedEventId":"IOzVIy5xkvGQevbw"}
 {"id":"K0xUMB_J","description":"Restructure open-campus-unreal-90min materials so a synchronized 90-minute workshop reliably reaches a finished game","stage":"committed","createdAt":"2026-04-19T07:32:11.815Z","updatedAt":"2026-04-19T10:47:45.875Z","committedEventId":"3n0b3YYtGG-t_WUw"}
 {"id":"OIIJGssd","description":"Standardize portable verify entrypoint and mwt verify command","stage":"committed","createdAt":"2026-04-22T04:16:05.267Z","updatedAt":"2026-04-22T04:31:42.075Z","committedEventId":"hE58Dwjmp_4jvtU2"}
+{"id":"bNoPJle8","description":"Research instructional design guidance for repeated procedural operations in tutorials","stage":"pending","createdAt":"2026-05-09T08:35:45.951Z","updatedAt":"2026-05-09T08:35:45.951Z"}
