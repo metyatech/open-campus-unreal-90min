@@ -338,21 +338,35 @@ Blueprint のノードを組み終わったら、**コンパイル**でゲーム
 
 <Section title="任意：時間が余った場合（80〜90分）" goal="さらにゲームの完成度を高めます">
 
-ここからは時間が余ったときだけ進めます。ゲーム本編は Step 5 までで完成しているので、この演習を行わなくても今日のゲームは完成です。
+ここからは時間が余ったときだけ進めます。ゲーム自体は Step 5 までで完成しているので、無理に進める必要はありません。余裕があれば、以下の内容でさらにゲームの完成度を高めてみましょう。
 
-<Concept title="M_Coin とは">
-`M_Coin` は、コインの見た目を決めるマテリアルです。Blueprint がゲームの動きを作るのに対して、マテリアルは色や動き方などの見た目を調整します。
-</Concept>
-
-ここでは Blueprint ではなく、`M_Coin` のマテリアルで見た目を少しアレンジします。
-
-### 演習-発展1：M_Coin を時間で回す
+### 演習-発展1：コインを回転させる
 
 <Exercise>
 
-![M_Coin のマテリアルグラフで、① 黄色のコメントエリア「時間経過でコインを回す」と、② 接続先の A ピンが示されているスクリーンショット](./img/m-coin-yellow-comment-rotate-empty.png)
+<Section title="コインを回転させる" goal="コインの見た目が時間に合わせて回るようになります">
 
-`M_Coin` を開き、① 黄色いコメントエリア **時間経過でコインを回す** の中で、② `Time` ノードを `A` ピンにつないでください。
+<Action img="./img/open-m-coin-material.png" alt="Unreal Editor で、M_Coin のマテリアルエディタを開くスクリーンショット">
+  ① `Content Drawer` で `OpenCampus` フォルダを開き、`M_Coin` をダブルクリックしてマテリアルエディタを開きます。
+</Action>
+
+<Action img="./img/m-coin-yellow-comment-rotate-empty.png" alt="M_Coin のマテリアルグラフで、時間経過でコインを回すコメントエリアが示されているスクリーンショット">
+  `M_Coin` のマテリアルグラフで、黄色のコメントエリア「**時間経過でコインを回す**」を見つけます。
+</Action>
+
+<Action img="./img/m-coin-add-time-node.png" alt="M_Coin のマテリアルグラフで、① 黄色いコメントエリアの空白部分、② 検索欄、③ Time ノードの候補が示されているスクリーンショット">
+  ① 黄色いコメントエリア **時間経過でコインを回す** の中の空いている場所を右クリックし、② 検索欄に `Time` と入力して、③ `Time` ノードを追加します。
+</Action>
+
+<Action img="./img/m-coin-time-to-a-wired.png" alt="M_Coin のマテリアルグラフで、Time ノードの出力と Multiply ノードの A ピンの接続が示されているスクリーンショット">
+  `Time` ノードの出力ピンを、すぐ右の `Multiply` ノードの `A` ピンにつなぎます。
+</Action>
+
+<Action img="./img/m-coin-rotate-preview.png" alt="プレイ中のビューポートで、回転しているコインが示されているスクリーンショット">
+  プレビューでコインが回るようになったことを確認します。
+</Action>
+
+</Section>
 
 確認方法：保存してプレイし、コインの見た目が時間に合わせて回っていれば成功です。
 
@@ -375,6 +389,6 @@ Blueprint のノードを組み終わったら、**コンパイル**でゲーム
 </Section>
 
 <NextSteps>
-- [Blueprint の公式ドキュメント（日本語）](https://dev.epicgames.com/documentation/ja-jp/unreal-engine/blueprints-visual-scripting-in-unreal-engine) で、今日使ったノードの考え方を復習する
-- 今日のプロジェクトにコインの配置やポータルまでの道を追加して、自分だけのステージに変える
+- コインの配置を工夫して、ゲームの難易度を調整してみましょう
+- ステージの続きを作って、ゴールまでの道のりを長くしてみましょう
 </NextSteps>
