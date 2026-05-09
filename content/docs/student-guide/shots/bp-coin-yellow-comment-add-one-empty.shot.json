@@ -8,13 +8,13 @@
     "x": 0,
     "y": 0,
     "width": 1396,
-    "height": 857
+    "height": 856
   },
   "annotations": [
     {
       "id": "4cc6596d-bc89-4a0f-8184-af518921c640",
       "type": "box",
-      "role": "action",
+      "role": "verify",
       "x": 664,
       "y": 172,
       "width": 249,
@@ -23,5 +23,5 @@
   ],
   "annotationMode": "focal",
   "alt": "",
-  "updatedAt": "2026-05-09T07:27:41.318Z"
+  "updatedAt": "2026-05-09T14:26:25.867Z"
 }

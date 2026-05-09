@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "id": "m-coin-rotate-preview",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/m-coin-rotate-preview.png",
+  "rawImagePath": "content/docs/student-guide/shots/m-coin-rotate-preview.raw.png",
+  "crop": {
+    "x": 3,
+    "y": 0,
+    "width": 358,
+    "height": 324
+  },
+  "annotations": [],
+  "annotationMode": "focal",
+  "alt": "",
+  "updatedAt": "2026-05-09T14:19:49.155Z"
+}

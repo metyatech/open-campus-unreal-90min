@@ -23,7 +23,7 @@
     {
       "id": "17d2ee7e-11b7-48c7-9bbf-c3cf81b2373d",
       "type": "box",
-      "role": "action",
+      "role": "verify",
       "x": 1044,
       "y": 280,
       "width": 360,
@@ -32,5 +32,5 @@
   ],
   "annotationMode": "callout",
   "alt": "",
-  "updatedAt": "2026-05-09T06:45:54.265Z"
+  "updatedAt": "2026-05-09T14:29:58.173Z"
 }
