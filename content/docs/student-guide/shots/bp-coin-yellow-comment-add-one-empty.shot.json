@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "id": "bp-coin-yellow-comment-add-one-empty",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/bp-coin-yellow-comment-add-one-empty.png",
+  "rawImagePath": "content/docs/student-guide/shots/bp-coin-yellow-comment-add-one-empty.raw.png",
+  "crop": {
+    "x": 0,
+    "y": 0,
+    "width": 1396,
+    "height": 857
+  },
+  "annotations": [
+    {
+      "id": "4cc6596d-bc89-4a0f-8184-af518921c640",
+      "type": "box",
+      "role": "action",
+      "x": 664,
+      "y": 172,
+      "width": 249,
+      "height": 252
+    }
+  ],
+  "annotationMode": "focal",
+  "alt": "",
+  "updatedAt": "2026-05-09T07:27:41.318Z"
+}
