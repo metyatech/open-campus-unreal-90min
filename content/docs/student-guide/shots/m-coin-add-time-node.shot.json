@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "id": "m-coin-add-time-node",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/m-coin-add-time-node.png",
+  "rawImagePath": "content/docs/student-guide/shots/m-coin-add-time-node.raw.png",
+  "crop": {
+    "x": 362,
+    "y": 141,
+    "width": 1001,
+    "height": 534
+  },
+  "annotations": [
+    {
+      "id": "ebcd24c7-9332-4686-88b9-22a5052ee459",
+      "type": "box",
+      "role": "action",
+      "x": 323,
+      "y": 226,
+      "width": 42,
+      "height": 28
+    },
+    {
+      "id": "8aec6063-92ab-4b08-a6f0-3b9070f50a5b",
+      "type": "box",
+      "role": "action",
+      "x": 352,
+      "y": 253,
+      "width": 394,
+      "height": 23
+    },
+    {
+      "id": "0b1cc9a9-aa9b-41fe-96c6-94e06e53ad15",
+      "type": "box",
+      "role": "action",
+      "x": 340,
+      "y": 291,
+      "width": 407,
+      "height": 21
+    }
+  ],
+  "annotationMode": "callout",
+  "alt": "",
+  "updatedAt": "2026-05-09T10:03:21.133Z"
+}

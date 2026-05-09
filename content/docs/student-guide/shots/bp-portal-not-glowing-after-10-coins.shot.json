@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "id": "bp-portal-not-glowing-after-10-coins",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/bp-portal-not-glowing-after-10-coins.png",
+  "rawImagePath": "content/docs/student-guide/shots/bp-portal-not-glowing-after-10-coins.raw.png",
+  "crop": {
+    "x": 0,
+    "y": 0,
+    "width": 1423,
+    "height": 837
+  },
+  "annotations": [
+    {
+      "id": "2c9ed45f-6878-4eb9-947d-f7fdc783e134",
+      "type": "box",
+      "role": "verify",
+      "x": 904,
+      "y": 153,
+      "width": 120,
+      "height": 61
+    },
+    {
+      "id": "a8cdca11-7792-4f6a-9d01-0bb0205a6ce5",
+      "type": "box",
+      "role": "verify",
+      "x": 261,
+      "y": 135,
+      "width": 535,
+      "height": 428
+    }
+  ],
+  "annotationMode": "callout",
+  "alt": "",
+  "updatedAt": "2026-05-09T14:25:49.315Z"
+}

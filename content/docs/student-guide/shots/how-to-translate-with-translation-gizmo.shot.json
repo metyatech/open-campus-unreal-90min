@@ -7,21 +7,21 @@
   "crop": {
     "x": 0,
     "y": 0,
-    "width": 1232,
-    "height": 728
+    "width": 1423,
+    "height": 837
   },
   "annotations": [
     {
-      "id": "66dffe02-bd93-4aa4-a76d-b6b012eafb83",
+      "id": "067bfc54-567c-4971-8fb9-77cc7a1c8140",
       "type": "box",
-      "x": 414,
-      "y": 219,
-      "width": 144,
-      "height": 155,
-      "role": "action"
+      "role": "action",
+      "x": 499,
+      "y": 337,
+      "width": 175,
+      "height": 211
     }
   ],
   "annotationMode": "focal",
   "alt": "",
-  "updatedAt": "2026-04-14T02:27:09.542Z"
+  "updatedAt": "2026-05-09T06:40:43.644Z"
 }

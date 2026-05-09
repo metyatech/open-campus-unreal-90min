@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "id": "open-bp-coin-from-content-browser",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/open-bp-coin-from-content-browser.png",
+  "rawImagePath": "content/docs/student-guide/shots/open-bp-coin-from-content-browser.raw.png",
+  "crop": {
+    "x": 0,
+    "y": 0,
+    "width": 1423,
+    "height": 837
+  },
+  "annotations": [
+    {
+      "id": "0ec5a0a1-cc5a-4e64-986e-983c78f93e39",
+      "type": "box",
+      "role": "action",
+      "x": -1,
+      "y": 804,
+      "width": 139,
+      "height": 35
+    },
+    {
+      "id": "01a3e11d-a9bc-4ab2-835f-686b02317a4c",
+      "type": "box",
+      "role": "action",
+      "x": 22,
+      "y": 558,
+      "width": 228,
+      "height": 23
+    },
+    {
+      "id": "503e1de1-a3f6-4d81-9afd-bae47da1f1b2",
+      "type": "box",
+      "role": "action",
+      "x": 435,
+      "y": 510,
+      "width": 112,
+      "height": 166
+    }
+  ],
+  "annotationMode": "callout",
+  "alt": "",
+  "updatedAt": "2026-05-09T07:01:47.197Z"
+}

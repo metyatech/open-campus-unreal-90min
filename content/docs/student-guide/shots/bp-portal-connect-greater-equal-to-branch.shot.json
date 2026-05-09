@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "id": "bp-portal-connect-greater-equal-to-branch",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/bp-portal-connect-greater-equal-to-branch.png",
+  "rawImagePath": "content/docs/student-guide/shots/bp-portal-connect-greater-equal-to-branch.raw.png",
+  "crop": {
+    "x": 0,
+    "y": 0,
+    "width": 1396,
+    "height": 857
+  },
+  "annotations": [
+    {
+      "id": "d5204357-aaee-48cc-a30c-5dfbb43b807d",
+      "type": "box",
+      "role": "action",
+      "x": 510,
+      "y": 398,
+      "width": 93,
+      "height": 113
+    }
+  ],
+  "annotationMode": "focal",
+  "alt": "",
+  "updatedAt": "2026-05-09T09:15:08.097Z"
+}

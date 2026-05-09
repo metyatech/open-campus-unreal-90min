@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "id": "bp-coin-connect-update-coins",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/bp-coin-connect-update-coins.png",
+  "rawImagePath": "content/docs/student-guide/shots/bp-coin-connect-update-coins.raw.png",
+  "crop": {
+    "x": 76,
+    "y": 166,
+    "width": 1256,
+    "height": 567
+  },
+  "annotations": [
+    {
+      "id": "5c9d4737-1bae-4d80-b751-05d00348e18c",
+      "type": "box",
+      "role": "action",
+      "x": 496,
+      "y": 97,
+      "width": 154,
+      "height": 44
+    },
+    {
+      "id": "cacc09d8-ff64-43d1-9675-e1511ec4266e",
+      "type": "box",
+      "role": "action",
+      "x": 770,
+      "y": 99,
+      "width": 185,
+      "height": 43
+    }
+  ],
+  "annotationMode": "multi-focal",
+  "alt": "",
+  "updatedAt": "2026-05-09T08:06:10.138Z"
+}

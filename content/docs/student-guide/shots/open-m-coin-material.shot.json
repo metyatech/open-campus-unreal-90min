@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "id": "open-m-coin-material",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/open-m-coin-material.png",
+  "rawImagePath": "content/docs/student-guide/shots/open-m-coin-material.raw.png",
+  "crop": {
+    "x": 0,
+    "y": 0,
+    "width": 1423,
+    "height": 837
+  },
+  "annotations": [
+    {
+      "id": "689be5ee-efcf-49cd-b546-0b7b6f9b257e",
+      "type": "box",
+      "role": "action",
+      "x": -3,
+      "y": 802,
+      "width": 141,
+      "height": 40
+    },
+    {
+      "id": "b0eb3591-2a68-45b1-aa6c-49a061188a0a",
+      "type": "box",
+      "role": "action",
+      "x": 21,
+      "y": 558,
+      "width": 232,
+      "height": 23
+    },
+    {
+      "id": "abe25513-ad6a-43e4-9c2c-94b4f334c2b2",
+      "type": "box",
+      "role": "action",
+      "x": 645,
+      "y": 503,
+      "width": 109,
+      "height": 177
+    }
+  ],
+  "annotationMode": "callout",
+  "alt": "",
+  "updatedAt": "2026-05-09T09:57:23.589Z"
+}

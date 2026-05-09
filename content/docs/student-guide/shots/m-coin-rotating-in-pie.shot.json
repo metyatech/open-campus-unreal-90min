@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "id": "m-coin-rotating-in-pie",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/m-coin-rotating-in-pie.png",
+  "rawImagePath": "content/docs/student-guide/shots/m-coin-rotating-in-pie.raw.png",
+  "crop": {
+    "x": 0,
+    "y": 0,
+    "width": 1424,
+    "height": 838
+  },
+  "annotations": [
+    {
+      "id": "18aa37b3-419f-4549-93fa-7714f44766b5",
+      "type": "box",
+      "role": "verify",
+      "x": 410,
+      "y": 237,
+      "width": 351,
+      "height": 285
+    }
+  ],
+  "annotationMode": "focal",
+  "alt": "",
+  "updatedAt": "2026-05-09T14:23:45.002Z"
+}

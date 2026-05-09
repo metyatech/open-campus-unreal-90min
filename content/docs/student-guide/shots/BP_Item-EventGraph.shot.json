@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "id": "bp-item-eventgraph",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/BP_Item-EventGraph.png",
+  "rawImagePath": "content/docs/student-guide/shots/BP_Item-EventGraph.raw.png",
+  "crop": {
+    "x": 0,
+    "y": 0,
+    "width": 1396,
+    "height": 857
+  },
+  "annotations": [
+    {
+      "id": "49769030-98e7-4b7e-9d45-2618f8dcaf50",
+      "type": "box",
+      "role": "action",
+      "x": 275,
+      "y": 165,
+      "width": 778,
+      "height": 555
+    }
+  ],
+  "annotationMode": "focal",
+  "alt": "",
+  "updatedAt": "2026-05-09T14:28:24.488Z"
+}

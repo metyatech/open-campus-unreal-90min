@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "id": "m-coin-time-to-a-wired",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/m-coin-time-to-a-wired.png",
+  "rawImagePath": "content/docs/student-guide/shots/m-coin-time-to-a-wired.raw.png",
+  "crop": {
+    "x": 363,
+    "y": 139,
+    "width": 998,
+    "height": 533
+  },
+  "annotations": [
+    {
+      "id": "ae58f03f-44fc-42b9-9385-61776e4fbf51",
+      "type": "box",
+      "role": "action",
+      "x": 364,
+      "y": 228,
+      "width": 151,
+      "height": 28
+    }
+  ],
+  "annotationMode": "focal",
+  "alt": "",
+  "updatedAt": "2026-05-09T10:05:44.218Z"
+}

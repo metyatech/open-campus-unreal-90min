@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "id": "bp-portal-connect-branch-true-to-portal",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/bp-portal-connect-branch-true-to-portal.png",
+  "rawImagePath": "content/docs/student-guide/shots/bp-portal-connect-branch-true-to-portal.raw.png",
+  "crop": {
+    "x": 0,
+    "y": 0,
+    "width": 1396,
+    "height": 857
+  },
+  "annotations": [
+    {
+      "id": "a7e6f21b-19db-445f-9391-be046148b891",
+      "type": "box",
+      "role": "action",
+      "x": 711,
+      "y": 336,
+      "width": 276,
+      "height": 72
+    }
+  ],
+  "annotationMode": "focal",
+  "alt": "",
+  "updatedAt": "2026-05-09T09:18:23.868Z"
+}

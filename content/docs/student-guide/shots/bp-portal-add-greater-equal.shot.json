@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "id": "bp-portal-add-greater-equal",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/bp-portal-add-greater-equal.png",
+  "rawImagePath": "content/docs/student-guide/shots/bp-portal-add-greater-equal.raw.png",
+  "crop": {
+    "x": 72,
+    "y": 69,
+    "width": 1261,
+    "height": 661
+  },
+  "annotations": [
+    {
+      "id": "68c71188-890d-4ead-9acf-563e66d78f61",
+      "type": "box",
+      "role": "action",
+      "x": 211,
+      "y": 295,
+      "width": 61,
+      "height": 50
+    },
+    {
+      "id": "f706d8ee-8e9d-483d-9189-1b765b2dd472",
+      "type": "box",
+      "role": "action",
+      "x": 345,
+      "y": 390,
+      "width": 60,
+      "height": 58
+    },
+    {
+      "id": "1394462e-7025-4ed6-b739-982404e2b52c",
+      "type": "box",
+      "role": "action",
+      "x": 361,
+      "y": 35,
+      "width": 419,
+      "height": 35
+    },
+    {
+      "id": "c4339de7-303b-44d0-b020-9f887df9e6bc",
+      "type": "box",
+      "role": "action",
+      "x": 364,
+      "y": 97,
+      "width": 420,
+      "height": 35
+    }
+  ],
+  "annotationMode": "callout",
+  "alt": "",
+  "updatedAt": "2026-05-09T09:13:03.229Z"
+}

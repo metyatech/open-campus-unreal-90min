@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "id": "open-bp-portal-from-content-browser",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/open-bp-portal-from-content-browser.png",
+  "rawImagePath": "content/docs/student-guide/shots/open-bp-portal-from-content-browser.raw.png",
+  "crop": {
+    "x": 0,
+    "y": 0,
+    "width": 1423,
+    "height": 837
+  },
+  "annotations": [
+    {
+      "id": "f371605d-44c2-4f5e-aafc-28111bda1986",
+      "type": "box",
+      "role": "action",
+      "x": -1,
+      "y": 799,
+      "width": 136,
+      "height": 40
+    },
+    {
+      "id": "0cbdbc04-4836-47bf-a4a0-65895e378fc8",
+      "type": "box",
+      "role": "action",
+      "x": 22,
+      "y": 558,
+      "width": 230,
+      "height": 23
+    },
+    {
+      "id": "2487158d-0b22-4a88-9ab7-1e24759ff310",
+      "type": "box",
+      "role": "action",
+      "x": 540,
+      "y": 501,
+      "width": 111,
+      "height": 175
+    }
+  ],
+  "annotationMode": "callout",
+  "alt": "",
+  "updatedAt": "2026-05-09T08:50:06.875Z"
+}
