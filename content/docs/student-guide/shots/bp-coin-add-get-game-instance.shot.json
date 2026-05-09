@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "id": "bp-coin-add-get-game-instance",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/bp-coin-add-get-game-instance.png",
+  "rawImagePath": "content/docs/student-guide/shots/bp-coin-add-get-game-instance.raw.png",
+  "crop": {
+    "x": 76,
+    "y": 165,
+    "width": 1255,
+    "height": 567
+  },
+  "annotations": [
+    {
+      "id": "0d2859eb-1d81-4d01-a61b-98c81ded6031",
+      "type": "box",
+      "role": "action",
+      "x": 588,
+      "y": 191,
+      "width": 39,
+      "height": 40
+    },
+    {
+      "id": "1d9e4db1-79f5-4b4e-9b02-25a301eb8d5f",
+      "type": "box",
+      "role": "action",
+      "x": 596,
+      "y": 243,
+      "width": 411,
+      "height": 29
+    },
+    {
+      "id": "b026ea2d-30fd-4907-a1c6-ad1f0568eefe",
+      "type": "box",
+      "role": "action",
+      "x": 601,
+      "y": 350,
+      "width": 408,
+      "height": 30
+    }
+  ],
+  "annotationMode": "callout",
+  "alt": "",
+  "updatedAt": "2026-05-09T07:55:09.710Z"
+}

@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "id": "bp-coin-move-update-coins",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/bp-coin-move-update-coins.png",
+  "rawImagePath": "content/docs/student-guide/shots/bp-coin-move-update-coins.raw.png",
+  "crop": {
+    "x": 72,
+    "y": 163,
+    "width": 1259,
+    "height": 569
+  },
+  "annotations": [
+    {
+      "id": "cde9a896-14b9-4800-9969-4b4cf8aaa966",
+      "type": "box",
+      "role": "action",
+      "x": 595,
+      "y": 60,
+      "width": 240,
+      "height": 152
+    }
+  ],
+  "annotationMode": "focal",
+  "alt": "",
+  "updatedAt": "2026-05-09T08:01:59.344Z"
+}

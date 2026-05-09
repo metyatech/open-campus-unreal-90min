@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "id": "bp-coin-add-update-coins",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/bp-coin-add-update-coins.png",
+  "rawImagePath": "content/docs/student-guide/shots/bp-coin-add-update-coins.raw.png",
+  "crop": {
+    "x": 78,
+    "y": 164,
+    "width": 1306,
+    "height": 570
+  },
+  "annotations": [
+    {
+      "id": "50fbd81c-1887-47b5-9056-e1af54c1ea57",
+      "type": "box",
+      "role": "action",
+      "x": 711,
+      "y": 238,
+      "width": 38,
+      "height": 44
+    },
+    {
+      "id": "ad6c7855-dad3-483b-93f4-9ac6f10801a3",
+      "type": "box",
+      "role": "action",
+      "x": 870,
+      "y": 221,
+      "width": 41,
+      "height": 43
+    },
+    {
+      "id": "c44dc790-3f08-44ea-aefe-00089fab590c",
+      "type": "box",
+      "role": "action",
+      "x": 876,
+      "y": 290,
+      "width": 427,
+      "height": 36
+    },
+    {
+      "id": "c8fb1d30-e429-469f-a57a-906e1289688c",
+      "type": "box",
+      "role": "action",
+      "x": 876,
+      "y": 357,
+      "width": 424,
+      "height": 29
+    }
+  ],
+  "annotationMode": "callout",
+  "alt": "",
+  "updatedAt": "2026-05-09T07:56:26.768Z"
+}

@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "id": "bp-coin-set-update-coins-change-one",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/bp-coin-set-update-coins-change-one.png",
+  "rawImagePath": "content/docs/student-guide/shots/bp-coin-set-update-coins-change-one.raw.png",
+  "crop": {
+    "x": 72,
+    "y": 164,
+    "width": 1259,
+    "height": 571
+  },
+  "annotations": [
+    {
+      "id": "cd632e87-d687-4a7e-a702-12817199c15e",
+      "type": "box",
+      "role": "action",
+      "x": 674,
+      "y": 161,
+      "width": 37,
+      "height": 39
+    }
+  ],
+  "annotationMode": "focal",
+  "alt": "",
+  "updatedAt": "2026-05-09T08:07:07.191Z"
+}
