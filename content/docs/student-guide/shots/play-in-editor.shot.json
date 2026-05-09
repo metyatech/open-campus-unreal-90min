@@ -7,30 +7,30 @@
   "crop": {
     "x": 0,
     "y": 0,
-    "width": 1232,
-    "height": 728
+    "width": 946,
+    "height": 726
   },
   "annotations": [
     {
-      "id": "e5453fb0-fe76-474c-815f-5866c73229af",
+      "id": "b87ed7c3-cf59-4ae6-a4fd-1e3fe8e527ed",
       "type": "box",
       "role": "action",
-      "x": 442,
-      "y": 51,
-      "width": 53,
-      "height": 52
+      "x": 474,
+      "y": 58,
+      "width": 42,
+      "height": 42
     },
     {
-      "id": "a8028c8e-52b7-4212-bd43-3fd869094cb1",
+      "id": "98cba209-dab6-4445-af65-c5914a98d421",
       "type": "box",
       "role": "action",
-      "x": 6,
-      "y": 143,
-      "width": 992,
-      "height": 354
+      "x": 4,
+      "y": 135,
+      "width": 688,
+      "height": 342
     }
   ],
   "annotationMode": "callout",
   "alt": "",
-  "updatedAt": "2026-04-16T01:07:36.255Z"
+  "updatedAt": "2026-05-09T04:56:06.877Z"
 }

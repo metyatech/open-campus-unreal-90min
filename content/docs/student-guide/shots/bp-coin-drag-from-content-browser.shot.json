@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "id": "bp-coin-drag-from-content-browser",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/bp-coin-drag-from-content-browser.png",
+  "rawImagePath": "content/docs/student-guide/shots/bp-coin-drag-from-content-browser.raw.png",
+  "crop": {
+    "x": 0,
+    "y": 0,
+    "width": 1423,
+    "height": 837
+  },
+  "annotations": [
+    {
+      "id": "75f649bd-94a8-4e48-9a65-b99513417515",
+      "type": "box",
+      "role": "action",
+      "x": -3,
+      "y": 804,
+      "width": 145,
+      "height": 33
+    },
+    {
+      "id": "46b39838-ab80-4b9d-aa05-d27de390b506",
+      "type": "box",
+      "role": "action",
+      "x": 19,
+      "y": 560,
+      "width": 230,
+      "height": 23
+    },
+    {
+      "id": "d2e41aef-4ffa-46b8-a128-b4fc93f89bb1",
+      "type": "box",
+      "role": "action",
+      "x": 439,
+      "y": 507,
+      "width": 104,
+      "height": 165
+    },
+    {
+      "id": "14539144-52c7-4b02-b678-d1f8f1edfce0",
+      "type": "box",
+      "role": "action",
+      "x": 6,
+      "y": 137,
+      "width": 1036,
+      "height": 303
+    }
+  ],
+  "annotationMode": "callout",
+  "alt": "",
+  "updatedAt": "2026-05-09T05:20:31.828Z"
+}
