@@ -57,6 +57,7 @@ node scripts/verify.mjs
 
 What it does:
 
+- checks that every `<Exercise>` is titled by the immediately preceding Markdown heading and has no `title` prop
 - runs `markdownlint` for this repository
 - locates a local `course-docs-site` checkout automatically when the repos live in the same workspace
 - runs `course-docs-site` lint and `build:verified` with `COURSE_CONTENT_SOURCE` set to this repository

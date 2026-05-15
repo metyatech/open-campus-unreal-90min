@@ -45,3 +45,4 @@
 {"id":"OIIJGssd","description":"Standardize portable verify entrypoint and mwt verify command","stage":"committed","createdAt":"2026-04-22T04:16:05.267Z","updatedAt":"2026-04-22T04:31:42.075Z","committedEventId":"hE58Dwjmp_4jvtU2"}
 {"id":"KXc0kPwz","description":"Rewrite open-campus Unreal tutorial around preinstalled coin and portal project flow","stage":"in-progress","createdAt":"2026-05-08T09:42:13.275Z","updatedAt":"2026-05-08T09:42:13.275Z"}
 {"id":"bNoPJle8","description":"Research instructional design guidance for repeated procedural operations in tutorials","stage":"pending","createdAt":"2026-05-09T08:35:45.951Z","updatedAt":"2026-05-09T08:35:45.951Z"}
+{"id":"I3UjQOCg","description":"Unify Exercise headings as Markdown headings before Exercise blocks","stage":"committed","createdAt":"2026-05-15T05:42:31.206Z","updatedAt":"2026-05-15T06:31:39.684Z","committedEventId":"pxG9xON09H7X9b7J"}
