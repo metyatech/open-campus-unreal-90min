@@ -12,7 +12,7 @@ course content repository です。
 - 対象: 主に高校既卒以上の初学者
 - 授業時間: 90 分
 - 形式: Unreal Engine 5.x / Third Person template / Blueprint
-- 到達点: ミニゲームを 1 本完成させ、ゲームの基本構造を理解する
+- 到達点: ミニゲームを完成させ、Blueprint でジャンプ台を追加してゲームの基本構造を理解する
 
 ## Site Preview
 
@@ -33,9 +33,6 @@ COURSE_CONTENT_SOURCE=../path-to-open-campus-unreal-90min
 
 course-docs 系 content repo は public / private を問わず、この local path source 方式で統一しています。
 Use any local path that is valid from the `course-docs-site` checkout. If the two repositories are siblings, that can be `../open-campus-unreal-90min`.
-
-この教材の `教員ガイド` と `セットアップ・トラブル対応` をローカルで確認する場合は、
-`course-docs-site/.env.local` に `ADMIN_MODE_TOKEN` も設定してから `npm run dev` を起動してください。
 
 ## Repository Setup
 
