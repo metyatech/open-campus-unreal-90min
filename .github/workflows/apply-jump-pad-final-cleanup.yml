@@ -20,4 +20,45 @@ jobs:
       - name: Apply approved cleanup
         shell: python
         run: |
-          from pathlib
+          from pathlib import Path
+
+          path = Path('content/docs/student-guide/index.mdx')
+          text = path.read_text(encoding='utf-8')
+
+          intro = '`BP_JumpPad` をステージに置き、Collision に触れたときの処理を追加して、プレイヤーが乗ると上へ飛ぶようにしましょう.\n\n'
+          if intro not in text:
+              intro = '`BP_JumpPad` をステージに置き、Collision に触れたときの処理を追加して、プレイヤーが乗ると上へ飛ぶようにしましょう。\n\n'
+          if text.count(intro) != 1:
+              raise SystemExit(f'expected one intro, found {text.count(intro)}')
+          text = text.replace(intro, '', 1)
+
+          old = '''<Checkpoint>
+          - `BP_JumpPad` を自分でステージに置いている
+          - `Collision` の範囲を確認している
+          - `Collision` から `On Component Begin Overlap` を追加している
+          - ジャンプ台に触れた相手を `Cast To Character` で確認している
+          - `Launch Character` が Character を飛ばしている
+          - `Launch Velocity` の Z で上方向の強さを設定している
+          - プレイするとジャンプ台から上へ飛べる
+          </Checkpoint>'''.replace('          ', '')
+
+          new = '''<Checkpoint>
+          - `BP_JumpPad` を自分でステージに置いている
+          - `Collision` から `On Component Begin Overlap (Collision)` を追加している
+          - `Cast To Character` と `Launch Character` が正しくつながっている
+          - プレイするとジャンプ台から上へ飛べる
+          </Checkpoint>'''.replace('          ', '')
+
+          if text.count(old) != 1:
+              raise SystemExit(f'expected one checkpoint block, found {text.count(old)}')
+          text = text.replace(old, new, 1)
+          path.write_text(text, encoding='utf-8', newline='\n')
+
+      - name: Commit cleanup and remove workflow
+        run: |
+          rm .github/workflows/apply-jump-pad-final-cleanup.yml
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add content/docs/student-guide/index.mdx .github/workflows/apply-jump-pad-final-cleanup.yml
+          git commit -m "Simplify jump-pad checkpoint"
+          git push origin HEAD:main
