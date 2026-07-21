@@ -1,0 +1,18 @@
+name: Apply jump-pad known-step simplification
+
+on:
+  pull_request:
+    types: [opened]
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    if: github.event.pull_request.title == '__apply_jump_pad_known_step_simplification_20260721_104806__'
+    runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+    steps:
+      - uses: actions/checkout@v6
+        with
