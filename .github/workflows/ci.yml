@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 permissions:
-  contents: write
+  contents: read
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
@@ -17,27 +17,6 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  correct-lesson:
-    if: github.head_ref == 'agent/add-jump-pad-mission' && hashFiles('.github/lesson-corrections.pending') != ''
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v6
-        with:
-          ref: agent/add-jump-pad-mission
-          fetch-depth: 0
-      - name: Apply requested lesson corrections
-        run: python .github/apply_lesson_corrections.py
-      - name: Restore CI and commit corrected lesson
-        run: |
-          git show origin/main:.github/workflows/ci.yml > .github/workflows/ci.yml
-          rm .github/apply_lesson_corrections.py
-          rm .github/lesson-corrections.pending
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add README.md content/docs/intro/index.mdx content/docs/student-guide/index.mdx .github
-          git commit -m "Restore lesson text and refine jump-pad mission"
-          git push origin HEAD:agent/add-jump-pad-mission
-
   lint:
     runs-on: ubuntu-latest
     steps:
