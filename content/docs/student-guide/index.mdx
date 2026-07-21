@@ -382,8 +382,8 @@ Blueprint のノードを組み終わったら、**コンパイル**でゲーム
 
 <Section title="3. Collision に入ったときのイベントを追加する" goal="Collision に触れた瞬間から始まるイベントを追加します">
 
-<Action img="./img/bp-jump-pad-add-overlap-event.webp" alt="BP_JumpPad の Components で Collision を右クリックし、Add Event から Add OnComponentBeginOverlap を選ぶスクリーンショット">
-  Components の `Collision` を右クリックし、`Add Event`、`Add OnComponentBeginOverlap` の順にクリックします。
+<Action img="./img/bp-jump-pad-add-overlap-event.webp" alt="BP_JumpPad の Components で、① Collision、② Add Event、③ Add OnComponentBeginOverlap が示されているスクリーンショット">
+  ① Components の `Collision` を右クリックし、② `Add Event`、③ `Add OnComponentBeginOverlap` の順にクリックします。
 </Action>
 
 <Concept title="On Component Begin Overlap">
@@ -406,8 +406,8 @@ Blueprint のノードを組み終わったら、**コンパイル**でゲーム
 `Cast To Character` は、触れた相手を Character として扱えるか確認するノードです。成功したときだけ Character 用の処理へ進めます。
 </Concept>
 
-<Action img="./img/bp-jump-pad-add-cast-to-character.webp" alt="BP_JumpPad の Event Graph で Other Actor から Cast To Character を追加するスクリーンショット">
-  `Other Actor` のピンからドラッグし、検索欄に `Cast To Character` と入力して、`Cast To Character` を追加します。
+<Action img="./img/bp-jump-pad-add-cast-to-character.webp" alt="BP_JumpPad の Event Graph で、① Other Actor のピン、② ドロップ先、③ 検索欄、④ Cast To Character の候補が示されているスクリーンショット">
+  ① `Other Actor` のピンからドラッグし、② 空いている場所へドロップします。③ 検索欄に `Cast To Character` と入力し、④ `Cast To Character` を選びます。
 </Action>
 
 <Verify img="./img/bp-jump-pad-cast-character-connected.webp" alt="BP_JumpPad の Event Graph で Other Actor から Cast To Character を追加し、Object と白い実行ピンが自動接続されたスクリーンショット">
@@ -422,8 +422,8 @@ Blueprint のノードを組み終わったら、**コンパイル**でゲーム
 `Launch Character` は、Character に速度を与えて飛ばすノードです。今回は上方向の速度を与えて、ジャンプ台として使います。
 </Concept>
 
-<Action img="./img/bp-jump-pad-add-launch-character.webp" alt="BP_JumpPad の Event Graph で As Character の青いピンからドラッグし、Launch Character を検索して追加するスクリーンショット">
-  `As Character` の青いピンからドラッグし、`Launch Character` を検索して追加します。
+<Action img="./img/bp-jump-pad-add-launch-character.webp" alt="BP_JumpPad の Event Graph で、① As Character の青いピン、② ドロップ先、③ 検索欄、④ Launch Character の候補が示されているスクリーンショット">
+  ① `As Character` の青いピンからドラッグし、② 空いている場所へドロップします。③ 検索欄に `Launch Character` と入力し、④ `Launch Character` を選びます。
 </Action>
 
 <Verify img="./img/bp-jump-pad-launch-character-connected.webp" alt="BP_JumpPad の Event Graph で  As Character から Launch Character が追加され、Target と白い実行ピンが自動接続されたスクリーンショット">
