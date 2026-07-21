@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "id": "bp-jump-pad-launch-character-connected",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/bp-jump-pad-launch-character-connected.webp",
+  "rawImagePath": "content/docs/student-guide/shots/bp-jump-pad-launch-character-connected.raw.png",
+  "crop": {
+    "x": 242,
+    "y": 27,
+    "width": 749,
+    "height": 551
+  },
+  "annotations": [
+    {
+      "id": "376bc05d-8d06-40c6-98e0-040eeb1f8f16",
+      "type": "box",
+      "role": "verify",
+      "x": 111,
+      "y": 199,
+      "width": 549,
+      "height": 279
+    }
+  ],
+  "annotationMode": "focal",
+  "alt": "",
+  "updatedAt": "2026-07-21T10:40:41.642Z"
+}

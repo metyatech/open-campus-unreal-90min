@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "id": "bp-jump-pad-add-cast-to-character",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/bp-jump-pad-add-cast-to-character.webp",
+  "rawImagePath": "content/docs/student-guide/shots/bp-jump-pad-add-cast-to-character.raw.png",
+  "crop": {
+    "x": 245,
+    "y": 26,
+    "width": 914,
+    "height": 754
+  },
+  "annotations": [
+    {
+      "id": "78bc4fb0-0474-4154-8d76-59bb357f7a60",
+      "type": "box",
+      "role": "action",
+      "x": 358,
+      "y": 328,
+      "width": 41,
+      "height": 33
+    },
+    {
+      "id": "770cb881-1e27-4892-8265-c05b01280d92",
+      "type": "box",
+      "role": "action",
+      "x": 457,
+      "y": 301,
+      "width": 34,
+      "height": 35
+    },
+    {
+      "id": "d28fffaf-e546-4db7-8533-2d118f81e063",
+      "type": "box",
+      "role": "action",
+      "x": 463,
+      "y": 363,
+      "width": 413,
+      "height": 30
+    },
+    {
+      "id": "16667351-e7f0-4cd0-a1ef-af1e2d147100",
+      "type": "box",
+      "role": "action",
+      "x": 473,
+      "y": 450,
+      "width": 401,
+      "height": 30
+    }
+  ],
+  "annotationMode": "callout",
+  "alt": "",
+  "updatedAt": "2026-07-21T10:30:07.969Z"
+}

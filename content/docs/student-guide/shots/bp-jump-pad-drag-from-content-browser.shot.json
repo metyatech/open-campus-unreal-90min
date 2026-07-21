@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "id": "bp-jump-pad-drag-from-content-browser",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/bp-jump-pad-drag-from-content-browser.webp",
+  "rawImagePath": "content/docs/student-guide/shots/bp-jump-pad-drag-from-content-browser.raw.png",
+  "crop": {
+    "x": 0,
+    "y": 0,
+    "width": 1222,
+    "height": 925
+  },
+  "annotations": [
+    {
+      "id": "dc27eb98-0243-49d5-9681-a132ec8333f4",
+      "type": "box",
+      "role": "action",
+      "x": 542,
+      "y": 644,
+      "width": 123,
+      "height": 185
+    },
+    {
+      "id": "8567d398-9b4f-4835-9c7d-3d7aad9cf78a",
+      "type": "arrow",
+      "fromX": 592,
+      "fromY": 629,
+      "toX": 523,
+      "toY": 449
+    }
+  ],
+  "annotationMode": "focal",
+  "alt": "",
+  "updatedAt": "2026-07-21T09:07:10.848Z"
+}

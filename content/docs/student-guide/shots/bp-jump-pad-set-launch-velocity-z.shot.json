@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "id": "bp-jump-pad-set-launch-velocity-z",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/bp-jump-pad-set-launch-velocity-z.webp",
+  "rawImagePath": "content/docs/student-guide/shots/bp-jump-pad-set-launch-velocity-z.raw.png",
+  "crop": {
+    "x": 245,
+    "y": 25,
+    "width": 706,
+    "height": 521
+  },
+  "annotations": [
+    {
+      "id": "75ba2294-3eac-43ff-939a-763063a0e721",
+      "type": "box",
+      "role": "action",
+      "x": 544,
+      "y": 346,
+      "width": 49,
+      "height": 31
+    }
+  ],
+  "annotationMode": "focal",
+  "alt": "",
+  "updatedAt": "2026-07-21T10:40:22.032Z"
+}

@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "id": "bp-jump-pad-begin-overlap-added",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/bp-jump-pad-begin-overlap-added.webp",
+  "rawImagePath": "content/docs/student-guide/shots/bp-jump-pad-begin-overlap-added.raw.png",
+  "crop": {
+    "x": 0,
+    "y": 0,
+    "width": 943,
+    "height": 794
+  },
+  "annotations": [
+    {
+      "id": "b587de3d-1fea-4666-be23-e777590145c8",
+      "type": "box",
+      "role": "verify",
+      "x": 428,
+      "y": 322,
+      "width": 331,
+      "height": 283
+    }
+  ],
+  "annotationMode": "focal",
+  "alt": "",
+  "updatedAt": "2026-07-21T09:14:06.168Z"
+}

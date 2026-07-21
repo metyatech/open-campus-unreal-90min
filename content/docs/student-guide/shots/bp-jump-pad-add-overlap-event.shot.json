@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "id": "bp-jump-pad-add-overlap-event",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/bp-jump-pad-add-overlap-event.webp",
+  "rawImagePath": "content/docs/student-guide/shots/bp-jump-pad-add-overlap-event.raw.png",
+  "crop": {
+    "x": 0,
+    "y": 0,
+    "width": 944,
+    "height": 790
+  },
+  "annotations": [
+    {
+      "id": "df8740fd-a535-4b4a-aaef-220d19231bf6",
+      "type": "box",
+      "role": "action",
+      "x": 0,
+      "y": 212,
+      "width": 238,
+      "height": 27
+    },
+    {
+      "id": "fedcf49a-21e2-4701-9147-7f3de1af922a",
+      "type": "box",
+      "role": "action",
+      "x": 162,
+      "y": 286,
+      "width": 257,
+      "height": 32
+    },
+    {
+      "id": "5fc19fed-266e-4114-8a1b-befd642f13cc",
+      "type": "box",
+      "role": "action",
+      "x": 414,
+      "y": 364,
+      "width": 270,
+      "height": 24
+    }
+  ],
+  "annotationMode": "callout",
+  "alt": "",
+  "updatedAt": "2026-07-21T09:12:57.740Z"
+}

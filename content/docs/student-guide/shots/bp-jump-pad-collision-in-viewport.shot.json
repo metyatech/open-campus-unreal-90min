@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "id": "bp-jump-pad-collision-in-viewport",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/bp-jump-pad-collision-in-viewport.webp",
+  "rawImagePath": "content/docs/student-guide/shots/bp-jump-pad-collision-in-viewport.raw.png",
+  "crop": {
+    "x": 0,
+    "y": 0,
+    "width": 1158,
+    "height": 607
+  },
+  "annotations": [
+    {
+      "id": "625d3d2d-fa9c-44c4-94ad-ca0cda218936",
+      "type": "box",
+      "role": "action",
+      "x": 8,
+      "y": 209,
+      "width": 234,
+      "height": 32
+    }
+  ],
+  "annotationMode": "focal",
+  "alt": "",
+  "updatedAt": "2026-07-21T10:21:28.014Z"
+}

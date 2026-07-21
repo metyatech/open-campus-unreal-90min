@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "id": "bp-jump-pad-enable-z-override",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/bp-jump-pad-enable-z-override.webp",
+  "rawImagePath": "content/docs/student-guide/shots/bp-jump-pad-enable-z-override.raw.png",
+  "crop": {
+    "x": 244,
+    "y": 22,
+    "width": 722,
+    "height": 502
+  },
+  "annotations": [
+    {
+      "id": "06668138-615c-4133-bd47-569d5234d163",
+      "type": "box",
+      "role": "action",
+      "x": 482,
+      "y": 420,
+      "width": 32,
+      "height": 33
+    }
+  ],
+  "annotationMode": "focal",
+  "alt": "",
+  "updatedAt": "2026-07-21T10:40:07.318Z"
+}

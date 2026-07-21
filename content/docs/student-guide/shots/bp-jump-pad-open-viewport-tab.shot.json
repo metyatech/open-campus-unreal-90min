@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "id": "bp-jump-pad-open-viewport-tab",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/bp-jump-pad-open-viewport-tab.webp",
+  "rawImagePath": "content/docs/student-guide/shots/bp-jump-pad-open-viewport-tab.raw.png",
+  "crop": {
+    "x": 0,
+    "y": 0,
+    "width": 788,
+    "height": 617
+  },
+  "annotations": [
+    {
+      "id": "1f9b732d-8f17-42cd-b085-6b77069c5b02",
+      "type": "box",
+      "role": "action",
+      "x": 236,
+      "y": 96,
+      "width": 170,
+      "height": 42
+    }
+  ],
+  "annotationMode": "focal",
+  "alt": "",
+  "updatedAt": "2026-07-21T10:20:20.978Z"
+}

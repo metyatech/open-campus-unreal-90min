@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "id": "bp-jump-pad-cast-character-connected",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/bp-jump-pad-cast-character-connected.webp",
+  "rawImagePath": "content/docs/student-guide/shots/bp-jump-pad-cast-character-connected.raw.png",
+  "crop": {
+    "x": 241,
+    "y": 27,
+    "width": 919,
+    "height": 768
+  },
+  "annotations": [
+    {
+      "id": "2c0babe7-5738-46b6-b304-222dd3be2941",
+      "type": "box",
+      "role": "verify",
+      "x": 93,
+      "y": 221,
+      "width": 609,
+      "height": 279
+    }
+  ],
+  "annotationMode": "focal",
+  "alt": "",
+  "updatedAt": "2026-07-21T10:32:16.857Z"
+}

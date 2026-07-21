@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "id": "bp-jump-pad-blueprint-complete",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/bp-jump-pad-blueprint-complete.webp",
+  "rawImagePath": "content/docs/student-guide/shots/bp-jump-pad-blueprint-complete.raw.png",
+  "crop": {
+    "x": 304,
+    "y": 202,
+    "width": 1065,
+    "height": 362
+  },
+  "annotations": [
+    {
+      "id": "c093cb04-21d9-4e41-8ebe-ee988393aa67",
+      "type": "box",
+      "role": "verify",
+      "x": 44,
+      "y": 19,
+      "width": 961,
+      "height": 302
+    }
+  ],
+  "annotationMode": "focal",
+  "alt": "",
+  "updatedAt": "2026-07-21T10:43:18.143Z"
+}

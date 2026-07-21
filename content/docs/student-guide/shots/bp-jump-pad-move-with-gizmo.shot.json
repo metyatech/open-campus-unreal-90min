@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "id": "bp-jump-pad-move-with-gizmo",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/bp-jump-pad-move-with-gizmo.webp",
+  "rawImagePath": "content/docs/student-guide/shots/bp-jump-pad-move-with-gizmo.raw.png",
+  "crop": {
+    "x": 194,
+    "y": 268,
+    "width": 515,
+    "height": 257
+  },
+  "annotations": [
+    {
+      "id": "b97adeb3-d914-47e9-b7dd-9bb4d4bd1961",
+      "type": "box",
+      "role": "action",
+      "x": 254,
+      "y": 8,
+      "width": 139,
+      "height": 159
+    }
+  ],
+  "annotationMode": "focal",
+  "alt": "",
+  "updatedAt": "2026-07-21T10:17:53.381Z"
+}

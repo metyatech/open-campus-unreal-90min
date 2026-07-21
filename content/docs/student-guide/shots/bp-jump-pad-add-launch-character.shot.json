@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "id": "bp-jump-pad-add-launch-character",
+  "pagePath": "content/docs/student-guide/index.mdx",
+  "outputImagePath": "content/docs/student-guide/img/bp-jump-pad-add-launch-character.webp",
+  "rawImagePath": "content/docs/student-guide/shots/bp-jump-pad-add-launch-character.raw.png",
+  "crop": {
+    "x": 246,
+    "y": 26,
+    "width": 913,
+    "height": 766
+  },
+  "annotations": [
+    {
+      "id": "fc85b760-3338-43a8-9d70-59d2ae3c0106",
+      "type": "box",
+      "role": "action",
+      "x": 289,
+      "y": 328,
+      "width": 38,
+      "height": 32
+    },
+    {
+      "id": "b30d6b7c-26b6-45df-a292-d519ef328c4a",
+      "type": "box",
+      "role": "action",
+      "x": 430,
+      "y": 312,
+      "width": 35,
+      "height": 24
+    },
+    {
+      "id": "da830bdc-4891-47ca-89ce-50cde3c2e31e",
+      "type": "box",
+      "role": "action",
+      "x": 433,
+      "y": 370,
+      "width": 418,
+      "height": 31
+    },
+    {
+      "id": "78e7041f-ca33-49d7-a1bc-1917778a3da1",
+      "type": "box",
+      "role": "action",
+      "x": 433,
+      "y": 413,
+      "width": 424,
+      "height": 29
+    }
+  ],
+  "annotationMode": "callout",
+  "alt": "",
+  "updatedAt": "2026-07-21T10:33:55.385Z"
+}
