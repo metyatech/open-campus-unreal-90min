@@ -342,8 +342,12 @@ Blueprint のノードを組み終わったら、**コンパイル**でゲーム
 
 <Section title="1. BP_JumpPad を置く" goal="ジャンプ台をステージに配置し、まだ動かないことを確認します">
 
+<Action>
+  Content Drawer で `OpenCampus` フォルダを開きます。
+</Action>
+
 <Action img="./img/bp-jump-pad-drag-from-content-browser.png" alt="Content Drawer から BP_JumpPad をビューポートへドラッグ＆ドロップして配置するスクリーンショット">
-  Content Drawer で `OpenCampus` フォルダを開き、`BP_JumpPad` をビューポートへドラッグ＆ドロップします。
+  `BP_JumpPad` をビューポートへドラッグ＆ドロップします。
 </Action>
 
 <Action>
@@ -351,7 +355,11 @@ Blueprint のノードを組み終わったら、**コンパイル**でゲーム
 </Action>
 
 <Action>
-  プレイして、`BP_JumpPad` の上に乗ります。
+  「**▶ プレイ**」をクリックします。
+</Action>
+
+<Action>
+  キャラクターを操作して、`BP_JumpPad` の上へ移動します。
 </Action>
 
 <Verify>ジャンプ台の上に乗っても、まだ上へ飛ばなければ確認完了です。</Verify>
@@ -361,18 +369,26 @@ Blueprint のノードを組み終わったら、**コンパイル**でゲーム
 <Section title="2. Collision の範囲を確認する" goal="ジャンプ台が接触を検出する範囲を確認します">
 
 <Action>
-  Content Drawer で `OpenCampus` フォルダを開き、`BP_JumpPad` をダブルクリックします。
+  Content Drawer で `OpenCampus` フォルダを開きます。
+</Action>
+
+<Action>
+  `BP_JumpPad` をダブルクリックします。
 </Action>
 
 <Concept title="Collision とは">
 `Collision` は、プレイヤーやほかの物体が触れたり、範囲内へ入ったりしたことを検出するための、見えない判定範囲です。
 </Concept>
 
-<Action img="./img/bp-jump-pad-collision-in-viewport.png" alt="BP_JumpPad の Viewport で Collision を選択し、ジャンプ台の判定範囲を確認するスクリーンショット">
-  `Viewport` タブへ切り替え、Components で `Collision` をクリックします。Viewport に表示される Collision の範囲を確認します。
+<Action>
+  `Viewport` タブをクリックします。
 </Action>
 
-<Verify>`Collision` を選択し、ジャンプ台の上部に判定範囲が設定されていることを確認できれば完了です。</Verify>
+<Action img="./img/bp-jump-pad-collision-in-viewport.png" alt="BP_JumpPad の Viewport で Collision を選択し、ジャンプ台の判定範囲を確認するスクリーンショット">
+  Components の `Collision` をクリックします。
+</Action>
+
+<Verify>ジャンプ台の上部に Collision の判定範囲が表示されていれば完了です。</Verify>
 
 </Section>
 
@@ -382,17 +398,13 @@ Blueprint のノードを組み終わったら、**コンパイル**でゲーム
   Components の `Collision` を右クリックし、`Add Event`、`Add OnComponentBeginOverlap` の順にクリックします。
 </Action>
 
-<Action img="./img/bp-jump-pad-begin-overlap-added.png" alt="BP_JumpPad の Event Graph に On Component Begin Overlap (Collision) が追加されたスクリーンショット">
-  `On Component Begin Overlap (Collision)` が自動で追加され、Event Graph へ移動します。
-</Action>
-
 <Concept title="On Component Begin Overlap">
 `On Component Begin Overlap` は、ほかの物体が Collision の範囲内へ入った瞬間に始まるイベントです。
 
 ノード名の末尾の `(Collision)` というのは、先ほど確認した `Collision` に対するイベントだということを表しています。
 </Concept>
 
-<Verify>Event Graph に `On Component Begin Overlap (Collision)` が追加されていれば完了です。</Verify>
+<Verify img="./img/bp-jump-pad-begin-overlap-added.png" alt="BP_JumpPad の Event Graph に On Component Begin Overlap (Collision) が追加されたスクリーンショット">Event Graph に `On Component Begin Overlap (Collision)` が追加されていれば完了です。</Verify>
 
 </Section>
 
@@ -407,10 +419,10 @@ Blueprint のノードを組み終わったら、**コンパイル**でゲーム
 </Concept>
 
 <Action img="./img/bp-jump-pad-cast-character-connected.png" alt="BP_JumpPad の Event Graph で Other Actor から Cast To Character を追加し、Object と白い実行ピンが自動接続されたスクリーンショット">
-  `Other Actor` のピンからドラッグし、検索欄に `Cast To Character` と入力して、`Cast To Character` を追加します。`Object` と白い実行ピンは自動でつながります。
+  `Other Actor` のピンからドラッグし、検索欄に `Cast To Character` と入力して、`Cast To Character` を追加します。
 </Action>
 
-<Verify>`Other Actor` が `Object` につながり、白い実行線も `Cast To Character` へつながっていれば完了です。</Verify>
+<Verify>`Other Actor` が `Object` につながり、白い実行線も `Cast To Character` へ自動でつながっていれば完了です。</Verify>
 
 </Section>
 
@@ -421,10 +433,10 @@ Blueprint のノードを組み終わったら、**コンパイル**でゲーム
 </Concept>
 
 <Action>
-  `As Character` の青いピンからドラッグし、`Launch Character` を検索して追加します。`Target` と白い実行ピンは自動でつながります。
+  `As Character` の青いピンからドラッグし、`Launch Character` を検索して追加します。
 </Action>
 
-<Verify>Cast が成功したあとに `Launch Character` が実行され、`As Character` が `Target` につながっていれば完了です。</Verify>
+<Verify>`As Character` が `Target` につながり、白い実行線も `Launch Character` へ自動でつながっていれば完了です。</Verify>
 
 </Section>
 
@@ -435,25 +447,39 @@ Blueprint のノードを組み終わったら、**コンパイル**でゲーム
 </Concept>
 
 <Action>
-  `Launch Character` の `Launch Velocity` で、X と Y は `0` のままにし、Z に `1200` を入力します。
+  `Launch Character` の `Launch Velocity` の Z に `1200` を入力します。
 </Action>
 
 <Action>
-  `Launch Character` の `Z Override` をオンにします。`XY Override` はオフのままにします。
+  `Launch Character` の `Z Override` をオンにします。
 </Action>
 
-<Verify img="./img/bp-jump-pad-blueprint-complete.png" alt="BP_JumpPad の Event Graph で On Component Begin Overlap (Collision)、Cast To Character、Launch Character が接続され、Launch Velocity の Z が 1200 に設定された完成状態のスクリーンショット">`Launch Velocity` の Z が `1200` で、`Z Override` がオンになっていれば完了です。</Verify>
+<Verify img="./img/bp-jump-pad-blueprint-complete.png" alt="BP_JumpPad の Event Graph で On Component Begin Overlap (Collision)、Cast To Character、Launch Character が接続され、Launch Velocity の Z が 1200 に設定された完成状態のスクリーンショット">`Launch Velocity` が X=`0`、Y=`0`、Z=`1200` で、`Z Override` がオン、`XY Override` がオフになっていれば完了です。</Verify>
 
 </Section>
 
 <Section title="7. コンパイルして試す" goal="ジャンプ台に乗るとプレイヤーが上へ飛ぶことを確認します">
 
 <Action>
-  `BP_JumpPad` をコンパイルして保存し、メインエディターへ戻ります。
+  「**コンパイル**」をクリックします。
+</Action>
+
+<Verify>コンパイルアイコンが**緑のチェック**になれば成功です。</Verify>
+
+<Action>
+  `BP_JumpPad` を保存します。
 </Action>
 
 <Action>
-  プレイして、自分で置いたジャンプ台の上へ乗ります。
+  メインエディターへ戻ります。
+</Action>
+
+<Action>
+  「**▶ プレイ**」をクリックします。
+</Action>
+
+<Action>
+  キャラクターを操作して、自分で置いたジャンプ台の上へ移動します。
 </Action>
 
 <Recovery title="ジャンプ台に乗っても飛ばないとき">
