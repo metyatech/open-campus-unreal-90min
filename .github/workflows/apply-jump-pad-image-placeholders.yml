@@ -26,3 +26,109 @@ jobs:
 
           path = Path('content/docs/student-guide/index.mdx')
           text = path.read_text(encoding='utf-8')
+
+          replacements = {
+            '''<Action>
+              移動ギズモを使って、キャラクターが上に乗れる場所へ移動します。
+            </Action>'''.replace('            ', ''): '''<Action img="./img/bp-jump-pad-move-with-gizmo.png" alt="ビューポートで BP_JumpPad の移動ギズモを操作し、キャラクターが乗れる場所へ移動するスクリーンショット">
+              移動ギズモを使って、キャラクターが上に乗れる場所へ移動します。
+            </Action>'''.replace('            ', ''),
+            '''<Action>
+              `BP_JumpPad` をダブルクリックします。
+            </Action>'''.replace('            ', ''): '''<Action img="./img/open-bp-jump-pad-from-content-browser.png" alt="Content Drawer の OpenCampus フォルダで BP_JumpPad をダブルクリックするスクリーンショット">
+              `BP_JumpPad` をダブルクリックします。
+            </Action>'''.replace('            ', ''),
+            '''<Action>
+              `Viewport` タブをクリックします。
+            </Action>'''.replace('            ', ''): '''<Action img="./img/bp-jump-pad-open-viewport-tab.png" alt="BP_JumpPad の Blueprint エディターで Viewport タブをクリックするスクリーンショット">
+              `Viewport` タブをクリックします。
+            </Action>'''.replace('            ', ''),
+            '''<Action>
+              `As Character` の青いピンからドラッグし、`Launch Character` を検索して追加します。
+            </Action>'''.replace('            ', ''): '''<Action img="./img/bp-jump-pad-add-launch-character.png" alt="BP_JumpPad の Event Graph で As Character の青いピンからドラッグし、Launch Character を検索して追加するスクリーンショット">
+              `As Character` の青いピンからドラッグし、`Launch Character` を検索して追加します。
+            </Action>'''.replace('            ', ''),
+            '''<Action>
+              `Launch Character` の `Launch Velocity` の Z に `1200` を入力します。
+            </Action>'''.replace('            ', ''): '''<Action img="./img/bp-jump-pad-set-launch-velocity-z.png" alt="Launch Character ノードの Launch Velocity で Z に 1200 を入力するスクリーンショット">
+              `Launch Character` の `Launch Velocity` の Z に `1200` を入力します。
+            </Action>'''.replace('            ', ''),
+            '''<Action>
+              `Launch Character` の `Z Override` をオンにします。
+            </Action>'''.replace('            ', ''): '''<Action img="./img/bp-jump-pad-enable-z-override.png" alt="Launch Character ノードの Z Override をオンにするスクリーンショット">
+              `Launch Character` の `Z Override` をオンにします。
+            </Action>'''.replace('            ', ''),
+            '''<Action>
+              「**コンパイル**」をクリックします。
+            </Action>'''.replace('            ', ''): '''<Action img="./img/bp-jump-pad-click-compile.png" alt="BP_JumpPad の Blueprint エディターでコンパイルボタンをクリックするスクリーンショット">
+              「**コンパイル**」をクリックします。
+            </Action>'''.replace('            ', ''),
+            '''<Verify>コンパイルアイコンが**緑のチェック**になれば成功です。</Verify>''': '''<Verify img="./img/compile-success.png" alt="コンパイルアイコンが緑のチェックになったスクリーンショット">コンパイルアイコンが**緑のチェック**になれば成功です。</Verify>''',
+          }
+
+          for old, new in replacements.items():
+              count = text.count(old)
+              if count != 1:
+                  raise SystemExit(f'expected one match, found {count}: {old[:80]!r}')
+              text = text.replace(old, new, 1)
+
+          path.write_text(text, encoding='utf-8', newline='\n')
+
+      - name: Verify placeholder image paths
+        shell: python
+        run: |
+          from pathlib import Path
+          text = Path('content/docs/student-guide/index.mdx').read_text(encoding='utf-8')
+          expected = [
+            './img/bp-jump-pad-move-with-gizmo.png',
+            './img/open-bp-jump-pad-from-content-browser.png',
+            './img/bp-jump-pad-open-viewport-tab.png',
+            './img/bp-jump-pad-add-launch-character.png',
+            './img/bp-jump-pad-set-launch-velocity-z.png',
+            './img/bp-jump-pad-enable-z-override.png',
+            './img/bp-jump-pad-click-compile.png',
+          ]
+          for image in expected:
+              if text.count(image) != 1:
+                  raise SystemExit(f'expected exactly one placeholder path: {image}')
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+
+      - name: Checkout course-docs-site
+        uses: actions/checkout@v6
+        with:
+          repository: metyatech/course-docs-site
+          ref: main
+          path: site
+
+      - name: Install site dependencies
+        working-directory: site
+        run: npm ci
+
+      - name: Verify exercise headings
+        run: node scripts/verify-exercise-headings.mjs
+
+      - name: Lint site against updated content
+        working-directory: site
+        env:
+          COURSE_CONTENT_SOURCE: ..
+        run: npm run lint
+
+      - name: Build site with strict tutorial lint
+        working-directory: site
+        env:
+          COURSE_CONTENT_SOURCE: ..
+          TUTORIAL_LINT_STRICT: '1'
+          TUTORIAL_LINT_COLLECT: '1'
+        run: npm run build:verified
+
+      - name: Commit approved changes and remove workflow
+        run: |
+          rm .github/workflows/apply-jump-pad-image-placeholders.yml
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add content/docs/student-guide/index.mdx .github/workflows/apply-jump-pad-image-placeholders.yml
+          git commit -m "Add jump-pad image placeholders"
+          git push origin HEAD:main
