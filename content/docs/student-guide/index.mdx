@@ -340,8 +340,6 @@ Blueprint のノードを組み終わったら、**コンパイル**でゲーム
 
 ここまでで、最初にプレイした基本ゲームは完成です。ここからは、完成見本にはなかった新しい機能を追加します。
 
-`BP_JumpPad` をステージに置き、Collision に触れたときの処理を追加して、プレイヤーが乗ると上へ飛ぶようにしましょう。
-
 <Section title="1. BP_JumpPad を置く" goal="ジャンプ台をステージに配置し、まだ動かないことを確認します">
 
 <Action img="./img/bp-jump-pad-drag-from-content-browser.png" alt="Content Drawer から BP_JumpPad をビューポートへドラッグ＆ドロップして配置するスクリーンショット">
@@ -475,11 +473,8 @@ Blueprint のノードを組み終わったら、**コンパイル**でゲーム
 
 <Checkpoint>
 - `BP_JumpPad` を自分でステージに置いている
-- `Collision` の範囲を確認している
-- `Collision` から `On Component Begin Overlap` を追加している
-- ジャンプ台に触れた相手を `Cast To Character` で確認している
-- `Launch Character` が Character を飛ばしている
-- `Launch Velocity` の Z で上方向の強さを設定している
+- `Collision` から `On Component Begin Overlap (Collision)` を追加している
+- `Cast To Character` と `Launch Character` が正しくつながっている
 - プレイするとジャンプ台から上へ飛べる
 </Checkpoint>
 
