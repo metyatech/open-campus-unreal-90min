@@ -1,0 +1,22 @@
+name: One-time checkpoint placement fix
+
+on:
+  push:
+    branches:
+      - agent/add-jump-pad-mission
+    paths:
+      - .github/workflows/one-time-fix-checkpoint.yml
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/add-jump-pad-mission
+          fetch-depth: 0
+
+      - name: Move Checkpoint to top
