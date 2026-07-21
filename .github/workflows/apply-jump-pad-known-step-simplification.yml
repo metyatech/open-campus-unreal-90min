@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   apply:
-    if: github.event.pull_request.title == '__apply_jump_pad_known_step_simplification_20260721_104806__'
+    if: github.event.pull_request.title == '__apply_jump_pad_known_step_simplification_20260721_104806_retry__'
     runs-on: ubuntu-latest
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
@@ -22,87 +22,59 @@ jobs:
       - name: Simplify previously learned operations
         shell: python
         run: |
+          import re
           from pathlib import Path
 
           path = Path('content/docs/student-guide/index.mdx')
           text = path.read_text(encoding='utf-8')
 
-          replacements = [
-            (
-              '''<Action>
-                Content Drawer で `OpenCampus` フォルダを開きます。
-              </Action>
+          section1_pattern = re.compile(
+              r'(<Section title="1\. BP_JumpPad を置く"[^>]*>\n\n)'
+              r'.*?'
+              r'(\n\n<Verify>ジャンプ台の上に乗っても、まだ上へ飛ばなければ確認完了です。</Verify>)',
+              re.S,
+          )
+          section1_body = '''<Action img="./img/bp-jump-pad-drag-from-content-browser.webp" alt="Content Drawer から BP_JumpPad をビューポートへドラッグ＆ドロップして配置するスクリーンショット">
+  Content Drawer の `OpenCampus` フォルダにある `BP_JumpPad` を、ビューポートへドラッグ＆ドロップします。
+</Action>
 
-              <Action img="./img/bp-jump-pad-drag-from-content-browser.webp" alt="Content Drawer から BP_JumpPad をビューポートへドラッグ＆ドロップして配置するスクリーンショット">
-                `BP_JumpPad` をビューポートへドラッグ＆ドロップします。
-              </Action>
+<Action>
+  移動ギズモを使って、キャラクターが上に乗れる場所へ移動します。
+</Action>
 
-              <Action img="./img/bp-jump-pad-move-with-gizmo.webp" alt="ビューポートで BP_JumpPad の移動ギズモを操作し、キャラクターが乗れる場所へ移動するスクリーンショット">
-                移動ギズモを使って、キャラクターが上に乗れる場所へ移動します。
-              </Action>
+<Action>
+  プレイ中にキャラクターを操作して、`BP_JumpPad` の上へ移動します。
+</Action>'''
+          text, count = section1_pattern.subn(r'\1' + section1_body + r'\2', text, count=1)
+          if count != 1:
+              raise SystemExit(f'expected one section 1 match, found {count}')
 
-              <Action>
-                「**▶ プレイ**」をクリックします。
-              </Action>
+          open_pattern = re.compile(
+              r'<Action img="\./img/open-bp-jump-pad-from-content-browser\.webp"[^>]*>\n'
+              r'  `BP_JumpPad` をダブルクリックします。\n'
+              r'</Action>'
+          )
+          open_replacement = '''<Action>
+  Content Drawer の `OpenCampus` フォルダにある `BP_JumpPad` をダブルクリックします。
+</Action>'''
+          text, count = open_pattern.subn(open_replacement, text, count=1)
+          if count != 1:
+              raise SystemExit(f'expected one BP_JumpPad open action match, found {count}')
 
-              <Action>
-                キャラクターを操作して、`BP_JumpPad` の上へ移動します。
-              </Action>'''.replace('              ', ''),
-              '''<Action img="./img/bp-jump-pad-drag-from-content-browser.webp" alt="Content Drawer から BP_JumpPad をビューポートへドラッグ＆ドロップして配置するスクリーンショット">
-                Content Drawer の `OpenCampus` フォルダにある `BP_JumpPad` を、ビューポートへドラッグ＆ドロップします。
-              </Action>
+          section7_pattern = re.compile(
+              r'(<Section title="7\. コンパイルして試す"[^>]*>\n\n)'
+              r'.*?'
+              r'(\n\n<Recovery title="ジャンプ台に乗っても飛ばないとき">)',
+              re.S,
+          )
+          section7_body = '''コンパイルして保存し、メインエディターでプレイを開始します。
 
-              <Action>
-                移動ギズモを使って、キャラクターが上に乗れる場所へ移動します。
-              </Action>
-
-              <Action>
-                プレイ中にキャラクターを操作して、`BP_JumpPad` の上へ移動します。
-              </Action>'''.replace('              ', ''),
-            ),
-            (
-              '''<Action img="./img/open-bp-jump-pad-from-content-browser.webp" alt="Content Drawer の OpenCampus フォルダで BP_JumpPad をダブルクリックするスクリーンショット">
-                `BP_JumpPad` をダブルクリックします。
-              </Action>'''.replace('              ', ''),
-              '''<Action>
-                Content Drawer の `OpenCampus` フォルダにある `BP_JumpPad` をダブルクリックします。
-              </Action>'''.replace('              ', ''),
-            ),
-            (
-              '''<Action img="./img/bp-jump-pad-click-compile.png" alt="BP_JumpPad の Blueprint エディターでコンパイルボタンをクリックするスクリーンショット">
-                「**コンパイル**」をクリックします。
-              </Action>
-
-              <Verify img="./img/compile-success.png" alt="コンパイルアイコンが緑のチェックになったスクリーンショット">コンパイルアイコンが**緑のチェック**になれば成功です。</Verify>
-
-              <Action>
-                `BP_JumpPad` を保存します。
-              </Action>
-
-              <Action>
-                メインエディターへ戻ります。
-              </Action>
-
-              <Action>
-                「**▶ プレイ**」をクリックします。
-              </Action>
-
-              <Action>
-                キャラクターを操作して、自分で置いたジャンプ台の上へ移動します。
-              </Action>'''.replace('              ', ''),
-              '''コンパイルして保存し、メインエディターでプレイを開始します。
-
-              <Action>
-                キャラクターを操作して、自分で置いたジャンプ台の上へ移動します。
-              </Action>'''.replace('              ', ''),
-            ),
-          ]
-
-          for old, new in replacements:
-              count = text.count(old)
-              if count != 1:
-                  raise SystemExit(f'expected one match, found {count}: {old[:100]!r}')
-              text = text.replace(old, new, 1)
+<Action>
+  キャラクターを操作して、自分で置いたジャンプ台の上へ移動します。
+</Action>'''
+          text, count = section7_pattern.subn(r'\1' + section7_body + r'\2', text, count=1)
+          if count != 1:
+              raise SystemExit(f'expected one section 7 match, found {count}')
 
           forbidden = [
               './img/bp-jump-pad-move-with-gizmo.webp',
@@ -115,6 +87,8 @@ jobs:
 
           required = [
               './img/bp-jump-pad-open-viewport-tab.webp',
+              './img/bp-jump-pad-collision-in-viewport.webp',
+              './img/bp-jump-pad-add-overlap-event.webp',
               './img/bp-jump-pad-add-cast-to-character.webp',
               './img/bp-jump-pad-add-launch-character.webp',
               './img/bp-jump-pad-set-launch-velocity-z.webp',
