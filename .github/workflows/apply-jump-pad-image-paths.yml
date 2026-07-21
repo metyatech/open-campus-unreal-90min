@@ -1,0 +1,56 @@
+name: Apply jump-pad image paths
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    if: github.event.issue.title == '__apply_jump_pad_image_paths_20260721__'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Add image paths
+        shell: python
+        run: |
+          from pathlib import Path
+
+          path = Path('content/docs/student-guide/index.mdx')
+          text = path.read_text(encoding='utf-8')
+
+          replacements = {
+              '<Action>\n  Content Drawer で `OpenCampus` フォルダを開き、`BP_JumpPad` をビューポートへドラッグ＆ドロップします。':
+                  '<Action img="./img/bp-jump-pad-drag-from-content-browser.png" alt="Content Drawer から BP_JumpPad をビューポートへドラッグ＆ドロップして配置するスクリーンショット">\n  Content Drawer で `OpenCampus` フォルダを開き、`BP_JumpPad` をビューポートへドラッグ＆ドロップします。',
+              '<Action>\n  イベントグラフで、`On Component Begin Overlap` と、黄色いコメントエリア「**プレイヤーを上へ飛ばす**」を見つけます。':
+                  '<Action img="./img/bp-jump-pad-overlap-comment.png" alt="BP_JumpPad のイベントグラフで、On Component Begin Overlap と黄色いコメントエリア「プレイヤーを上へ飛ばす」が示されているスクリーンショット">\n  イベントグラフで、`On Component Begin Overlap` と、黄色いコメントエリア「**プレイヤーを上へ飛ばす**」を見つけます。',
+              '<Action>\n  `On Component Begin Overlap` の白い実行ピンを、`Cast To Character` の白い実行ピンへつなぎます。':
+                  '<Action img="./img/bp-jump-pad-cast-character-connected.png" alt="BP_JumpPad のイベントグラフで、Other Actor と Cast To Character、白い実行ピンが接続されているスクリーンショット">\n  `On Component Begin Overlap` の白い実行ピンを、`Cast To Character` の白い実行ピンへつなぎます。',
+              '<Verify>`Make Vector` の Z が `1200` で、`Launch Velocity` につながっていれば完了です。</Verify>':
+                  '<Verify img="./img/bp-jump-pad-blueprint-complete.png" alt="BP_JumpPad のイベントグラフで、Cast To Character、Launch Character、Make Vector がすべて接続された完成状態のスクリーンショット">`Make Vector` の Z が `1200` で、`Launch Velocity` につながっていれば完了です。</Verify>',
+              '<Verify>ジャンプ台に乗ったとき、プレイヤーが上へ飛べば追加ミッション成功です。</Verify>':
+                  '<Verify img="./img/bp-jump-pad-launch-in-play.png" alt="プレイ中にキャラクターが BP_JumpPad から上へ飛んでいるスクリーンショット">ジャンプ台に乗ったとき、プレイヤーが上へ飛べば追加ミッション成功です。</Verify>',
+          }
+
+          for old, new in replacements.items():
+              count = text.count(old)
+              if count != 1:
+                  raise SystemExit(f'expected exactly one match, found {count}: {old[:80]}')
+              text = text.replace(old, new, 1)
+
+          path.write_text(text, encoding='utf-8', newline='\n')
+
+      - name: Commit image paths and remove one-time workflow
+        run: |
+          rm .github/workflows/apply-jump-pad-image-paths.yml
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add content/docs/student-guide/index.mdx .github/workflows/apply-jump-pad-image-paths.yml
+          git commit -m "Add jump-pad image paths"
+          git push origin HEAD:main
