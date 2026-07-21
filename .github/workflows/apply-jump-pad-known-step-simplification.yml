@@ -15,4 +15,167 @@ jobs:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
     steps:
       - uses: actions/checkout@v6
-        with
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Simplify previously learned operations
+        shell: python
+        run: |
+          from pathlib import Path
+
+          path = Path('content/docs/student-guide/index.mdx')
+          text = path.read_text(encoding='utf-8')
+
+          replacements = [
+            (
+              '''<Action>
+                Content Drawer で `OpenCampus` フォルダを開きます。
+              </Action>
+
+              <Action img="./img/bp-jump-pad-drag-from-content-browser.webp" alt="Content Drawer から BP_JumpPad をビューポートへドラッグ＆ドロップして配置するスクリーンショット">
+                `BP_JumpPad` をビューポートへドラッグ＆ドロップします。
+              </Action>
+
+              <Action img="./img/bp-jump-pad-move-with-gizmo.webp" alt="ビューポートで BP_JumpPad の移動ギズモを操作し、キャラクターが乗れる場所へ移動するスクリーンショット">
+                移動ギズモを使って、キャラクターが上に乗れる場所へ移動します。
+              </Action>
+
+              <Action>
+                「**▶ プレイ**」をクリックします。
+              </Action>
+
+              <Action>
+                キャラクターを操作して、`BP_JumpPad` の上へ移動します。
+              </Action>'''.replace('              ', ''),
+              '''<Action img="./img/bp-jump-pad-drag-from-content-browser.webp" alt="Content Drawer から BP_JumpPad をビューポートへドラッグ＆ドロップして配置するスクリーンショット">
+                Content Drawer の `OpenCampus` フォルダにある `BP_JumpPad` を、ビューポートへドラッグ＆ドロップします。
+              </Action>
+
+              <Action>
+                移動ギズモを使って、キャラクターが上に乗れる場所へ移動します。
+              </Action>
+
+              <Action>
+                プレイ中にキャラクターを操作して、`BP_JumpPad` の上へ移動します。
+              </Action>'''.replace('              ', ''),
+            ),
+            (
+              '''<Action img="./img/open-bp-jump-pad-from-content-browser.webp" alt="Content Drawer の OpenCampus フォルダで BP_JumpPad をダブルクリックするスクリーンショット">
+                `BP_JumpPad` をダブルクリックします。
+              </Action>'''.replace('              ', ''),
+              '''<Action>
+                Content Drawer の `OpenCampus` フォルダにある `BP_JumpPad` をダブルクリックします。
+              </Action>'''.replace('              ', ''),
+            ),
+            (
+              '''<Action img="./img/bp-jump-pad-click-compile.png" alt="BP_JumpPad の Blueprint エディターでコンパイルボタンをクリックするスクリーンショット">
+                「**コンパイル**」をクリックします。
+              </Action>
+
+              <Verify img="./img/compile-success.png" alt="コンパイルアイコンが緑のチェックになったスクリーンショット">コンパイルアイコンが**緑のチェック**になれば成功です。</Verify>
+
+              <Action>
+                `BP_JumpPad` を保存します。
+              </Action>
+
+              <Action>
+                メインエディターへ戻ります。
+              </Action>
+
+              <Action>
+                「**▶ プレイ**」をクリックします。
+              </Action>
+
+              <Action>
+                キャラクターを操作して、自分で置いたジャンプ台の上へ移動します。
+              </Action>'''.replace('              ', ''),
+              '''コンパイルして保存し、メインエディターでプレイを開始します。
+
+              <Action>
+                キャラクターを操作して、自分で置いたジャンプ台の上へ移動します。
+              </Action>'''.replace('              ', ''),
+            ),
+          ]
+
+          for old, new in replacements:
+              count = text.count(old)
+              if count != 1:
+                  raise SystemExit(f'expected one match, found {count}: {old[:100]!r}')
+              text = text.replace(old, new, 1)
+
+          forbidden = [
+              './img/bp-jump-pad-move-with-gizmo.webp',
+              './img/open-bp-jump-pad-from-content-browser.webp',
+              './img/bp-jump-pad-click-compile.png',
+          ]
+          for value in forbidden:
+              if value in text:
+                  raise SystemExit(f'obsolete image reference remains: {value}')
+
+          required = [
+              './img/bp-jump-pad-open-viewport-tab.webp',
+              './img/bp-jump-pad-add-cast-to-character.webp',
+              './img/bp-jump-pad-add-launch-character.webp',
+              './img/bp-jump-pad-set-launch-velocity-z.webp',
+              './img/bp-jump-pad-enable-z-override.webp',
+          ]
+          for value in required:
+              if value not in text:
+                  raise SystemExit(f'required new-operation image missing: {value}')
+
+          path.write_text(text, encoding='utf-8', newline='\n')
+
+      - name: Remove obsolete image assets
+        run: |
+          rm -f \
+            content/docs/student-guide/img/bp-jump-pad-move-with-gizmo.webp \
+            content/docs/student-guide/shots/bp-jump-pad-move-with-gizmo.raw.png \
+            content/docs/student-guide/shots/bp-jump-pad-move-with-gizmo.shot.json \
+            content/docs/student-guide/img/open-bp-jump-pad-from-content-browser.webp \
+            content/docs/student-guide/shots/open-bp-jump-pad-from-content-browser.raw.png \
+            content/docs/student-guide/shots/open-bp-jump-pad-from-content-browser.shot.json \
+            content/docs/student-guide/img/bp-jump-pad-click-compile.png \
+            content/docs/student-guide/shots/bp-jump-pad-click-compile.raw.png \
+            content/docs/student-guide/shots/bp-jump-pad-click-compile.shot.json
+
+      - name: Verify exercise headings
+        run: node scripts/verify-exercise-headings.mjs
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+
+      - name: Checkout course-docs-site
+        uses: actions/checkout@v6
+        with:
+          repository: metyatech/course-docs-site
+          ref: main
+          path: site
+
+      - name: Install site dependencies
+        working-directory: site
+        run: npm ci
+
+      - name: Lint site against updated content
+        working-directory: site
+        env:
+          COURSE_CONTENT_SOURCE: ..
+        run: npm run lint
+
+      - name: Build site with strict tutorial lint
+        working-directory: site
+        env:
+          COURSE_CONTENT_SOURCE: ..
+          TUTORIAL_LINT_STRICT: '1'
+          TUTORIAL_LINT_COLLECT: '1'
+        run: npm run build:verified
+
+      - name: Commit approved simplification and remove workflow
+        run: |
+          rm .github/workflows/apply-jump-pad-known-step-simplification.yml
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add -A
+          git commit -m "Simplify repeated jump-pad instructions"
+          git push origin HEAD:main
