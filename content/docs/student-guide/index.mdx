@@ -7,7 +7,7 @@ authoringMode: 'tutorial'
 - `OpenCampusUE90min` プロジェクトが開いていること
 </Prerequisites>
 
-ここから実際に手を動かして、コインを集めてポータルに入ってゴールするゲームを完成させます。基本のゲームが完成したあとは、Blueprint を使って、プレイヤーを上へ飛ばすジャンプ台を追加します。困ったら手を挙げてください。
+ここから実際に手を動かして、コインを集めてポータルに入ってゴール、というゲームを完成させます。まずテストプレイの方法を確認し、そのあとコイン数表示とクリア条件を作っていきます。困ったら手を挙げてください。
 
 <Section title="Step 1：テストプレイする（10〜15分）" goal="エディターでテストプレイできるようになります">
 
@@ -131,21 +131,25 @@ Unreal Engine の画面中央にある大きな 3D ビューエリアです。�
 <Verify>Blueprint エディターが開き、`BP_Coin` の編集画面が表示されれば準備完了です。</Verify>
 
 <Concept title="イベントグラフとは">
-イベントグラフは、Blueprint の中でゲームの動きを作る場所です。ノードを配置して、**触れたらどう動くか**を組み立てていきます。最初からある `Event ActorBeginOverlap` が「何かに触れた瞬間」のスタート地点です。
+
+イベントグラフは、Blueprint の中でゲームの動きを作る場所です。
+ノードを配置して、**触れたらどう動くか**を組み立てていきます。最初からある `Event ActorBeginOverlap` が「何かに触れた瞬間」のスタート地点です。
+
 </Concept>
 
 <Action img="./img/BP_Item-EventGraph.png" alt="イベントグラフの場所を表すスクリーンショット">
   イベントグラフ内を自由に動かして、操作に慣れましょう。
 
-  | 操作 | 動作 |
-  | --- | --- |
-  | **右クリック + ドラッグ** | グラフをスクロール（パン） |
-  | **マウスホイール** | ズームイン／アウト |
-  | **Home キー** | 全ノードが画面に収まるように表示を合わせる |
+| 操作 | 動作 |
+| --- | --- |
+| **右クリック + ドラッグ** | グラフをスクロール（パン） |
+| **マウスホイール** | ズームイン／アウト |
+| **Home キー** | 全ノードが画面に収まるように表示を合わせる |
+
 </Action>
 
 <Action img="./img/bp-coin-yellow-comment-add-one-empty.png" alt="BP_Coin のイベントグラフで、黄色のコメントエリア「コインを1枚増やす」が示されているスクリーンショット">
-  イベントグラフを操作して、黄色いコメントエリア「**コインを1枚増やす**」を見つけましょう。ここが、これから処理を追加する場所です。
+  イベントグラフを操作して、黄色のコメントエリア「**コインを1枚増やす**」を見つけましょう。ここが、これから処理を追加する場所です。
 </Action>
 
 <Verify>`BP_Coin` で黄色いコメントエリア「**コインを1枚増やす**」を見つけられれば準備完了です。</Verify>
@@ -159,15 +163,15 @@ Unreal Engine の画面中央にある大きな 3D ビューエリアです。�
 </Action>
 
 <Action img="./img/bp-coin-add-update-coins.png" alt="BP_Coin のイベントグラフで、① Get Game Instance の出力ピン、② 検索欄、③ Update Coins の候補が示されているスクリーンショット">
-  ① `Get Game Instance` の出力ピンからドラッグし、② 空いている場所へドロップします。③ 表示された検索欄に `Update Coins` と入力し、④ 候補から `Update Coins` を選びます。
+  ① `Get Game Instance` の出力ピンからドラッグし、② 空いている場所へドラップします。② 表示された検索欄に `Update Coins` と入力し、③ 候補から `Update Coins` を選びます。
 </Action>
 
 <Action img="./img/bp-coin-move-update-coins.png" alt="BP_Coin のイベントグラフで、Update Coins ノードをドラッグして、Pawn に当たった場合のみとビジュアルの更新の間に移動する操作が示されているスクリーンショット">
-  `Update Coins` を「**Pawn に当たった場合のみ**」と「**ビジュアルの更新**」の2つのノードの間へ移動します。
+  `Update Coins` を「**Pawn に当たった場合のみ**」と「**ビジュアルの更新**」の2つのノードの間に位置するように、画像の辺りの位置へ移動します。
 </Action>
 
 <Action img="./img/bp-coin-connect-update-coins.png" alt="BP_Coin のイベントグラフで、Update Coins ノードの左右の白い実行ピンをそれぞれ繋ぐ操作が示されているスクリーンショット">
-  `Update Coins` の左右の白い実行ピンをつなぎます。左は「**Pawn に当たった場合のみ**」から、右は「**ビジュアルの更新**」へつなぎます。
+  `Update Coins` の左右の白い実行ピンを、それぞれ繋ぎます。左は「**Pawn に当たった場合のみ**」の実行ピンから、右は「**ビジュアルの更新**」の実行ピンへつなぎます。
 </Action>
 
 <Action img="./img/bp-coin-set-update-coins-change-one.png" alt="BP_Coin のイベントグラフで、Update Coins ノードの Change に 1 を入力する場所が示されているスクリーンショット">
@@ -175,7 +179,18 @@ Unreal Engine の画面中央にある大きな 3D ビューエリアです。�
 </Action>
 
 <Concept title="「コンパイル」とは">
-Blueprint のノードを組み終わったら、**コンパイル**でゲームに反映します。コンパイルしないと、ノードを変更してもゲームには反映されません。
+
+Blueprint のノードを組み終わったら、**コンパイル**でゲームに反映します。文書を「保存」するのに近い操作ですが、正確には「作ったノードの設定をゲームが実際に動かせる形に変換する」作業です。コンパイルしないと、ノードを変更してもゲームには反映されません。
+
+ツールバーのコンパイルボタンのアイコンで結果がわかります。
+
+| アイコン | 意味 |
+| --- | --- |
+| **緑のチェック** | 成功。ゲームに反映されました |
+| **赤の ×** | エラーあり。修正が必要です |
+
+ノードを組み終わったら一度押してアイコンを確認する習慣をつけておくと、問題を早く発見できます。
+
 </Concept>
 
 <Action img="./img/compile-BP_Item-and-check-result.png" alt="Blueprint エディタのツールバー。コンパイルボタンがハイライトされている">
@@ -216,12 +231,12 @@ Blueprint のノードを組み終わったら、**コンパイル**でゲーム
 
 <Section title="4-1. BP_Portal を開く" goal="ポータルの Blueprint を編集できるようになります">
 
-<Action img="./img/open-bp-portal-from-content-browser.png" alt="① Content Drawer で ② OpenCampus フォルダを開き、③ BP_Portal をダブルクリックして開く操作が示されているスクリーンショット">
+<Action img="./img/open-bp-portal-from-content-browser.png" alt="① Content Drawer で ② `OpenCampus` フォルダを開き、③ `BP_Portal` をダブルクリックして開く操作が示されているスクリーンショット">
   ① Content Drawer で ② `OpenCampus` フォルダを開き、③ `BP_Portal` をダブルクリックして開きます。
 </Action>
 
 <Action img="./img/bp-portal-yellow-comment-condition-empty.png" alt="BP_Portal のイベントグラフで、① ポータルの判定処理、② 黄色のコメントエリア「集めたコインが10枚以上なら」が示されているスクリーンショット">
-  イベントグラフを操作し、黄色いコメントエリア「**集めたコインが10枚以上なら**」を見つけます。ここに、これから条件の処理を追加します。
+  イベントグラフを操作し、黄色のコメントエリア「**集めたコインが10枚以上なら**」を見つけます。ここに、これから条件の処理を追加していきます。
 </Action>
 
 <Verify>`BP_Portal` で黄色いコメントエリア「**集めたコインが10枚以上なら**」を見つけられれば準備完了です。</Verify>
@@ -238,8 +253,8 @@ Blueprint のノードを組み終わったら、**コンパイル**でゲーム
   ① `Event Coins Updated` の白い実行ピンからドラッグして、② 空いている場所へドロップします。③ 表示された検索欄に `Branch` と入力し、④ 候補から `Branch` を選びます。
 </Action>
 
-<Action img="./img/bp-portal-add-greater-equal.png" alt="BP_Portal のイベントグラフで、① Event Coins Updated の緑の New Amount からドラッグして、② 空いている場所へドロップし、③ 検索欄、④ Greater Equal の候補が示されているスクリーンショット">
-  ① `Event Coins Updated` の緑の `New Amount` からドラッグして、② 空いている場所へドロップします。③ `>=` を入力して検索し、④ `Greater Equal (>=)` ノードを選びます。
+<Action img="./img/bp-portal-add-greater-equal.png" alt="BP_Portal のイベントグラフで、① Event Coins Updated の緑の「New Amount」からドラッグして、② 空いている場所へドロップし、③ 検索欄、④ Greater Equal (>=) の候補が示されているスクリーンショット">
+  ① `Event Coins Updated` の緑の「New Amount」からドラッグして、② 空いている場所へドロップし、③ `>=` を入力して検索し、④ `Greater Equal (>=)` ノードを選びます。
 </Action>
 
 <Action img="./img/bp-portal-input-10.png" alt="BP_Portal のイベントグラフで、>= ノードの下のピンに値 10 が入力されているスクリーンショット">
@@ -272,7 +287,7 @@ Blueprint のノードを組み終わったら、**コンパイル**でゲーム
   光っているポータルに入ります。ゲームクリアになります。
 </Action>
 
-<Verify>10 枚以上集めたあとにポータルへ入ってゲームクリアになれば、最初に遊んだ基本ゲームは完成です。</Verify>
+<Verify>10 枚以上集めたあとにポータルへ入ってゲームクリアになれば完成です。</Verify>
 
 </Section>
 
@@ -284,35 +299,68 @@ Blueprint のノードを組み終わったら、**コンパイル**でゲーム
 
 </Section>
 
-<Section title="確認演習：クリアに必要なコイン数を変える（60〜65分）" goal="条件の数字を変えるとゲームのルールが変わることを確認します">
+<Section title="Step 5：クリアに必要なコイン数を調整する（60〜70分）" goal="BP_Portal の数字を変えて、クリア条件を自分で調整できるようになります">
 
 <Concept title="しきい値とは">
-しきい値は、「この数以上なら OK」と決める境目の数字です。`>= 10` の `10` を変えると、何枚集めたら `BP_Portal` が反応するかを調整できます。
+しきい値は、「この数以上なら OK」と決める境目の数字です。`>= 10` の `10` を変えると、何枚集めたら `BP_Portal` が反応するかを調整できます。ゲームの難しさを変えるときは、見た目だけでなく、このような条件の数字も調整します。
 </Concept>
+
+<Section title="5-1. 3 枚でクリアできるようにする" goal="少ないコイン数でもクリアできる条件に変えます">
 
 <Action img="./img/bp-portal-condition-greater-equal-3.png" alt="BP_Portal のイベントグラフで、① 比較ノード、② しきい値 3 が示されているスクリーンショット">
   再度 `BP_Portal` を開き、条件を `>= 3` に変更してから、コンパイルして保存します。
 </Action>
 
 <Action img="./img/playtest-collect-3-coins.png" alt="プレイ中のビューポートで、コインを3枚集めてポータルが光るところが示されているスクリーンショット">
-  プレイして、コインを 3 枚集めます。ポータルが光って、入るとクリアになることを確認します。
+  プレイして、コインを 3 枚集めてみましょう。ポータルが光って、入るとクリアになります。
 </Action>
 
-<Action img="./img/bp-portal-condition-restored.png" alt="BP_Portal のイベントグラフで、① 比較ノード、② 10 もしくは自分で選んだしきい値が示されているスクリーンショット">
-  確認できたら、`>=` の数値を、自分が最後のクリア条件にしたい数値へ変更し、コンパイルして保存します。
-</Action>
-
-<Verify>`>=` の数字を変えると、ポータルが光るために必要なコイン数も変われば確認完了です。</Verify>
+<Verify>3 枚でゲームクリアになれば、条件の数字でゲームのクリア条件を変えられることを確認できています。</Verify>
 
 </Section>
 
-<Section title="追加ミッション：ジャンプ台を作ろう（65〜85分）" goal="Blueprint に処理を追加し、プレイヤーを上へ飛ばすジャンプ台を完成させます">
+<Section title="5-2. 自分でルールを決める" goal="自分でクリア条件を好きな数値に決めます">
+
+<Action img="./img/bp-portal-condition-restored.png" alt="BP_Portal のイベントグラフで、① 比較ノード、② 10 もしくは自分で選んだしきい値が示されているスクリーンショット">
+  再度 `BP_Portal` を開き、`>=` の条件の数値を、自分がクリア条件にしたい数値に変更して、コンパイルして保存します。
+</Action>
+
+<Verify>選んだ数字どおりに `BP_Portal` が反応すれば、ゲームのルール調整は完了です。</Verify>
+
+</Section>
+
+<Checkpoint>
+- `>= 3` にすると 3 枚でクリアできる
+- `>=` の数値を変えると、クリアに必要なコイン数を自分で調整できる
+</Checkpoint>
+
+</Section>
+
+<Section title="追加ミッション：ジャンプ台を作ろう（70〜85分）" goal="Blueprint に処理を追加し、プレイヤーを上へ飛ばすジャンプ台を完成させます">
 
 ここまでで、最初にプレイした基本ゲームは完成です。ここからは、完成見本にはなかった新しい機能を追加します。
 
-ステージに置かれている `BP_JumpPad` は、今のままでは上に乗っても何も起こりません。Blueprint に処理を追加して、プレイヤーが乗ると上へ飛ぶようにしましょう。
+`BP_JumpPad` をステージに置き、Blueprint に処理を追加して、プレイヤーが乗ると上へ飛ぶようにしましょう。
 
-<Section title="1. BP_JumpPad を開く" goal="ジャンプ台の Blueprint と処理を追加する場所を確認します">
+<Section title="1. BP_JumpPad を置く" goal="ジャンプ台をステージに配置し、まだ動かないことを確認します">
+
+<Action>
+  Content Drawer で `OpenCampus` フォルダを開き、`BP_JumpPad` をビューポートへドラッグ＆ドロップします。
+</Action>
+
+<Action>
+  移動ギズモを使って、キャラクターが上に乗れる場所へ移動します。
+</Action>
+
+<Action>
+  プレイして、`BP_JumpPad` の上に乗ります。
+</Action>
+
+<Verify>ジャンプ台の上に乗っても、まだ上へ飛ばなければ確認完了です。</Verify>
+
+</Section>
+
+<Section title="2. BP_JumpPad を開く" goal="ジャンプ台の Blueprint と処理を追加する場所を確認します">
 
 <Action>
   Content Drawer で `OpenCampus` フォルダを開き、`BP_JumpPad` をダブルクリックします。
@@ -326,7 +374,7 @@ Blueprint のノードを組み終わったら、**コンパイル**でゲーム
 
 </Section>
 
-<Section title="2. 触れた相手が Character か確認する" goal="ジャンプ台に触れた相手を Character として扱える場合だけ処理を進めます">
+<Section title="3. 触れた相手が Character か確認する" goal="ジャンプ台に触れた相手を Character として扱える場合だけ処理を進めます">
 
 <Concept title="Other Actor">
 `On Component Begin Overlap` の `Other Actor` には、ジャンプ台に触れた相手が入ります。プレイヤーが触れた場合は、プレイヤーキャラクターが入ります。
@@ -348,7 +396,7 @@ Blueprint のノードを組み終わったら、**コンパイル**でゲーム
 
 </Section>
 
-<Section title="3. Launch Character を追加する" goal="Character に上方向の速度を与える処理を追加します">
+<Section title="4. Launch Character を追加する" goal="Character に上方向の速度を与える処理を追加します">
 
 <Concept title="Launch Character">
 `Launch Character` は、Character に速度を与えて飛ばすノードです。今回は上方向の速度を与えて、ジャンプ台として使います。
@@ -366,7 +414,7 @@ Blueprint のノードを組み終わったら、**コンパイル**でゲーム
 
 </Section>
 
-<Section title="4. 上方向の速度を設定する" goal="プレイヤーが上へ飛ぶための速度を作ります">
+<Section title="5. 上方向の速度を設定する" goal="プレイヤーが上へ飛ぶための速度を作ります">
 
 <Concept title="Vector">
 Vector は、X・Y・Z の3方向をまとめた値です。Unreal Engine では、Z が上下方向です。
@@ -388,14 +436,14 @@ Vector は、X・Y・Z の3方向をまとめた値です。Unreal Engine では
 
 </Section>
 
-<Section title="5. コンパイルして試す" goal="ジャンプ台に乗るとプレイヤーが上へ飛ぶことを確認します">
+<Section title="6. コンパイルして試す" goal="ジャンプ台に乗るとプレイヤーが上へ飛ぶことを確認します">
 
 <Action>
   `BP_JumpPad` をコンパイルして保存し、メインエディターへ戻ります。
 </Action>
 
 <Action>
-  プレイして、ステージに置かれているジャンプ台の上へ乗ります。
+  プレイして、自分で置いたジャンプ台の上へ乗ります。
 </Action>
 
 <Recovery title="ジャンプ台に乗っても飛ばないとき">
@@ -413,6 +461,7 @@ Vector は、X・Y・Z の3方向をまとめた値です。Unreal Engine では
 </Section>
 
 <Checkpoint>
+- `BP_JumpPad` を自分でステージに置いている
 - ジャンプ台に触れた相手を `Cast To Character` で確認している
 - `Launch Character` が Character を飛ばしている
 - `Make Vector` の Z で上方向の強さを設定している
@@ -472,15 +521,15 @@ Z の数値が大きいほど、上方向へ強く飛びます。
 <Section title="コインを回転させる" goal="コインの見た目が時間に合わせて回るようになります">
 
 <Action img="./img/open-m-coin-material.png" alt="Unreal Editor で、M_Coin のマテリアルエディタを開くスクリーンショット">
-  `Content Drawer` で `OpenCampus` フォルダを開き、`M_Coin` をダブルクリックしてマテリアルエディタを開きます。
+  ① `Content Drawer` で `OpenCampus` フォルダを開き、`M_Coin` をダブルクリックしてマテリアルエディタを開きます。
 </Action>
 
 <Action img="./img/m-coin-yellow-comment-rotate-empty.png" alt="M_Coin のマテリアルグラフで、時間経過でコインを回すコメントエリアが示されているスクリーンショット">
-  `M_Coin` のマテリアルグラフで、黄色いコメントエリア「**時間経過でコインを回す**」を見つけます。
+  `M_Coin` のマテリアルグラフで、黄色のコメントエリア「**時間経過でコインを回す**」を見つけます。
 </Action>
 
 <Action img="./img/m-coin-add-time-node.png" alt="M_Coin のマテリアルグラフで、① 黄色いコメントエリアの空白部分、② 検索欄、③ Time ノードの候補が示されているスクリーンショット">
-  黄色いコメントエリアの空いている場所を右クリックし、`Time` を検索して追加します。
+  ① 黄色いコメントエリア **時間経過でコインを回す** の中の空いている場所を右クリックし、② 検索欄に `Time` と入力して、③ `Time` ノードを追加します。
 </Action>
 
 <Action img="./img/m-coin-time-to-a-wired.png" alt="M_Coin のマテリアルグラフで、Time ノードの出力と Multiply ノードの A ピンの接続が示されているスクリーンショット">
@@ -500,11 +549,11 @@ Z の数値が大きいほど、上方向へ強く飛びます。
 </Section>
 
 <Hint>
-`Time` ノードの値を使うと、時間の経過に合わせて回転角度を変えられます。
+`Time` ノードの値を使うと、時間の経過に合わせて回転角度を変えられます。`M_Coin` の黄色いコメントエリアで、`Time` ノードを回転用の計算につなげてみましょう。
 </Hint>
 
 <Answer>
-`Time` ノードを追加して回転用の計算につなぎ、`Apply` を押して保存します。プレイ中にもコインが回っていれば完了です。
+`Time` ノードを追加して回転用の計算につなぎ、プレビューでコインが回ることを確認します。最後に `Apply` を押して保存し、Play In Editor でもコインが回っていれば完了です。
 </Answer>
 
 </Exercise>
@@ -512,6 +561,6 @@ Z の数値が大きいほど、上方向へ強く飛びます。
 </Section>
 
 <NextSteps>
-- ジャンプ台の強さとコインの位置を調整して、自分だけのコースを作ってみましょう
+- コインの配置を工夫して、ゲームの難易度を調整してみましょう
 - ステージの続きを作って、ゴールまでの道のりを長くしてみましょう
 </NextSteps>
