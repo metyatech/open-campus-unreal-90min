@@ -1,0 +1,28 @@
+name: Apply jump-pad image placeholders
+
+on:
+  pull_request:
+    types: [opened]
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    if: github.event.pull_request.title == '__apply_jump_pad_image_placeholders_20260721_100820__'
+    runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Apply approved image placeholders
+        shell: python
+        run: |
+          from pathlib import Path
+
+          path = Path('content/docs/student-guide/index.mdx')
+          text = path.read_text(encoding='utf-8')
