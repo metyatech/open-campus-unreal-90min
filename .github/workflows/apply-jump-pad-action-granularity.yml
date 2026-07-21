@@ -1,0 +1,18 @@
+name: Apply jump-pad action granularity
+
+on:
+  pull_request:
+    types: [opened]
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    if: github.event.pull_request.title == '__apply_jump_pad_action_granularity_20260721_094551__'
+    runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+      HEAD_REF: ${{ github.event.pull_request.head.ref }}
+    steps:
+      - name
