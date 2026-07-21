@@ -1,15 +1,15 @@
 name: Apply jump-pad known-step simplification
 
 on:
-  pull_request:
-    types: [opened]
+  push:
+    branches: [main]
 
 permissions:
   contents: write
 
 jobs:
   apply:
-    if: github.event.pull_request.title == '__apply_jump_pad_known_step_simplification_20260721_104806_retry__'
+    if: github.event.head_commit.message == '__apply_jump_pad_known_step_simplification_20260721_104806_push__'
     runs-on: ubuntu-latest
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
@@ -148,6 +148,7 @@ jobs:
       - name: Commit approved simplification and remove workflow
         run: |
           rm .github/workflows/apply-jump-pad-known-step-simplification.yml
+          rm -f .automation-trigger-jump-pad-known-step-simplification-push
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git add -A
