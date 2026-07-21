@@ -350,7 +350,7 @@ Blueprint のノードを組み終わったら、**コンパイル**でゲーム
   `BP_JumpPad` をビューポートへドラッグ＆ドロップします。
 </Action>
 
-<Action>
+<Action img="./img/bp-jump-pad-move-with-gizmo.png" alt="ビューポートで BP_JumpPad の移動ギズモを操作し、キャラクターが乗れる場所へ移動するスクリーンショット">
   移動ギズモを使って、キャラクターが上に乗れる場所へ移動します。
 </Action>
 
@@ -372,7 +372,7 @@ Blueprint のノードを組み終わったら、**コンパイル**でゲーム
   Content Drawer で `OpenCampus` フォルダを開きます。
 </Action>
 
-<Action>
+<Action img="./img/open-bp-jump-pad-from-content-browser.png" alt="Content Drawer の OpenCampus フォルダで BP_JumpPad をダブルクリックするスクリーンショット">
   `BP_JumpPad` をダブルクリックします。
 </Action>
 
@@ -380,7 +380,7 @@ Blueprint のノードを組み終わったら、**コンパイル**でゲーム
 `Collision` は、プレイヤーやほかの物体が触れたり、範囲内へ入ったりしたことを検出するための、見えない判定範囲です。
 </Concept>
 
-<Action>
+<Action img="./img/bp-jump-pad-open-viewport-tab.png" alt="BP_JumpPad の Blueprint エディターで Viewport タブをクリックするスクリーンショット">
   `Viewport` タブをクリックします。
 </Action>
 
@@ -432,7 +432,7 @@ Blueprint のノードを組み終わったら、**コンパイル**でゲーム
 `Launch Character` は、Character に速度を与えて飛ばすノードです。今回は上方向の速度を与えて、ジャンプ台として使います。
 </Concept>
 
-<Action>
+<Action img="./img/bp-jump-pad-add-launch-character.png" alt="BP_JumpPad の Event Graph で As Character の青いピンからドラッグし、Launch Character を検索して追加するスクリーンショット">
   `As Character` の青いピンからドラッグし、`Launch Character` を検索して追加します。
 </Action>
 
@@ -446,11 +446,11 @@ Blueprint のノードを組み終わったら、**コンパイル**でゲーム
 `Launch Velocity` は、Character をどの方向へ、どのくらいの強さで飛ばすかを表します。X と Y は水平方向、Z は上下方向です。
 </Concept>
 
-<Action>
+<Action img="./img/bp-jump-pad-set-launch-velocity-z.png" alt="Launch Character ノードの Launch Velocity で Z に 1200 を入力するスクリーンショット">
   `Launch Character` の `Launch Velocity` の Z に `1200` を入力します。
 </Action>
 
-<Action>
+<Action img="./img/bp-jump-pad-enable-z-override.png" alt="Launch Character ノードの Z Override をオンにするスクリーンショット">
   `Launch Character` の `Z Override` をオンにします。
 </Action>
 
@@ -460,11 +460,11 @@ Blueprint のノードを組み終わったら、**コンパイル**でゲーム
 
 <Section title="7. コンパイルして試す" goal="ジャンプ台に乗るとプレイヤーが上へ飛ぶことを確認します">
 
-<Action>
+<Action img="./img/bp-jump-pad-click-compile.png" alt="BP_JumpPad の Blueprint エディターでコンパイルボタンをクリックするスクリーンショット">
   「**コンパイル**」をクリックします。
 </Action>
 
-<Verify>コンパイルアイコンが**緑のチェック**になれば成功です。</Verify>
+<Verify img="./img/compile-success.png" alt="コンパイルアイコンが緑のチェックになったスクリーンショット">コンパイルアイコンが**緑のチェック**になれば成功です。</Verify>
 
 <Action>
   `BP_JumpPad` を保存します。
