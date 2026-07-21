@@ -1,0 +1,63 @@
+name: Fix checkpoint placement
+
+on:
+  push:
+    branches:
+      - agent/add-jump-pad-mission
+    paths:
+      - .github/workflows/fix-checkpoint-placement.yml
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/add-jump-pad-mission
+          fetch-depth: 0
+
+      - name: Move Checkpoint outside nested Section
+        shell: python
+        run: |
+          from pathlib import Path
+
+          path = Path('content/docs/student-guide/index.mdx')
+          text = path.read_text(encoding='utf-8')
+          old = '''<Verify>ジャンプ台に乗ったとき、プレイヤーが上へ飛べば追加ミッション成功です。</Verify>
+
+<Checkpoint>
+- ジャンプ台に触れた相手を `Cast To Character` で確認している
+- `Launch Character` が Character を飛ばしている
+- `Make Vector` の Z で上方向の強さを設定している
+- プレイするとジャンプ台から上へ飛べる
+</Checkpoint>
+
+</Section>
+
+</Section>'''
+          new = '''<Verify>ジャンプ台に乗ったとき、プレイヤーが上へ飛べば追加ミッション成功です。</Verify>
+
+</Section>
+
+<Checkpoint>
+- ジャンプ台に触れた相手を `Cast To Character` で確認している
+- `Launch Character` が Character を飛ばしている
+- `Make Vector` の Z で上方向の強さを設定している
+- プレイするとジャンプ台から上へ飛べる
+</Checkpoint>
+
+</Section>'''
+          if text.count(old) != 1:
+              raise SystemExit(f'expected exactly one target block, found {text.count(old)}')
+          path.write_text(text.replace(old, new), encoding='utf-8')
+
+      - name: Commit fix
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add content/docs/student-guide/index.mdx
+          git commit -m "Fix checkpoint placement"
+          git push origin HEAD:agent/add-jump-pad-mission
