@@ -1,15 +1,15 @@
 name: Apply jump-pad checkpoint cleanup
 
 on:
-  pull_request:
-    types: [opened, reopened]
+  issues:
+    types: [opened]
 
 permissions:
   contents: write
 
 jobs:
   apply:
-    if: github.event.pull_request.title == '__apply_jump_pad_checkpoint_cleanup_20260721__'
+    if: github.event.issue.title == '__apply_jump_pad_checkpoint_cleanup_issue_20260721__'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
