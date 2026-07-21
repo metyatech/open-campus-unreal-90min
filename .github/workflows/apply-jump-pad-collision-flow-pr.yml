@@ -2,7 +2,7 @@ name: Apply jump-pad collision flow from PR
 
 on:
   pull_request:
-    types: [opened]
+    types: [opened, reopened]
 
 permissions:
   contents: write
@@ -17,24 +17,16 @@ jobs:
           ref: main
           fetch-depth: 0
 
-      - name: Run embedded lesson rewrite
-        shell: python
-        run: |
-          from pathlib import Path
-          import textwrap
+      - name: Rewrite jump-pad lesson flow
+        run: python .github/apply_jump_pad_collision_flow.py
 
-          workflow = Path('.github/workflows/apply-jump-pad-collision-flow.yml').read_text(encoding='utf-8')
-          section = workflow.split('      - name: Rewrite jump-pad lesson flow', 1)[1]
-          section = section.split('      - name: Commit lesson and remove one-time workflow', 1)[0]
-          code = section.split('        run: |\n', 1)[1]
-          exec(textwrap.dedent(code))
-
-      - name: Commit lesson and remove temporary workflows
+      - name: Commit lesson and remove temporary files
         run: |
+          rm .github/apply_jump_pad_collision_flow.py
           rm .github/workflows/apply-jump-pad-collision-flow.yml
           rm .github/workflows/apply-jump-pad-collision-flow-pr.yml
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add content/docs/student-guide/index.mdx .github/workflows
+          git add content/docs/student-guide/index.mdx .github
           git commit -m "Refine jump-pad collision workflow"
           git push origin HEAD:main
