@@ -45,6 +45,19 @@ Source: github:metyatech/agent-rules@HEAD/rules/domains/education/question-autho
 - Prompts, answers, and explanations MUST stand alone without referring to
   "this material", "the attached document", "lesson N", or other external
   source context unless that source context is included in the prompt itself.
+- Educational questions MUST NOT assess content or context specific to a
+  particular teaching material, example, exercise, project, story, or classroom
+  activity. Use source materials only to establish the taught scope and
+  evidence. Rewrite assessment targets as self-contained, transferable
+  concepts, features, roles, procedures, judgments, debugging cues, or
+  misconceptions that remain valid outside the original teaching artifact.
+- Unless an identifier or value is itself an intended learning target,
+  questions MUST NOT make recall of incidental source-specific names or values
+  part of the answer. This includes work titles, scenarios, characters,
+  Blueprint names, class names, function names, variable names, level names,
+  file names, message strings, instructor-assigned labels, example-specific
+  constants, placements, and outputs. Replace them with generic role-based
+  wording while preserving the taught technical distinction.
 - Questions, prompts, options, answers, scoring criteria, and explanations MUST NOT introduce, require, or casually reference untaught concepts, features, parameters, APIs, syntax, techniques, tools, or extension-only content unless the user explicitly requests extension-level assessment.
 - Scoring criteria (also called rubric criteria) are the individual bullet items of a question's `## Scoring` section, each describing one thing the answer must demonstrate.
 - The number of scoring criteria and their ordering determine the assessment manifest `points` array: the `points` length MUST equal the criterion count, and each `points` entry maps to the criterion at the same index.
@@ -77,32 +90,69 @@ Source: github:metyatech/agent-rules@HEAD/rules/domains/course-docs/authoring.md
 # Course Docs Authoring
 
 - Course documentation content MUST be written for beginner learners in clear Japanese unless the task explicitly requests another language.
-- Course docs pages MUST use the shared course-docs MDX components when they express page structure, learner actions, verification, concept explanation, reference material, recovery steps, checkpoints, exercises, or solutions.
-- Use `<Section>`, `<Action>`, `<Verify>`, `<Concept>`, `<Reference>`, `<Recovery>`, and `<Checkpoint>` from `course-docs-platform` for structured tutorial pages.
+- Course docs pages MUST use the shared course-docs MDX components when they express page structure, learner actions, verification, concept explanation, reference material, recovery steps, checkpoints, exercises, or answers.
+- Use `<Section>`, `<Action>`, `<Verify>`, `<Concept>`, `<Reference>`, `<Recovery>`, `<Checkpoint>`, `<Exercise>`, `<QuickCheck>`, `<Hint>`, and `<Answer>` from `course-docs-platform` for structured tutorial pages.
 - A top-level `<Section>` MUST declare `goal`.
 - Learner-facing HTML examples MUST use normal HTML void elements without XHTML-style trailing slashes, such as `<input>` rather than `<input />`.
 - The void-element rule applies to learner-facing HTML code fences and sample/complete files; it does not apply to MDX/JSX component syntax.
-- Exercises MUST use `<Exercise>` and `<Solution>` when the page expects learners to attempt a task and then compare with an answer.
+- Exercises MUST use `<Exercise>`, `<Hint>`, and `<Answer>` when the page expects learners to attempt a task and then compare with an answer.
+- QuickCheck tasks MUST use `<QuickCheck>`, `<Hint>`, and `<Answer>` when the page expects learners to check understanding and then compare with an answer.
+- Every `<Exercise>` and `<QuickCheck>` task MUST be structured as problem content, followed by one or more `<Hint>` blocks, followed by exactly one `<Answer>` block.
+- A `<Hint>` MUST NOT reveal the answer first and MUST use only material already covered earlier in the same lesson or in a guaranteed earlier lesson.
+- An `<Answer>` MUST include an explanation that corrects likely misconceptions, not only the final answer.
+- Course docs MUST NOT use `<Solution>` or `authoringMode`.
+- Course docs MUST NOT impose a fixed page-wide order for QuickCheck, Exercise, and extension exercise blocks; place each task where it best supports the learner's progression.
 - Exercise headings MUST use `### 演習N` for standard exercises and `### 演習-発展N` for extension exercises.
 - Exercise statements MUST include the expected result, success criteria, and enough context for learners to start without guessing.
 - Extension exercises MUST be optional and must not be required for the base lesson completion.
 
+## Tutorial representation and learning-goal closure
+
+- For each learner action, choose the most efficient primary representation for the task: visual for spatial UI/layout information, code or CodePreview for code authoring, text for short non-spatial operations, and diagrams/visuals for structural relationships. Images MUST NOT be added merely because a step is operational.
+- Do not duplicate the same complete procedure across the primary representation and secondary prose. Short labels, identifiers, numbers, or positional cues MAY appear in both when they materially reduce mapping or search cost.
+- A substantive learning goal MUST have an aligned closure that can actually test that goal. Use `<Verify>` for observable behavior/state, `<QuickCheck>` for retrieval/understanding, `<Checkpoint>` for a meaningful multi-condition milestone, or `<Exercise>` for transfer/application. Do not add every closure component mechanically.
+- `<Recovery>` is error diagnosis/recovery support and MUST NOT be treated as learning-goal closure.
+- A `<Concept>` MUST focus on one new concept and only the information needed for imminent first use. Roughly 2–5 sentences or one short table is preferred; 6+ sentences SHOULD trigger review for multiple concepts or reference material, not automatic rejection.
+- Learner-facing prose MUST NOT contain author-facing audience meta descriptions such as `受講者は〜`, `学習者は〜`, or `初学者向け` when they do not help perform the task. Rewrite them as direct task prose. Do not ban `ユーザー` when it refers to a real product/domain end user rather than the tutorial reader.
+- For screenshot annotations, normal text and images of text MUST meet WCAG 2.2 SC 1.4.3 contrast of at least 4.5:1; large text may use 3:1. Meaningful non-text callout shapes and UI-state indicators MUST meet the applicable 3:1 non-text contrast requirement. Prefer real text over images of text when practical.
+
 ## Beginner lesson material ordering
 
 - Materials MUST be written assuming learners will read every word carefully, in natural reading order: top to bottom and left to right.
-- At any point in the material, do not introduce a term or feature that has not been explained earlier in that same material. Introduce new terms or features at the point where learners first need them.
+- At any point in the material, do not introduce a term or feature that has not been explained earlier in that same material (or in a strictly earlier lesson within the same course, when curriculum ordering guarantees it was already taught). Introduce new terms or features at the point where learners first need them.
+- "Term or feature" is not limited to HTML/CSS/JS syntax or APIs. It also includes: quoted literal values used in prose or tables (e.g. a string like `active` used as a rule's classification key), variable/identifier names, and any word or metaphor used in a `<Section>`/`<Concept>`/heading title or in body prose, a table cell, or a bullet, before its meaning has been established.
+- A `<Concept>` or `<Section>` title MUST NOT rely on a word, abbreviation, or metaphor that is only explained in that block's own body or in a later block. Titles MUST either be self-explanatory to a reader who has not yet read the body, or be phrased so the metaphor/label appears only after the body has explained the underlying idea (e.g. as a closing summary label, not as the heading itself).
+- When a rule, table, or summary statement needs to reference a specific value, label, or term (e.g. a classification-rule sentence naming a value to count), the term MUST already be defined by that point, or the sentence MUST explicitly flag it as forthcoming rather than using it as if already known.
 - When creating materials, first decide how learners should behave in each section, then write the content so that it naturally leads them to behave that way.
 - Introduce only one new concept or element at a time.
 - Do not include elements, such as terms, features, code, or markup, that learners will not use or engage with just because they might be realistic or useful later.
+
+### Verification method for this rule
+
+- Checking this rule requires a literal top-to-bottom "cold read" simulation, not a structural/component-level scan. To review material against this rule:
+  1. Walk the material from the first word to the last, in rendered reading order, including titles/headings (which render before their own body).
+  2. Maintain a running set of terms, values, and metaphors that have been explicitly explained so far.
+  3. At each sentence, heading, table cell, and code comment, check every technical term, quoted value, and metaphor against that running set before accepting it as understandable at that point.
+  4. Flag the first point where a word could not be resolved by a first-time reader using only what has been read so far. Headings/titles MUST be checked against content read strictly before that heading, never against the body that follows it.
+- A structural check (e.g. "does this page use the required MDX components", "is `goal` present") does NOT satisfy this rule's verification requirement and MUST NOT be treated as a substitute for the cold-read simulation above.
 
 Source: github:metyatech/agent-rules@HEAD/rules/domains/course-docs/repository-and-site.md
 
 # Course Docs Repository and Site Architecture
 
-- `metyatech/course-docs-site` is the only runnable Next.js/Nextra course site app.
-- `course-docs-site` owns routing, layouts, middleware, site runtime wiring, and end-to-end tests for the site runtime.
-- `metyatech/course-docs-platform` owns shared MDX components, remark/rehype configuration, webpack asset rules, and shared course site behavior.
-- `<course>-course-docs` repositories are content-only repositories.
+- `metyatech/course-docs-site` is the Course Docs monorepo and the only runnable Next.js/Nextra course site app.
+- The runnable site remains at the repository root.
+- `packages/platform` is the internal workspace package named `@metyatech/course-docs-platform`.
+- The Course Docs monorepo MUST keep a single root `package-lock.json`; workspace packages MUST NOT contain their own lockfiles.
+- `packages/platform` owns shared MDX components, remark/rehype configuration, webpack asset rules, reusable Next app factories/routes, and shared course-site behavior.
+- The root site owns content synchronization, site composition, deployment wiring, development tooling, and end-to-end tests.
+- Shared behavior that applies to multiple courses belongs in `packages/platform`.
+- Root site code MUST remain composition/wiring for platform-owned behavior.
+- Site/platform cross-boundary changes MUST be committed and verified atomically in the same repository.
+- Platform, site, course build, and end-to-end verification MUST run together for changes that cross the site/platform boundary.
+- The archived `metyatech/course-docs-platform` repository is historical only.
+- Active code MUST NOT depend on the archived repository through Git, GitHub SHA dependencies, submodules, or subtree synchronization.
+- Content repositories remain content-only repositories.
 - Course content repositories MUST keep only course content, static assets, and course-specific configuration such as `content/**`, `public/img/**`, and `site.config.ts`.
 - Course content repositories MUST NOT add Next.js/Nextra app runtime files such as `next.config.js`, `src/app`, app package files, or site runtime implementations.
 - `public/img/favicon.ico` is expected by `site.config.ts` when `faviconHref` references it.
@@ -110,8 +160,6 @@ Source: github:metyatech/agent-rules@HEAD/rules/domains/course-docs/repository-a
 - Secrets MUST NOT be stored in course content repositories.
 - `.env.local` is local-only and belongs in `course-docs-site`, not in content repositories.
 - Course content MUST be previewed through `course-docs-site` by setting `COURSE_CONTENT_SOURCE`.
-- Shared rendering/runtime behavior that applies to multiple courses MUST be implemented in `course-docs-platform`, not duplicated in `course-docs-site` or content repositories.
-- `course-docs-site` MUST remain composition/wiring only for platform-owned behavior.
 - Vercel deployment for course sites MUST use GitHub Actions with the Vercel CLI, not Vercel's GitHub integration.
 - Generic tool-agnostic specs MUST remain in their dedicated repositories.
 - Course Docs Site-specific presentation conventions MUST be documented in `course-docs-platform` or the `course-docs` domain, not in generic specs.
